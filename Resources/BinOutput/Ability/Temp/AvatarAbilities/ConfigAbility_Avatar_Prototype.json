@@ -13,7 +13,7 @@
                 },
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10281,
+                    "skillID": 10281,
                     "chargeTime": 0.20000000298023224,
                     "secondChargeTime": 0.4000000059604645,
                     "OnBeginUncharged": [
@@ -24,7 +24,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
@@ -35,7 +35,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         }
                     ],
                     "chargeStateIDs": [
@@ -50,24 +50,26 @@
             "modifiers": {
                 "ExtraAttack_FX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WhiteBox_RushAttack"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WhiteBox_RushAttack",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "ExtraAttack_Damage_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible"
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Monster_Abyss_Fire_Blink_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Monster_Abyss_Fire_Blink_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -77,7 +79,8 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Monster_Abyss_Fire_Blink_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Monster_Abyss_Fire_Blink_AS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -101,7 +104,7 @@
             "modifiers": {
                 "ExtraAttack_HideWeapon_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -122,7 +125,7 @@
             "modifiers": {
                 "Prototype_ExtraAttack_Blink_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "SetAnimatorTrigger",
@@ -152,9 +155,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -177,20 +180,23 @@
             "modifiers": {
                 "Xiangling_ExtraAttack_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WhiteBox_Pole"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WhiteBox_Pole",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Arrow_Fly"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Arrow_Fly",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_WhiteBox_RushAttack",
-                            "scale": 0.20000000298023224
+                            "healLimitedByCasterMaxHPRatio": "Eff_WhiteBox_RushAttack",
+                            "scale": 0.20000000298023224,
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -210,9 +216,9 @@
                         "attenuationTag": "",
                         "attenuationGroup": "default",
                         "attackProperty": {
-                            "bonusCriticalHurt": "ExtraAttack_Damage",
-                            "damagePercentageRatio": 0.0,
-                            "elementDurability": 20.0,
+                            "MDJIHDGGPHA": "ExtraAttack_Damage",
+                            "NEFPGMGNGAK": 0.0,
+                            "bonusCriticalHurt": 20.0,
                             "overrideByWeapon": true,
                             "strikeType": "Slash",
                             "attackType": "Range"
@@ -220,7 +226,7 @@
                         "hitPattern": {
                             "onHitEffectName": "default",
                             "hitLevel": "Heavy",
-                            "hitImpulseX": 180.0,
+                            "DBIGJBIFCPK": 180.0,
                             "hitImpulseY": 0.0,
                             "hitImpulseType": "",
                             "hitHaltTimeScale": 0.05000000074505806
@@ -237,7 +243,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10282,
+                    "skillID": 10282,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -266,17 +272,17 @@
             "modifiers": {
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.5,
-                                "_z": -2.5
+                                "x": 0.5,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.30000001192092896,
-                                "_y": -0.20000000298023224
+                                "x": 0.30000001192092896,
+                                "y": -0.20000000298023224
                             },
                             "cameraFastFocusMode": true,
                             "dragButtonName": "Skill2",
@@ -298,14 +304,15 @@
                 },
                 "Visible_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible"
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Monster_Abyss_Fire_Blink_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Monster_Abyss_Fire_Blink_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -315,7 +322,8 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Monster_Abyss_Fire_Blink_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Monster_Abyss_Fire_Blink_AS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -329,17 +337,17 @@
             "modifiers": {
                 "Pole_Appear": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "CreateGadget",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.10000000149011612,
-                                    "z": 4.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.10000000149011612,
+                                    "OGKDKNLKIDE": 4.0
                                 },
                                 "onGround": true,
                                 "alongGround": true
@@ -353,9 +361,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": -2.8299999237060547,
-                                    "y": 0.10000000149011612,
-                                    "z": 2.8299999237060547
+                                    "NMLENGBJMAA": -2.8299999237060547,
+                                    "OKBPMDLDKLI": 0.10000000149011612,
+                                    "OGKDKNLKIDE": 2.8299999237060547
                                 },
                                 "onGround": true,
                                 "alongGround": true
@@ -369,9 +377,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 2.8299999237060547,
-                                    "y": 0.10000000149011612,
-                                    "z": 2.8299999237060547
+                                    "NMLENGBJMAA": 2.8299999237060547,
+                                    "OKBPMDLDKLI": 0.10000000149011612,
+                                    "OGKDKNLKIDE": 2.8299999237060547
                                 },
                                 "onGround": true,
                                 "alongGround": true
@@ -386,9 +394,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10283,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10283,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -404,8 +412,8 @@
             "modifiers": {
                 "Pole_Attack_Timer": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
@@ -415,40 +423,40 @@
                 },
                 "Pole_Attack_Hit": {
                     "modifierName": "",
-                    "duration": 1.0499999523162842,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0499999523162842,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 2.0
+                                    "PHALDBNIMGI": 2.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Skill",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 1.5,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 1.5,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Fire",
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Blunt"
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
                                         "hitLevel": "Air",
-                                        "hitImpulseX": 0.0,
+                                        "DBIGJBIFCPK": 0.0,
                                         "hitImpulseY": 600.0,
                                         "hitImpulseType": "",
                                         "hitHaltTimeScale": 0.05000000074505806
@@ -460,13 +468,15 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_IceExplodeArrow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_IceExplodeArrow",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_IceSlash_Out"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_IceSlash_Out",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -489,20 +499,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.2000000476837158,
-                                "y": 1.0,
-                                "z": 3.0
+                                "NMLENGBJMAA": 1.2000000476837158,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.0
                             }
                         },
                         "attackInfo": {
@@ -510,9 +520,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.27000001072883606,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.27000001072883606,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -520,7 +530,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 280.0,
+                                "DBIGJBIFCPK": 280.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.029999999329447746,
@@ -548,20 +558,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.600000023841858,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.600000023841858,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -569,9 +579,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.3199999928474426,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.3199999928474426,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -579,7 +589,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 360.0,
+                                "DBIGJBIFCPK": 360.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.029999999329447746,
@@ -607,20 +617,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.2000000476837158,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.2000000476837158,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -628,9 +638,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.25,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.25,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -638,7 +648,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 240.0,
+                                "DBIGJBIFCPK": 240.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTimeScale": 0.009999999776482582,
@@ -665,20 +675,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.2000000476837158,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.2000000476837158,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -686,9 +696,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.3400000035762787,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.3400000035762787,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Pierce",
                                 "attackType": "Melee"
@@ -696,7 +706,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 300.0,
+                                "DBIGJBIFCPK": 300.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.029999999329447746,
@@ -724,20 +734,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.2000000476837158,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.2000000476837158,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -745,9 +755,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.14000000059604645,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.14000000059604645,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -755,7 +765,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 120.0,
+                                "DBIGJBIFCPK": 120.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTimeScale": 0.009999999776482582,
@@ -782,20 +792,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.2000000476837158,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.2000000476837158,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -803,9 +813,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.14000000059604645,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.14000000059604645,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -813,7 +823,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Heavy",
-                                "hitImpulseX": 480.0,
+                                "DBIGJBIFCPK": 480.0,
                                 "hitImpulseY": 0.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.029999999329447746,
@@ -841,20 +851,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.399999976158142,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.399999976158142,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -862,9 +872,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.8999999761581421,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.8999999761581421,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -872,7 +882,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Air",
-                                "hitImpulseX": 680.0,
+                                "DBIGJBIFCPK": 680.0,
                                 "hitImpulseY": 480.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.09000000357627869,
@@ -900,20 +910,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "filterByFrame": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.699999988079071,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.699999988079071,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 1.399999976158142,
-                                "y": 1.0,
-                                "z": 3.299999952316284
+                                "NMLENGBJMAA": 1.399999976158142,
+                                "OKBPMDLDKLI": 1.0,
+                                "OGKDKNLKIDE": 3.299999952316284
                             }
                         },
                         "attackInfo": {
@@ -921,9 +931,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.8999999761581421,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.8999999761581421,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Spear",
                                 "attackType": "Melee"
@@ -931,7 +941,7 @@
                             "hitPattern": {
                                 "onHitEffectName": "default",
                                 "hitLevel": "Air",
-                                "hitImpulseX": 50.0,
+                                "DBIGJBIFCPK": 50.0,
                                 "hitImpulseY": 480.0,
                                 "hitImpulseType": "",
                                 "hitHaltTime": 0.09000000357627869,

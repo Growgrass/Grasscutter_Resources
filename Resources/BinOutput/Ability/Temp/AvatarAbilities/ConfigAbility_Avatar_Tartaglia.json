@@ -16,11 +16,12 @@
             "modifiers": {
                 "Tartaglia_Arrow_FX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Arrow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Arrow",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -54,11 +55,11 @@
             "modifiers": {
                 "Tartaglia_Bow_Mode_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ButtonHoldChargeMixin",
-                            "overtime": 10331,
+                            "skillID": 10331,
                             "chargeTime": 0.20000000298023224,
                             "secondChargeTime": 999999.0,
                             "OnBeginUncharged": [
@@ -69,7 +70,7 @@
                                 {
                                     "$type": "SetAnimatorInt",
                                     "intID": "SkillID",
-                                    "value": 100.0
+                                    "ratio": 100.0
                                 }
                             ],
                             "OnReleaseUncharged": [
@@ -79,7 +80,7 @@
                                 },
                                 {
                                     "$type": "EntityDoSkill",
-                                    "overtime": 10335,
+                                    "skillID": 10335,
                                     "isHold": true
                                 }
                             ],
@@ -91,25 +92,25 @@
                                 {
                                     "$type": "SetAnimatorInt",
                                     "intID": "SkillID",
-                                    "value": 101.0
+                                    "ratio": 101.0
                                 }
                             ],
                             "OnReleaseCharged": [
                                 {
                                     "$type": "AvatarSkillStart",
-                                    "overtime": 10331,
-                                    "cdRatio": 1.0,
-                                    "costStaminaRatio": 1.0
+                                    "skillID": 10331,
+                                    "cdDelta": 1.0,
+                                    "costStaminaDelta": 1.0
                                 },
                                 {
                                     "$type": "AvatarSkillStart",
-                                    "overtime": 10334,
-                                    "cdRatio": 1.0,
-                                    "costStaminaRatio": 1.0
+                                    "skillID": 10334,
+                                    "cdDelta": 1.0,
+                                    "costStaminaDelta": 1.0
                                 },
                                 {
                                     "$type": "EntityDoSkill",
-                                    "overtime": 10335,
+                                    "skillID": 10335,
                                     "isHold": true
                                 }
                             ],
@@ -148,7 +149,7 @@
                     "onAdded": [
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "renderNames": [
                                 "Body_Cloak"
@@ -157,7 +158,7 @@
                         },
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "renderNames": [
                                 "Body_CloakEffectMesh"
@@ -165,7 +166,7 @@
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "visible": true,
                             "partNames": [
@@ -179,11 +180,11 @@
                 },
                 "Tartaglia_Gandalfr_Mode_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ButtonHoldChargeMixin",
-                            "overtime": 10337,
+                            "skillID": 10337,
                             "chargeTime": 0.11999999731779099,
                             "secondChargeTime": 0.20000000298023224,
                             "OnBeginUncharged": [
@@ -200,20 +201,20 @@
                                                 {
                                                     "$type": "ByAnimatorInt",
                                                     "logic": "Equal",
-                                                    "value": 0,
+                                                    "ratio": 0,
                                                     "parameter": "ComboCount"
                                                 },
                                                 {
                                                     "$type": "ByAnimatorInt",
                                                     "logic": "Equal",
-                                                    "value": 6,
+                                                    "ratio": 6,
                                                     "parameter": "ComboCount"
                                                 }
                                             ]
                                         }
                                     ],
                                     "intID": "SkillID",
-                                    "value": 11.0
+                                    "ratio": 11.0
                                 },
                                 {
                                     "$type": "SetAnimatorBool",
@@ -224,14 +225,14 @@
                                 {
                                     "$type": "SetAnimatorInt",
                                     "intID": "SkillID",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "OnBeginCharged": [
                                 {
                                     "$type": "SetAnimatorBool",
                                     "boolID": "IsCharging",
-                                    "value": true
+                                    "ratio": true
                                 }
                             ],
                             "OnReleaseCharged": [
@@ -242,7 +243,7 @@
                                 {
                                     "$type": "SetAnimatorInt",
                                     "intID": "SkillID",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "OnBeginSecondCharged": [
@@ -255,7 +256,7 @@
                                             "stamina": [
                                                 "ExtraAttack_Sword_Stamina_Cost",
                                                 "Flexible_Stamina",
-                                                "Add"
+                                                "ADD"
                                             ]
                                         }
                                     ],
@@ -270,12 +271,12 @@
                                             "stamina": [
                                                 "ExtraAttack_Sword_Stamina_Cost",
                                                 "Flexible_Stamina",
-                                                "Add"
+                                                "ADD"
                                             ]
                                         }
                                     ],
                                     "intID": "SkillID",
-                                    "value": 6.0
+                                    "ratio": 6.0
                                 },
                                 {
                                     "$type": "SetAnimatorBool",
@@ -312,7 +313,7 @@
                     "onAdded": [
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "renderNames": [
                                 "Body_Cloak"
@@ -320,7 +321,7 @@
                         },
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "renderNames": [
                                 "Body_CloakEffectMesh"
@@ -329,7 +330,7 @@
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true,
                             "partNames": [
                                 "equip01",
@@ -342,7 +343,7 @@
                     "onKill": [
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "renderNames": [
                                 "Body_Cloak"
                             ],
@@ -350,14 +351,14 @@
                         },
                         {
                             "$type": "TriggerSetRenderersEnable",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "renderNames": [
                                 "Body_CloakEffectMesh"
                             ]
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true,
                             "partNames": [
                                 "equip01",
@@ -370,7 +371,7 @@
                 },
                 "ExtraAttack_Mode_Error_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.20000000298023224,
                     "onAdded": [
                         {
@@ -395,24 +396,24 @@
                 },
                 "KeepFastAiming": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "FastAiming",
-                            "value": true
+                            "ratio": true
                         },
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.75,
-                                "_y": 0.38999998569488525,
-                                "_z": -1.8700000047683716
+                                "x": 0.75,
+                                "y": 0.38999998569488525,
+                                "z": -1.8700000047683716
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.75,
-                                "_y": 0.6499999761581421,
-                                "_z": -1.8700000047683716
+                                "x": 0.75,
+                                "y": 0.6499999761581421,
+                                "z": -1.8700000047683716
                             },
                             "cameraFastFocusMode": true,
                             "faceToTarget": true,
@@ -446,12 +447,12 @@
                 },
                 "SetFastAimShooting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "FastAimShooting",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -464,7 +465,7 @@
                             "predicates": [
                                 {
                                     "$type": "ByAnimatorBool",
-                                    "value": true,
+                                    "ratio": true,
                                     "parameter": "FastAiming"
                                 }
                             ],
@@ -474,12 +475,12 @@
                 },
                 "SetNeedAimEndStates": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "InStatesNeedAimEnd",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -491,13 +492,13 @@
                 },
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -511,24 +512,24 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10334,
+                    "skillID": 10334,
                     "secondChargeTime": 999999.0,
                     "OnReleaseCharged": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10331,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10331,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10334,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10334,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "EntityDoSkill",
-                            "overtime": 10335,
+                            "skillID": 10335,
                             "isHold": true
                         }
                     ],
@@ -564,24 +565,24 @@
             "modifiers": {
                 "KeepAiming": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "Aiming",
-                            "value": true
+                            "ratio": true
                         },
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.75,
-                                "_y": 0.38999998569488525,
-                                "_z": -1.8700000047683716
+                                "x": 0.75,
+                                "y": 0.38999998569488525,
+                                "z": -1.8700000047683716
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.75,
-                                "_y": 0.6499999761581421,
-                                "_z": -1.8700000047683716
+                                "x": 0.75,
+                                "y": 0.6499999761581421,
+                                "z": -1.8700000047683716
                             },
                             "cameraFastFocusMode": true,
                             "faceToTarget": true,
@@ -615,12 +616,12 @@
                 },
                 "SetAimShooting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "AimShooting",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -632,12 +633,12 @@
                 },
                 "SetNeedAimEndStates": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "InStatesNeedAimEnd",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -661,9 +662,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -687,9 +688,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -713,9 +714,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -739,9 +740,9 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": -0.12939999997615814,
-                            "y": 1.50600004196167,
-                            "z": 0.3553999960422516
+                            "NMLENGBJMAA": -0.12939999997615814,
+                            "OKBPMDLDKLI": 1.50600004196167,
+                            "OGKDKNLKIDE": 0.3553999960422516
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -752,20 +753,21 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_ShootArrow_Big_Custom",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_ShootArrow_Big_Custom",
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": -0.12939999997615814,
-                            "y": 1.50600004196167,
-                            "z": 0.3553999960422516
+                            "NMLENGBJMAA": -0.12939999997615814,
+                            "OKBPMDLDKLI": 1.50600004196167,
+                            "OGKDKNLKIDE": 0.3553999960422516
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
                             "attachPointName": "FocusAnchor",
                             "attachPointTargetType": "Self"
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -781,9 +783,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -807,9 +809,9 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": -0.020999999716877937,
-                            "y": 1.100000023841858,
-                            "z": 1.399999976158142
+                            "NMLENGBJMAA": -0.020999999716877937,
+                            "OKBPMDLDKLI": 1.100000023841858,
+                            "OGKDKNLKIDE": 1.399999976158142
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -820,15 +822,16 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_ShootArrow_Big_Last",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_ShootArrow_Big_Last",
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": -0.020999999716877937,
-                            "y": 1.100000023841858,
-                            "z": 1.399999976158142
+                            "NMLENGBJMAA": -0.020999999716877937,
+                            "OKBPMDLDKLI": 1.100000023841858,
+                            "OGKDKNLKIDE": 1.399999976158142
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ActCameraShake",
@@ -855,7 +858,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 4.0,
+                            "ratio": 4.0,
                             "forceByCaster": true,
                             "compareType": "MoreThanAndEqual"
                         }
@@ -864,9 +867,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -882,7 +885,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "forceByCaster": true,
                             "compareType": "LessAndEqual"
                         }
@@ -891,9 +894,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -909,7 +912,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 4.0,
+                            "ratio": 4.0,
                             "forceByCaster": true,
                             "compareType": "MoreThanAndEqual"
                         }
@@ -929,21 +932,22 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 4.0,
+                            "ratio": 4.0,
                             "forceByCaster": true,
                             "compareType": "MoreThanAndEqual"
                         }
                     ],
-                    "effectPattern": "Eff_WaterMagic_Arrow_Onshooting",
+                    "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Onshooting",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.8999999761581421
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.8999999761581421
                         },
                         "attachPointName": "WeaponR"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -951,21 +955,22 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "forceByCaster": true,
                             "compareType": "LessAndEqual"
                         }
                     ],
-                    "effectPattern": "Eff_WaterMagic_Arrow_Onshooting_Unsuccessful",
+                    "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Onshooting_Unsuccessful",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.8999999761581421
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.8999999761581421
                         },
                         "attachPointName": "WeaponR"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -980,48 +985,48 @@
                     "animEventNames": [
                         "Arrow_ATK01"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_01_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_01_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Arrow_ATK02"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_02_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_02_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Arrow_ATK03"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_03_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_03_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Arrow_ATK04"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_04_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_04_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Arrow_ATK05"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_05_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_05_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Arrow_ATK06"
                     ],
-                    "bonusCriticalHurt": "NormalAttack_Range_06_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "NormalAttack_Range_06_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 }
             ],
             "abilitySpecials": {
@@ -1035,7 +1040,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -1064,19 +1070,22 @@
                 "ShootArrow_Enchanted_Water": {
                     "modifierName": "",
                     "elementType": "Water",
-                    "elementDurability": 25.0,
+                    "bonusCriticalHurt": 25.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WaterMagic_Arrow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterMagic_Arrow_Fly_Particle"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterMagic_Arrow_Fly_Particle",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterMagic_Arrow_Fly_Trail"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterMagic_Arrow_Fly_Trail",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -1088,11 +1097,12 @@
                 },
                 "ShootArrow_Enchanted_WithoutWater": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1115,20 +1125,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -0.5
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -1136,10 +1146,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "DamageWithWater",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "DamageWithWater",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 20.0,
                                 "enHeadBreak": 60.0
@@ -1188,20 +1198,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -0.5
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -1209,9 +1219,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "DamageWithoutWater",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": "DamageWithoutWater",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 10.0,
                                 "enHeadBreak": 30.0
@@ -1260,20 +1270,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -0.5
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -1281,9 +1291,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "DamageWithoutWater",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": "DamageWithoutWater",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 10.0,
                                 "enHeadBreak": 30.0
@@ -1371,7 +1381,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Arrow_Fly_Big",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -1441,7 +1452,7 @@
             "modifiers": {
                 "ShootAimingArrow_Charge_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -1452,35 +1463,35 @@
                 },
                 "Aim_ChangeAlpha": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "EffectChangeAlphaMixin",
                             "target": "Team",
-                            "HFFJNJPFMEE": 0.20000000298023224,
-                            "JMNILCJHBLL": 0.30000001192092896
+                            "HOMPPOOOCFI": 0.20000000298023224,
+                            "KKANJKOAEPD": 0.30000001192092896
                         }
                     ]
                 },
                 "FastAim_ChangeAlpha": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "EffectChangeAlphaMixin",
                             "target": "Team",
-                            "HFFJNJPFMEE": 0.20000000298023224,
-                            "JMNILCJHBLL": 0.30000001192092896
+                            "HOMPPOOOCFI": 0.20000000298023224,
+                            "KKANJKOAEPD": 0.30000001192092896
                         }
                     ]
                 },
                 "ShootAimingArrow_Charge_Remove": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -5.0,
+                            "ratio": -5.0,
                             "key": "_Enchanted_Time",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -1501,11 +1512,11 @@
                         "maxModifierNumForMultipleType": 5.0
                     },
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_Enchanted_Time",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -1515,7 +1526,7 @@
                 },
                 "ShowAimingEffect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
@@ -1530,7 +1541,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Enchanted_Time",
-                                    "value": 4.0,
+                                    "ratio": 4.0,
                                     "forceByCaster": true,
                                     "compareType": "MoreThanAndEqual"
                                 }
@@ -1543,7 +1554,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Enchanted_Time",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -1554,30 +1565,34 @@
                 "WaterMagic_Arrow_Glow_Once": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WaterMagic_Arrow_Glow_Once_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Glow_Once_02",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WaterMagic_Arrow_Glow_Loop_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Glow_Loop_02",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "WaterMagic_Arrow_Glow_WithoutWater_Once": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WaterMagic_Arrow_Glow_Once_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Glow_Once_01",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_WaterMagic_Arrow_Glow_Loop_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_WaterMagic_Arrow_Glow_Loop_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1585,7 +1600,7 @@
             "onAbilityStart": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": -5.0,
+                    "ratio": -5.0,
                     "key": "_Enchanted_Time",
                     "useLimitRange": true,
                     "maxValue": 5.0,
@@ -1634,12 +1649,12 @@
             "modifiers": {
                 "Tartaglia_WaterFLower_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1656,7 +1671,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -1670,14 +1685,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_Flag",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "successActions": [
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "WaterMagicArrow_AquaFlower_Range"
                                 }
                             ]
@@ -1685,7 +1700,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1702,7 +1717,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -1718,7 +1733,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_WaterMagicArrow_AquaFlower"
                                 }
                             ]
@@ -1726,7 +1741,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1743,7 +1758,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -1759,7 +1774,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_WaterMagicArrow_AquaFlower"
                                 }
                             ]
@@ -1767,7 +1782,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1788,13 +1803,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_IsActivated",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 },
                                 {
@@ -1807,7 +1822,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_WaterMagicArrow_AquaFlower"
                                 }
                             ]
@@ -1815,7 +1830,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1836,18 +1851,18 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_Flag",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_IsActivated",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -1855,7 +1870,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_WaterMagicArrow_AquaFlower_Reaper"
                                 }
                             ]
@@ -1863,7 +1878,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1881,18 +1896,18 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_Flag",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_IsActivated",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -1900,7 +1915,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "WaterMagicArrow_AquaFlower_Melee"
                                 }
                             ]
@@ -1908,7 +1923,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1925,7 +1940,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -1933,7 +1948,7 @@
                                 {
                                     "$type": "AttachModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_WaterMagicArrow_AquaFlower"
                                 }
                             ]
@@ -1943,17 +1958,18 @@
                 "UNIQUE_WaterMagicArrow_AquaFlower": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "AquaFlower_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AquaFlower_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": "AquaFlower_RippleInterval",
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_WaterFlower"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_WaterFlower",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Tartaglia_WaterFlower_Flag",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -1963,7 +1979,7 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -11.0,
+                            "ratio": -11.0,
                             "key": "_ABILITY_Tartaglia_WaterFlower_Flag",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -1971,18 +1987,19 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_WaterFlower_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_WaterFlower_AS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_IsActivated",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 },
                                 {
@@ -1994,12 +2011,12 @@
                         },
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_IsActivated",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 },
                                 {
@@ -2013,7 +2030,8 @@
                     "onKill": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Kill_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Kill_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -2021,26 +2039,26 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.699999988079071,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.699999988079071,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 5.0
+                                    "PHALDBNIMGI": 5.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_05",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Kill_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Kill_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Slash",
                                         "enBreak": 100.0,
                                         "attackType": "Melee"
@@ -2080,25 +2098,26 @@
                         "maxModifierNumForMultipleType": 8.0
                     },
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "doOffStage": true,
-                            "value": 4.0
+                            "RotationDampTime": true,
+                            "ratio": 4.0
                         }
                     ]
                 },
                 "WaterMagicArrow_AquaFlower_Range": {
                     "modifierName": "",
-                    "duration": 0.699999988079071,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.699999988079071,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Range_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Range_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -2106,28 +2125,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_03",
                                     "attenuationTag": "AquaFlower",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Range_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Range_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 15.0,
                                         "attackType": "Melee"
@@ -2149,7 +2168,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Caster",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2157,12 +2176,12 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 3.0
                         },
                         {
@@ -2178,28 +2197,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_03",
                                     "attenuationTag": "AquaFlower",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Range_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Range_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 15.0,
                                         "attackType": "Melee"
@@ -2218,13 +2237,14 @@
                 },
                 "WaterMagicArrow_AquaFlower_Range_Talent": {
                     "modifierName": "",
-                    "duration": 0.699999988079071,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.699999988079071,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Range_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Range_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -2232,28 +2252,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_03",
                                     "attenuationTag": "AquaFlower",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Range_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Range_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 15.0,
                                         "attackType": "Melee"
@@ -2275,7 +2295,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Caster",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2283,12 +2303,12 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 3.0
                         },
                         {
@@ -2304,28 +2324,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_03",
                                     "attenuationTag": "AquaFlower",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Range_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Range_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 15.0,
                                         "attackType": "Melee"
@@ -2346,13 +2366,13 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 3.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2362,8 +2382,8 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -1.0,
+                            "RotationDampTime": true,
+                            "ratio": -1.0,
                             "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2374,12 +2394,13 @@
                 "WaterMagicArrow_AquaFlower_Melee": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Melee_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Melee_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -2387,28 +2408,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Melee_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Melee_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 100.0,
                                         "attackType": "Melee"
@@ -2429,7 +2450,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Caster",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2437,12 +2458,12 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 3.0
                         },
                         {
@@ -2455,12 +2476,13 @@
                 "WaterMagicArrow_AquaFlower_Melee_Talent": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Melee_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_WaterFlower_Melee_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -2468,28 +2490,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Melee_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Melee_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Slash",
                                         "enBreak": 100.0,
                                         "attackType": "Melee"
@@ -2510,7 +2532,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Caster",
                                     "key": "_ABILITY_Tartaglia_WaterFlower_ElemBallMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2518,12 +2540,12 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 3.0
                         },
                         {
@@ -2536,8 +2558,8 @@
                 "UNIQUE_WaterMagicArrow_AquaFlower_Reaper": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 0.800000011920929,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.800000011920929,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -2545,28 +2567,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "attachPointName": "Fx_ChestNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 5.0
+                                    "PHALDBNIMGI": 5.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquaFlower_Reaper_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquaFlower_Reaper_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Default",
                                         "enBreak": 100.0,
                                         "attackType": "Melee"
@@ -2586,7 +2608,8 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Melee_Reaper"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Melee_Reaper",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2654,72 +2677,72 @@
                     "animEventNames": [
                         "Gandalfr_ATK01"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_01_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_01_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK02"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_02_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_02_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK03"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_03_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_03_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK04"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_04_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_04_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK05"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_05_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_05_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK06_1"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_06_1_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_06_1_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ATK06_2"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_Attack_06_2_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_Attack_06_2_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ExtraAttack_1"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_ExtraAttack_1_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_ExtraAttack_1_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "Gandalfr_ExtraAttack_2"
                     ],
-                    "bonusCriticalHurt": "Gandalfr_ExtraAttack_2_DamagePercentage",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Gandalfr_ExtraAttack_2_DamagePercentage",
+                    "NEFPGMGNGAK": 0.0
                 }
             ],
             "abilitySpecials": {
@@ -2739,8 +2762,8 @@
                 "UNIQUE_Gandalfr_Main_Handler": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 31.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 31.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.20000000298023224,
                     "modifierMixins": [
                         {
@@ -2761,11 +2784,11 @@
                             "$type": "SwitchSkillIDMixin",
                             "priority": "AvatarSpecial",
                             "skillIndex": 1,
-                            "overtime": 10336
+                            "skillID": 10336
                         },
                         {
                             "$type": "SwitchSkillIDMixin",
-                            "overtime": 10337
+                            "skillID": 10337
                         }
                     ],
                     "properties": {
@@ -2775,12 +2798,12 @@
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "IsGandalfr",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Gandalfr_IsActivated",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2791,7 +2814,7 @@
                             "modifierName": "UNIQUE_Gandalfr_Maximum_Cooldown_Handler"
                         },
                         {
-                            "$type": "ApplyModifier",
+                            "$type": "AttachModifier",
                             "target": "Team",
                             "modifierName": "UNIQUE_Gandalfr_CoolDown_Count_On_Team"
                         }
@@ -2799,14 +2822,14 @@
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "floatID": "IsGandalfr",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -1.0,
+                            "RotationDampTime": true,
+                            "ratio": -1.0,
                             "key": "_ABILITY_Gandalfr_IsActivated",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2814,21 +2837,23 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_End_Blast"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_End_Blast",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_End_Blast_Head"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_End_Blast_Head",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Gandalfr_Maximum_Cooldown_Handler"
                         },
                         {
                             "$type": "RemoveUniqueModifier",
                             "target": "Team",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Gandalfr_CoolDown_Count_On_Team"
                         }
                     ],
@@ -2836,20 +2861,20 @@
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "IsGandalfr",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ]
                 },
                 "UNIQUE_Gandalfr_CoolDown_Count_On_Team": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
                             "target": "Caster",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Gandalfr_Cooldown_Count",
                             "useLimitRange": true,
                             "maxValue": 35.0,
@@ -2860,70 +2885,70 @@
                 "UNIQUE_Gandalfr_Maximum_Cooldown_Handler": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "globalValueKey": "_ABILITY_Gandalfr_Cooldown_Count",
                             "overrideMapKey": "Gandalfr_Cooldown_Count"
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Cooldown_Count",
-                                    "value": 29.0,
+                                    "ratio": 29.0,
                                     "forceByCaster": true,
                                     "compareType": "LessAndEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_AquariaBlade_Ultimate_Used",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "overtime": 10332,
-                            "cdRatio": [
+                            "skillID": 10332,
+                            "cdDelta": [
                                 1.0,
                                 "Gandalfr_Cooldown_Count",
                                 0.16699999570846558,
-                                "Mul",
-                                "Add"
+                                "MUL",
+                                "ADD"
                             ],
-                            "costStaminaRatio": 1.0
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Cooldown_Count",
-                                    "value": 29.0,
+                                    "ratio": 29.0,
                                     "forceByCaster": true,
                                     "compareType": "MoreThan"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_AquariaBlade_Ultimate_Used",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "overtime": 10332,
-                            "cdRatio": 7.5,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10332,
+                            "cdDelta": 7.5,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -99.0,
+                            "RotationDampTime": true,
+                            "ratio": -99.0,
                             "key": "_ABILITY_AquariaBlade_Ultimate_Used",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2931,8 +2956,8 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -99.0,
+                            "RotationDampTime": true,
+                            "ratio": -99.0,
                             "key": "_ABILITY_Gandalfr_Cooldown_Count",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2942,11 +2967,11 @@
                 },
                 "Gandalfr_Perform_Available_Checker_ForState": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2956,8 +2981,8 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -99.0,
+                            "RotationDampTime": true,
+                            "ratio": -99.0,
                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2967,11 +2992,11 @@
                 },
                 "Gandalfr_Perform_Available_Checker_ForAnimate": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2981,8 +3006,8 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -99.0,
+                            "RotationDampTime": true,
+                            "ratio": -99.0,
                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2992,11 +3017,11 @@
                 },
                 "Gandalfr_Perform_Maintainer": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddElementDurability",
-                            "value": 20.0,
+                            "ratio": 20.0,
                             "modifierName": "UNIQUE_Gandalfr_Main_Handler",
                             "useLimitRange": true,
                             "maxValue": 125.0,
@@ -3006,7 +3031,7 @@
                     "onRemoved": [
                         {
                             "$type": "AddElementDurability",
-                            "value": -20.0,
+                            "ratio": -20.0,
                             "modifierName": "UNIQUE_Gandalfr_Main_Handler",
                             "useLimitRange": true,
                             "maxValue": 125.0,
@@ -3016,33 +3041,34 @@
                 },
                 "Gandalfr_Avatar_Absence_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onKill": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Gandalfr_Main_Handler"
                         }
                     ],
-                    "onAvatarOut": [
+                    "ELMEGFLPEKG": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Gandalfr_Main_Handler"
                         }
                     ]
                 },
                 "Gandalfr_End_Warning_Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Gandalfr_End_Warning": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Coruscate_Head"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Coruscate_Head",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -3050,8 +3076,8 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Gandalfr_Cooldown_Count",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -3059,8 +3085,8 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -3068,8 +3094,8 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -3083,28 +3109,28 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10336,
-                    "cdRatio": 0.125,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10336,
+                    "cdDelta": 0.125,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
-                            "radius": 3.0
+                            "triggerType": "TriggerNoRepeat",
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Gandalfr_StartDamage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Gandalfr_StartDamage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
                                 "elementRank": 3.0,
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Blunt",
                                 "enBreak": 51.75
                             },
@@ -3130,11 +3156,13 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Blast"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Blast",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Blast_Head"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Bow_Tartaglia_Gandalfr_Start_Blast_Head",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -3153,12 +3181,12 @@
             "onAbilityStart": [
                 {
                     "$type": "RemoveUniqueModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Gandalfr_Main_Handler"
                 },
                 {
                     "$type": "RemoveUniqueModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Gandalfr_Maximum_Cooldown_Handler"
                 }
             ]
@@ -3179,8 +3207,8 @@
             "modifiers": {
                 "Gandalfr_Attack05_FixPos": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalPos",
@@ -3188,9 +3216,9 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.8500000238418579
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.8500000238418579
                                 }
                             }
                         },
@@ -3202,9 +3230,9 @@
                                 "direction": {
                                     "$type": "ConfigDirectionByEntity",
                                     "angleOffset": {
-                                        "x": 0.0,
-                                        "y": 0.0,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 0.0,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 }
                             }
@@ -3232,7 +3260,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10332,
+                    "skillID": 10332,
                     "chargeTime": 5.0,
                     "secondChargeTime": 10.0,
                     "OnBeginUncharged": [
@@ -3242,17 +3270,17 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "overtime": 10332,
+                            "skillID": 10332,
                             "type": "Skill"
                         },
                         {
@@ -3261,13 +3289,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -3282,14 +3310,14 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -3307,14 +3335,14 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -3322,7 +3350,7 @@
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 2.0
+                            "ratio": 2.0
                         }
                     ],
                     "OnReleaseUncharged": [
@@ -3342,7 +3370,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10336,
+                    "skillID": 10336,
                     "chargeTime": 5.0,
                     "secondChargeTime": 10.0,
                     "OnBeginUncharged": [
@@ -3352,17 +3380,17 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "overtime": 10332,
+                            "skillID": 10332,
                             "type": "Skill"
                         },
                         {
@@ -3371,13 +3399,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -3392,14 +3420,14 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -3417,14 +3445,14 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForState",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Gandalfr_Perform_Available_ForAnimate",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -3432,7 +3460,7 @@
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 2.0
+                            "ratio": 2.0
                         }
                     ],
                     "OnReleaseUncharged": [
@@ -3455,7 +3483,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": -5.0,
+                    "ratio": -5.0,
                     "key": "_ABILITY_AquariaBlade_Ultimate_Used",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -3468,27 +3496,27 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -2.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -2.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 5.0,
-                            "radius": 8.0
+                            "height": 5.0,
+                            "PHALDBNIMGI": 8.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Burst",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AquariaBlade_Melee_Damage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "AquariaBlade_Melee_Damage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Slash",
                                 "enBreak": 250.0,
                                 "attackType": "Melee"
@@ -3504,9 +3532,9 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10333,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10333,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "AddGlobalValue",
@@ -3516,7 +3544,7 @@
                             "talentParam": "Avatar_Tartaglia_ThousandWithers"
                         }
                     ],
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_ABILITY_AquariaBlade_Ultimate_Used",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -3536,13 +3564,13 @@
                 "AqauriaBlade_Range_EnergyRegain": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "doOffStage": true,
-                            "value": "AqauriaBlade_Range_EnergyRegain"
+                            "RotationDampTime": true,
+                            "ratio": "AqauriaBlade_Range_EnergyRegain"
                         }
                     ]
                 }
@@ -3550,9 +3578,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10333,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10333,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "CreateGadget",
@@ -3565,9 +3593,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "gadgetID": 41033009,
@@ -3589,9 +3617,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 7.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 7.0
                         },
                         "onGround": true
                     },
@@ -3602,7 +3630,7 @@
                 {
                     "$type": "ApplyModifier",
                     "target": "Caster",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "AqauriaBlade_Range_EnergyRegain"
                 }
             ]
@@ -3618,8 +3646,8 @@
             "modifiers": {
                 "AquariaBlade_Range_Damage": {
                     "modifierName": "",
-                    "duration": 1.100000023841858,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.100000023841858,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -3627,27 +3655,27 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": -2.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": -2.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "secondHeight": 4.0,
-                                    "radius": 6.0
+                                    "height": 4.0,
+                                    "PHALDBNIMGI": 6.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AquariaBlade_Range_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AquariaBlade_Range_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 200.0,
                                         "attackType": "Range"
@@ -3663,31 +3691,33 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_Explosion"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_Explosion",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "AquariaBlade_Range_Damage_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "AquariaBlade_Range_Damage_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "AquariaBlade_Range_OnlyEffect_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "AquariaBlade_Range_OnlyEffect_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 }
             },
             "onAdded": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_Alert"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_Alert",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -3865,11 +3895,11 @@
             "modifiers": {
                 "Gandalfr_Blade_Manager_Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Gandalfr_Blade_Manager_Switch": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachModifierToSelfGlobalValueMixin",
@@ -3895,12 +3925,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_L_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_L_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -3908,12 +3939,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_R_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_R_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -3921,15 +3953,16 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_Dual_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_Dual_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_Gandalfr_Single_Or_Dual",
                             "useLimitRange": true,
                             "maxValue": 2.0,
@@ -3939,43 +3972,47 @@
                 },
                 "Gandalfr_Blade_Single": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_L"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_L",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_R"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_R",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Gandalfr_Blade_Dual": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_SingleToDual"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_SingleToDual",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_Dual"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_Dual",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Gandalfr_Blade_Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Gandalfr_Blade_Manager_ToSingle": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -5.0,
+                            "ratio": -5.0,
                             "key": "_ABILITY_Gandalfr_Single_Or_Dual",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -3985,11 +4022,11 @@
                 },
                 "Gandalfr_Blade_Manager_ToDual": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Gandalfr_Single_Or_Dual",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -3999,7 +4036,7 @@
                 },
                 "Gandalfr_Blade_Manager_ToBlank": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
@@ -4007,12 +4044,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_L_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_L_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -4020,12 +4058,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "forceByCaster": true,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_R_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_R_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -4033,15 +4072,16 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "effectPattern": "Eff_Tartaglia_Gandalfr_Weapon_Dual_Dissipate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_Gandalfr_Weapon_Dual_Dissipate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 2.0,
+                            "ratio": 2.0,
                             "key": "_ABILITY_Gandalfr_Single_Or_Dual",
                             "useLimitRange": true,
                             "maxValue": 2.0,
@@ -4053,7 +4093,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": -5.0,
+                    "ratio": -5.0,
                     "key": "_ABILITY_Gandalfr_Single_Or_Dual",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -4124,7 +4164,7 @@
             "modifiers": {
                 "AquariaBlade_Camera_Protection_Ghost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachAbilityStateResistance",
@@ -4134,12 +4174,12 @@
                 },
                 "AquariaBlade_Camera_Protection_Invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "AquariaBlade_Melee_Camera_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -4152,7 +4192,7 @@
                 },
                 "AquariaBlade_Range_Camera_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -4165,7 +4205,7 @@
                 },
                 "AquariaBlade_Windzone_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "WindZoneMixin",
@@ -4173,14 +4213,14 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "strength": -3.0,
-                            "attenuation": 2.0,
-                            "innerRadius": 0.0,
+                            "IKGEBLKGCPK": -3.0,
+                            "innerRadius": 2.0,
+                            "radius": 0.0,
                             "targetType": "Enemy",
                             "predicates": [
                                 {
@@ -4202,7 +4242,7 @@
                 },
                 "AquariaBlade_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ControlEmotion",
@@ -4214,11 +4254,11 @@
                     "onRemoved": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "AvatarCameraParam",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "cameraParam": {
                                 "forceRadius": 6.0,
                                 "shouldKeepForceRadius": true
@@ -4226,13 +4266,13 @@
                         },
                         {
                             "$type": "ControlEmotion",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "Tartaglia_AquariaBlade_Invisible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible"
@@ -4241,14 +4281,14 @@
                     "onRemoved": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         }
                     ]
                 },
                 "Tartaglia_AquariaBlade_Range_Material_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
@@ -4257,18 +4297,18 @@
                                     "$type": "ByAttackNotHitScene",
                                     "attackPattern": {
                                         "$type": "ConfigAttackCircle",
-                                        "lifeTime": "TriggerNoRepeat",
+                                        "triggerType": "TriggerNoRepeat",
                                         "born": {
                                             "$type": "ConfigBornBySelf",
                                             "offset": {
-                                                "x": 0.0,
-                                                "y": 1.5,
-                                                "z": 0.0
+                                                "NMLENGBJMAA": 0.0,
+                                                "OKBPMDLDKLI": 1.5,
+                                                "OGKDKNLKIDE": 0.0
                                             }
                                         },
-                                        "secondHeight": 0.4000000059604645,
+                                        "height": 0.4000000059604645,
                                         "fanAngle": 30.0,
-                                        "radius": 1.399999976158142
+                                        "PHALDBNIMGI": 1.399999976158142
                                     },
                                     "checkWaterLayer": true
                                 },
@@ -4295,7 +4335,7 @@
                 },
                 "Tartaglia_AquariaBlade_Range_Arrow": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachToNormalizedTimeMixin",
@@ -4308,17 +4348,19 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_Arrow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_Arrow",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Tartaglia_AquariaBlade_Range_Arrow_ThirdParty": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachToNormalizedTimeMixin",
@@ -4331,31 +4373,35 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_Arrow_Thirdparty"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_Arrow_Thirdparty",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_BS_Thirdparty"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_BS_Thirdparty",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Tartaglia_AquariaBlade_Range_Arrow_Shooting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_BS_Shooting"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_BS_Shooting",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Tartaglia_AquariaBlade_Range_Arrow_Shooting_ThirdParty": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Tartaglia_AquariaBlade_Range_BS_Shooting_Thirdparty"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Tartaglia_AquariaBlade_Range_BS_Shooting_Thirdparty",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -4368,18 +4414,18 @@
                             "$type": "ByAttackNotHitScene",
                             "attackPattern": {
                                 "$type": "ConfigAttackCircle",
-                                "lifeTime": "TriggerNoRepeat",
+                                "triggerType": "TriggerNoRepeat",
                                 "born": {
                                     "$type": "ConfigBornBySelf",
                                     "offset": {
-                                        "x": 0.0,
-                                        "y": 1.5,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 1.5,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
-                                "secondHeight": 0.4000000059604645,
+                                "height": 0.4000000059604645,
                                 "fanAngle": 30.0,
-                                "radius": 1.399999976158142
+                                "PHALDBNIMGI": 1.399999976158142
                             },
                             "checkWaterLayer": true
                         },
@@ -4391,7 +4437,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Gandalfr_IsActivated",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
@@ -4404,18 +4450,18 @@
                             "$type": "ByAttackNotHitScene",
                             "attackPattern": {
                                 "$type": "ConfigAttackCircle",
-                                "lifeTime": "TriggerNoRepeat",
+                                "triggerType": "TriggerNoRepeat",
                                 "born": {
                                     "$type": "ConfigBornBySelf",
                                     "offset": {
-                                        "x": 0.0,
-                                        "y": 1.5,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 1.5,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
-                                "secondHeight": 0.4000000059604645,
+                                "height": 0.4000000059604645,
                                 "fanAngle": 30.0,
-                                "radius": 1.399999976158142
+                                "PHALDBNIMGI": 1.399999976158142
                             },
                             "checkWaterLayer": true
                         },
@@ -4427,7 +4473,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Gandalfr_IsActivated",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true
                         }
                     ],
@@ -4446,7 +4492,7 @@
             "modifiers": {
                 "Tartaglia_CoreTalent_Main_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "modifierMixins": [
                         {
@@ -4471,7 +4517,7 @@
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByCurTeamWeaponTypeSort",
@@ -4479,7 +4525,7 @@
                                     "logic": "Equal"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Tartaglia_CoreTalent_WeaponCount",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -4487,7 +4533,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByCurTeamWeaponTypeSort",
@@ -4495,7 +4541,7 @@
                                     "logic": "Equal"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Tartaglia_CoreTalent_WeaponCount",
                             "useLimitRange": true,
                             "maxValue": 2.0,
@@ -4503,7 +4549,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByCurTeamWeaponTypeSort",
@@ -4511,7 +4557,7 @@
                                     "logic": "Equal"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Tartaglia_CoreTalent_WeaponCount",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -4519,7 +4565,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByCurTeamWeaponTypeSort",
@@ -4527,7 +4573,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Tartaglia_CoreTalent_WeaponCount",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -4537,7 +4583,7 @@
                 },
                 "Tartaglia_CoreTalent_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SkillCDMinusRatio": "Tartaglia_CoreTalent_CDReductionRatio"
                     },
@@ -4545,36 +4591,36 @@
                 },
                 "Tartaglia_CoreTalent_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SkillCDMinusRatio": [
                             "Tartaglia_CoreTalent_CDReductionRatio",
                             2.0,
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "isLimitedProperties": true
                 },
                 "Tartaglia_CoreTalent_3": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SkillCDMinusRatio": [
                             "Tartaglia_CoreTalent_CDReductionRatio",
                             3.0,
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "isLimitedProperties": true
                 },
                 "Tartaglia_CoreTalent_4": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SkillCDMinusRatio": [
                             "Tartaglia_CoreTalent_CDReductionRatio",
                             4.0,
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "isLimitedProperties": true
@@ -4583,7 +4629,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": -2.0,
+                    "ratio": -2.0,
                     "key": "_ABILITY_Avatar_Tartaglia_CoreTalent_WeaponCount",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -4591,7 +4637,7 @@
                 },
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "Tartaglia_CoreTalent_Main_Handler"
                 }
             ]
@@ -4604,7 +4650,7 @@
             "onAbilityStart": [
                 {
                     "$type": "TriggerHideWeapon",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "visible": true,
                     "partNames": [
                         "equip01",
@@ -4623,12 +4669,12 @@
             "onAbilityStart": [
                 {
                     "$type": "TriggerHideWeapon",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByAnimatorFloat",
                             "logic": "Equal",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "parameter": "IsGandalfr"
                         }
                     ],
@@ -4755,21 +4801,23 @@
             "modifiers": {
                 "FallingAnthem_AttachEffect_BS_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_BS_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_BS_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -4785,7 +4833,7 @@
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -4800,7 +4848,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -4808,25 +4856,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 10.0,
                                         "attackType": "Melee"
@@ -4844,7 +4892,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -4856,10 +4904,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -4871,14 +4919,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -4890,14 +4938,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -4909,14 +4957,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -4927,10 +4975,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -4944,7 +4992,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -4959,14 +5007,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "FallingAnthem_Loop_Normal": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
@@ -4974,17 +5022,18 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_FallingAnthem_UseCamera",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_Loop_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Loop_02",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -4995,7 +5044,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -5003,10 +5052,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -5017,10 +5066,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -5032,33 +5081,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -5068,7 +5117,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -5076,7 +5125,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -5090,17 +5139,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -5108,7 +5157,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -5122,7 +5171,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -5141,7 +5190,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -5149,26 +5198,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 50.0,
                                 "attackType": "Melee"
@@ -5188,33 +5237,33 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.5
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -5234,12 +5283,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Bow_FallAnthem_Strike_01"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Strike_01",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -5247,11 +5297,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Bow_FallAnthem_Strike_02"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Strike_02",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }

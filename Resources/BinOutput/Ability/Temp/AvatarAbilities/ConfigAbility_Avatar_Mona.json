@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10413,
+                    "skillID": 10413,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -36,7 +36,7 @@
             "modifiers": {
                 "LiquidStrike_SetAnimatorTrigger": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorTrigger",
@@ -55,9 +55,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10413,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": "StaminaStartCost"
+                    "skillID": 10413,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": "StaminaStartCost"
                 }
             ]
         }
@@ -154,11 +154,11 @@
             "modifiers": {
                 "MoveLoop": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CostStaminaMixin",
-                            "costStaminaDelta": "StaminaCost",
+                            "costStaminaRatio": "StaminaCost",
                             "onStaminaEmpty": [
                                 {
                                     "$type": "SetAnimatorTrigger",
@@ -173,11 +173,11 @@
                 },
                 "MoveStandby_CostStamina": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CostStaminaMixin",
-                            "costStaminaDelta": 0.10000000149011612,
+                            "costStaminaRatio": 0.10000000149011612,
                             "onStaminaEmpty": [
                                 {
                                     "$type": "SetAnimatorTrigger",
@@ -189,74 +189,76 @@
                 },
                 "MoveLoop_SetVisible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         }
                     ]
                 },
                 "Move_Eff": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_MoveSpeedRatio": "LiquidStrike_MoveSpeedRatio"
                     },
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Spray"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Spray",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "isLimitedProperties": true
                 },
                 "MoveStandby_Eff": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Idle"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Idle",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Water_Bloom": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.10000000149011612
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.10000000149011612
                                         }
                                     },
-                                    "radius": "Water_Bloom_Radius"
+                                    "PHALDBNIMGI": "Water_Bloom_Radius"
                                 },
                                 "attackInfo": {
                                     "attackTag": "",
                                     "attenuationTag": "Mona_LiquidStrike",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "enBreak": 0.0
                                     },
                                     "hitPattern": {
@@ -284,9 +286,9 @@
                 },
                 "WaterModifier": {
                     "modifierName": "",
-                    "duration": 4.0,
+                    "KPGONJCLMDC": 4.0,
                     "elementType": "Water",
-                    "elementDurability": 25.0,
+                    "bonusCriticalHurt": 25.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
@@ -298,35 +300,46 @@
                                     ]
                                 }
                             ],
-                            "effectPattern": "Eff_Barbara_WetShield_Collision_Self"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Barbara_WetShield_Collision_Self",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "SetAnimatorFloat": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "@FallToGroundRun",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ]
                 },
                 "LiquidStrike_CloseCollider": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetPassThrough",
                             "passThrough": true
+                        },
+                        {
+                            "$type": "EnableHDMesh",
+                            "IBJNANMCAIC": "Default"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true
+                            "RotationDampTime": true
+                        },
+                        {
+                            "$type": "EnableHDMesh",
+                            "canBeHandledOnRecover": true,
+                            "enable": true,
+                            "IBJNANMCAIC": "Default"
                         }
                     ]
                 }
@@ -334,7 +347,7 @@
             "onAdded": [
                 {
                     "$type": "TriggerSetPassThrough",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "canBeHandledOnRecover": true
                 }
             ]
@@ -352,7 +365,7 @@
                 {
                     "$type": "SetAnimatorInt",
                     "intID": "SkillID",
-                    "value": 0.0
+                    "ratio": 0.0
                 }
             ]
         }
@@ -364,7 +377,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10411,
+                    "skillID": 10411,
                     "chargeTime": 0.10000000149011612,
                     "secondChargeTime": 0.10000000149011612,
                     "OnBeginUncharged": [
@@ -374,7 +387,7 @@
                                 {
                                     "$type": "ByAnimatorInt",
                                     "logic": "Equal",
-                                    "value": 0,
+                                    "ratio": 0,
                                     "parameter": "ComboCount"
                                 }
                             ],
@@ -386,12 +399,12 @@
                                 {
                                     "$type": "ByAnimatorInt",
                                     "logic": "Equal",
-                                    "value": 0,
+                                    "ratio": 0,
                                     "parameter": "ComboCount"
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -406,14 +419,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -428,7 +441,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -445,14 +458,14 @@
                                     "stamina": [
                                         "ExtraAttack_Catalyst_Stamina_Cost",
                                         "Mona_ExtraAttack_StaminaCost",
-                                        "Mul",
+                                        "MUL",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorInt",
@@ -463,14 +476,14 @@
                                     "stamina": [
                                         "ExtraAttack_Catalyst_Stamina_Cost",
                                         "Mona_ExtraAttack_StaminaCost",
-                                        "Mul",
+                                        "MUL",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -503,16 +516,16 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10003,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": [
+                            "skillID": 10003,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": [
                                 "Mona_ExtraAttack_StaminaCost",
                                 "ExtraAttack_Catalyst_Stamina_Cost",
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
@@ -538,8 +551,8 @@
                 "ExtraAttack_FX": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalPos",
@@ -557,9 +570,9 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 5.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 5.0
                                 },
                                 "onGround": true
                             },
@@ -578,18 +591,19 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "onGround": true,
                                 "positionKey": "_ABILITY_MONA_EXTRAATTACK_POS",
                                 "directionKey": ""
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -607,18 +621,19 @@
             "onAbilityStart": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "onGround": true,
                         "positionKey": "_ABILITY_MONA_EXTRAATTACK_POS",
                         "directionKey": ""
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "SetGlobalValueToOverrideMap",
@@ -642,23 +657,23 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "_ABILITY_MONA_EXTRAATTACK_POS",
                                 "directionKey": ""
                             },
-                            "radius": 3.0
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "ExtraAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Mona_ExtraAttack_Damge",
-                                "damagePercentageRatio": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
+                                "MDJIHDGGPHA": "AS_Mona_ExtraAttack_Damge",
+                                "NEFPGMGNGAK": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Default",
                                 "enBreak": 26.145000457763672
                             },
@@ -674,7 +689,7 @@
                                 "shakeTime": 0.36000001430511475,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": -1.0
+                                    "y": -1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.7200000286102295,
@@ -699,8 +714,8 @@
             "modifiers": {
                 "Mona_NormalAttack": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -708,23 +723,23 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "attachPointName": "RootNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_01",
                                     "attenuationTag": "Mona_Water_Damage",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_01",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Mona_NormalAttack_01",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 7.650000095367432
                                     },
@@ -758,15 +773,16 @@
                             ]
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_01_Hit",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_01_Hit",
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.0,
-                            "z": 5.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 5.0
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -781,8 +797,8 @@
             "modifiers": {
                 "Mona_NormalAttack": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -790,23 +806,23 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "attachPointName": "RootNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_02",
                                     "attenuationTag": "Mona_Water_Damage",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_02",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Mona_NormalAttack_02",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 7.349999904632568
                                     },
@@ -840,15 +856,16 @@
                             ]
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_02_Hit",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_02_Hit",
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.0,
-                            "z": 5.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 5.0
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -871,7 +888,7 @@
                         }
                     ],
                     "boolID": "Is_NormalAttack_Blink_Back",
-                    "value": true
+                    "ratio": true
                 },
                 {
                     "$type": "Predicated",
@@ -887,7 +904,7 @@
                         {
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "GreaterOrEqual",
-                            "value": 7.5
+                            "ratio": 7.5
                         }
                     ],
                     "successActions": [
@@ -900,7 +917,7 @@
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "Is_NormalAttack_Blink_Back",
-                            "value": true
+                            "ratio": true
                         }
                     ]
                 }
@@ -924,19 +941,20 @@
             "modifiers": {
                 "Blink": {
                     "modifierName": "",
-                    "duration": 0.2199999988079071,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.2199999988079071,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Attack_HideSpark"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Attack_HideSpark",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerSetVisible"
                         },
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "passThrough": true
                         }
                     ],
@@ -947,17 +965,18 @@
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         },
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Attack_ShowSpark"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Attack_ShowSpark",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "SetAnimatorTrigger",
@@ -984,8 +1003,8 @@
             "modifiers": {
                 "Mona_NormalAttack": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -993,23 +1012,23 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "attachPointName": "RootNode",
                                         "attachPointTargetType": "Self"
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_03",
                                     "attenuationTag": "Mona_Water_Damage",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_03",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Mona_NormalAttack_03",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 9.149999618530273
                                     },
@@ -1042,15 +1061,16 @@
                             ]
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_03_Hit",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_03_Hit",
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.0,
-                            "z": 5.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 5.0
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1071,9 +1091,9 @@
                     "born": {
                         "$type": "ConfigBornBySelectedPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "gadgetID": 41041004,
@@ -1095,9 +1115,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.2000000476837158,
-                            "z": 5.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.2000000476837158,
+                            "OGKDKNLKIDE": 5.0
                         },
                         "onGround": true
                     },
@@ -1119,36 +1139,36 @@
             "modifiers": {
                 "Attack04_Timer": {
                     "modifierName": "",
-                    "duration": 0.41999998688697815,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.41999998688697815,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerAttackEvent",
                             "target": "OriginOwner",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": "Radius"
+                                    "PHALDBNIMGI": "Radius"
                                 },
                                 "attackInfo": {
                                     "attackTag": "NormalAttack_04",
                                     "attenuationTag": "Mona_Water_Damage",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_04",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Mona_NormalAttack_04",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 11.850000381469727
                                     },
@@ -1176,7 +1196,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_04_Hit"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_04_Hit",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1200,7 +1221,7 @@
             "onAbilityStart": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_MONA_PHANTOM_IS_BLINK",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -1216,7 +1237,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10412,
+                    "skillID": 10412,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -1240,9 +1261,9 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10412,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10412,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "SetGlobalPos",
@@ -1260,9 +1281,9 @@
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": -0.800000011920929
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -0.800000011920929
                         },
                         "onGround": true,
                         "direction": {
@@ -1290,9 +1311,9 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 5.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 5.0
                         },
                         "onGround": true,
                         "direction": {
@@ -1313,22 +1334,24 @@
             "modifiers": {
                 "Invincible": {
                     "modifierName": "",
-                    "duration": 0.25,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.25,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "Blink_End": {
                     "modifierName": "",
-                    "duration": 0.25,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.25,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show_Door"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show_Door",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "SetAnimatorTrigger",
@@ -1345,9 +1368,9 @@
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "onGround": true,
                                 "direction": {
@@ -1372,24 +1395,25 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10412,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10412,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Hide",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Hide",
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByEntity"
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "SetGlobalPos",
@@ -1397,9 +1421,9 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByEntity"
@@ -1425,18 +1449,24 @@
             "modifiers": {
                 "SetVisible_End": {
                     "modifierName": "",
-                    "duration": 0.3400000035762787,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.3400000035762787,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
+                        },
+                        {
+                            "$type": "EnableHDMesh",
+                            "canBeHandledOnRecover": true,
+                            "enable": true,
+                            "IBJNANMCAIC": "Default"
                         }
                     ]
                 }
@@ -1444,8 +1474,12 @@
             "onAbilityStart": [
                 {
                     "$type": "TriggerSetPassThrough",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "passThrough": true
+                },
+                {
+                    "$type": "EnableHDMesh",
+                    "IBJNANMCAIC": "Default"
                 },
                 {
                     "$type": "TriggerSetVisible"
@@ -1476,7 +1510,7 @@
             "modifiers": {
                 "Mona_Phantom_HideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -1513,8 +1547,8 @@
             "modifiers": {
                 "ShowEffect_Phantom_Area": {
                     "modifierName": "",
-                    "duration": 5.21999979019165,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.21999979019165,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -1528,8 +1562,8 @@
                 },
                 "Phantom": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_MaxHPDelta": 999999.0,
                         "Actor_DefenceDelta": 999999.0
@@ -1537,13 +1571,15 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Area"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Area",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "KillSelf"
@@ -1552,27 +1588,28 @@
                     "onBeingHit": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.399999976158142,
-                                    "z": 0.44999998807907104
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.399999976158142,
+                                    "OGKDKNLKIDE": 0.44999998807907104
                                 }
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Phantom_Attack": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_MONA_PHANTOM_THINK_TIMES",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -1584,7 +1621,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_MONA_PHANTOM_THINK_TIMES",
-                                    "value": 4.0,
+                                    "ratio": 4.0,
                                     "forceByCaster": true,
                                     "compareType": "LessAndEqual"
                                 }
@@ -1595,41 +1632,42 @@
                 },
                 "Phantom_Attack_Think": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_ThinkAttack",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_ThinkAttack",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "GadgetPos",
                                 "directionKey": ""
                             },
-                            "scale": 0.699999988079071
+                            "scale": 0.699999988079071,
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "GadgetPos",
                                         "directionKey": ""
                                     },
-                                    "radius": 5.0
+                                    "PHALDBNIMGI": 5.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Mona_Phantom_ThinkDamageRate",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Mona_Phantom_ThinkDamageRate",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 40.0
                                     },
@@ -1648,7 +1686,7 @@
                 },
                 "Taunt_SelectTarget_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.5,
                     "onAdded": [
                         {
@@ -1665,8 +1703,8 @@
                 },
                 "Taunt_SelectTarget_02": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerTaunt",
@@ -1716,12 +1754,13 @@
                 },
                 "Taunted": {
                     "modifierName": "",
-                    "duration": 8.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 8.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Taunted"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Taunted",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onKill": [
@@ -1735,7 +1774,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_MONA_PHANTOM",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -1755,9 +1794,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByEntity"
@@ -1772,22 +1811,23 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst",
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "positionKey": "GadgetPos",
                         "directionKey": ""
                     },
-                    "scale": 0.75
+                    "scale": 0.75,
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "CreateGadget",
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "gadgetID": 41041007,
@@ -1807,7 +1847,7 @@
             "modifiers": {
                 "DummyElementBall": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -1828,7 +1868,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -1844,8 +1884,8 @@
                 "Ball": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "GenerateElemBall",
@@ -1853,12 +1893,12 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 9.0
                         },
                         {
@@ -1871,12 +1911,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 }
                             ]
@@ -1890,23 +1930,23 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "GadgetPos",
                                 "directionKey": ""
                             },
-                            "radius": 5.0
+                            "PHALDBNIMGI": 5.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Mona_Phantom_LastDamageRate",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "AS_Mona_Phantom_LastDamageRate",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Default",
                                 "enBreak": 150.0
                             },
@@ -1987,7 +2027,7 @@
             "modifiers": {
                 "isGhost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachAbilityStateResistance",
@@ -1997,19 +2037,19 @@
                 },
                 "invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "Tornado_Eff": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "WindZoneMixin",
                             "shapeName": "CircleR2",
-                            "strength": -2.0,
-                            "attenuation": 0.0,
+                            "IKGEBLKGCPK": -2.0,
                             "innerRadius": 0.0,
+                            "radius": 0.0,
                             "targetType": "All",
                             "predicates": [
                                 {
@@ -2036,17 +2076,17 @@
                                     "$type": "ByAttackNotHitScene",
                                     "attackPattern": {
                                         "$type": "ConfigAttackCircle",
-                                        "lifeTime": "TriggerNoRepeat",
+                                        "triggerType": "TriggerNoRepeat",
                                         "born": {
                                             "$type": "ConfigBornBySelf",
                                             "offset": {
-                                                "x": 0.0,
-                                                "y": 0.5,
-                                                "z": 0.0
+                                                "NMLENGBJMAA": 0.0,
+                                                "OKBPMDLDKLI": 0.5,
+                                                "OGKDKNLKIDE": 0.0
                                             }
                                         },
-                                        "secondHeight": 2.0,
-                                        "radius": 1.0
+                                        "height": 2.0,
+                                        "PHALDBNIMGI": 1.0
                                     },
                                     "checkWaterLayer": true
                                 },
@@ -2054,27 +2094,27 @@
                                     "$type": "ByAttackNotHitScene",
                                     "attackPattern": {
                                         "$type": "ConfigAttackBox",
-                                        "lifeTime": "TriggerNoRepeat",
+                                        "triggerType": "TriggerNoRepeat",
                                         "born": {
                                             "$type": "ConfigBornBySelf",
                                             "offset": {
-                                                "x": -5.730000019073486,
-                                                "y": 8.8100004196167,
-                                                "z": -5.260000228881836
+                                                "NMLENGBJMAA": -5.730000019073486,
+                                                "OKBPMDLDKLI": 8.8100004196167,
+                                                "OGKDKNLKIDE": -5.260000228881836
                                             },
                                             "direction": {
                                                 "$type": "ConfigDirectionByEntity",
                                                 "angleOffset": {
-                                                    "x": -50.0,
-                                                    "y": 20.299999237060547,
-                                                    "z": 0.0
+                                                    "NMLENGBJMAA": -50.0,
+                                                    "OKBPMDLDKLI": 20.299999237060547,
+                                                    "OGKDKNLKIDE": 0.0
                                                 }
                                             }
                                         },
                                         "size": {
-                                            "x": 5.0,
-                                            "y": 20.200000762939453,
-                                            "z": 5.0
+                                            "NMLENGBJMAA": 5.0,
+                                            "OKBPMDLDKLI": 20.200000762939453,
+                                            "OGKDKNLKIDE": 5.0
                                         }
                                     },
                                     "checkWaterLayer": true
@@ -2088,13 +2128,15 @@
                             "successActions": [
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS",
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ],
                             "failActions": [
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS_Thirdparty"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS_Thirdparty",
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ]
                         }
@@ -2102,7 +2144,7 @@
                 },
                 "camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -2124,22 +2166,22 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.30000001192092896
                         },
                         {
                             "$type": "ControlEmotion",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "AvatarExitCameraShot"
                         }
                     ],
-                    "onAvatarOut": [
+                    "ELMEGFLPEKG": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.30000001192092896
                         },
                         {
@@ -2150,17 +2192,17 @@
                         },
                         {
                             "$type": "ControlEmotion",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "camera_extra": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "AvatarCameraParam",
@@ -2173,12 +2215,12 @@
                 },
                 "SetEmission": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": 15.0,
+                            "value": 15.0,
                             "duration": 0.30000001192092896
                         }
                     ],
@@ -2186,14 +2228,14 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.6000000238418579
                         }
                     ]
                 },
                 "Mona_StarChart_HideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -2228,18 +2270,18 @@
                             "$type": "ByAttackNotHitScene",
                             "attackPattern": {
                                 "$type": "ConfigAttackCircle",
-                                "lifeTime": "TriggerNoRepeat",
+                                "triggerType": "TriggerNoRepeat",
                                 "born": {
                                     "$type": "ConfigBornBySelf",
                                     "offset": {
-                                        "x": 0.0,
-                                        "y": 1.2000000476837158,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 1.2000000476837158,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
-                                "secondHeight": 0.20000000298023224,
+                                "height": 0.20000000298023224,
                                 "fanAngle": 30.0,
-                                "radius": 0.800000011920929
+                                "PHALDBNIMGI": 0.800000011920929
                             }
                         }
                     ],
@@ -2278,48 +2320,48 @@
             "modifiers": {
                 "StarChart_Area_Delay": {
                     "modifierName": "",
-                    "duration": 1.7000000476837158,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.7000000476837158,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "TriggerAttack_Event"
                         }
                     ]
                 },
                 "Invincible": {
                     "modifierName": "",
-                    "duration": 2.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.5,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "TriggerAttack_Event": {
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 10.0
+                                    "PHALDBNIMGI": 10.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 50.0
                                     },
@@ -2336,24 +2378,24 @@
                         },
                         {
                             "$type": "TriggerAttackEvent",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 10.0
+                                    "PHALDBNIMGI": 10.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst_Trigger",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
                                         "strikeType": "Default",
                                         "enBreak": 0.0
                                     },
@@ -2373,7 +2415,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2391,7 +2433,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2399,7 +2441,7 @@
                                 {
                                     "$type": "Predicated",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "targetPredicates": [
                                         {
                                             "$type": "ByTargetWeight",
@@ -2411,7 +2453,7 @@
                                         {
                                             "$type": "ApplyModifier",
                                             "target": "Target",
-                                            "doOffStage": true,
+                                            "RotationDampTime": true,
                                             "modifierName": "Debuff_Bubble_Struggle"
                                         }
                                     ]
@@ -2419,7 +2461,7 @@
                                 {
                                     "$type": "ApplyModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Debuff_Bubble_RemoveDamage"
                                 }
                             ]
@@ -2428,8 +2470,8 @@
                 },
                 "Debuff_Bubble_Struggle": {
                     "modifierName": "",
-                    "duration": "AS_Mona_StarChart_Bubble_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_StarChart_Bubble_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -2438,8 +2480,8 @@
                 "UNIQUE_Debuff_Bubble_RemoveDamage": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "AS_Mona_StarChart_Bubble_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_StarChart_Bubble_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SubHurtDelta": "AS_Mona_StarChart_HurtUp_DamageRate",
                         "Actor_AntiCriticalDelta": "AS_Mona_Talent_AntiCritical"
@@ -2451,7 +2493,8 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -2461,21 +2504,22 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble_AS",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "DamageByAttackValue",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackInfo": {
                                 "attackTag": "Elemental_Burst",
                                 "attenuationTag": "Elemental_Burst",
                                 "attenuationGroup": "default",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": "AS_Mona_StarChart_Bubble_RemovedDamage",
-                                    "damagePercentageRatio": 0.0,
+                                    "MDJIHDGGPHA": "AS_Mona_StarChart_Bubble_RemovedDamage",
+                                    "NEFPGMGNGAK": 0.0,
                                     "elementType": "Water",
-                                    "elementDurability": 50.0,
+                                    "bonusCriticalHurt": 50.0,
                                     "strikeType": "Default",
                                     "enBreak": 200.0,
                                     "damageExtra": 0.0
@@ -2519,12 +2563,12 @@
                 "UNIQUE_Debuff_HurtUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Mona_StarChart_HurtUp_Duration",
                         0.20000000298023224,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_SubHurtDelta": "AS_Mona_StarChart_HurtUp_DamageRate",
                         "Actor_AntiCriticalDelta": "AS_Mona_Talent_AntiCritical"
@@ -2543,11 +2587,12 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "Is_Mona_StarChart_HurtUp",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2557,7 +2602,8 @@
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp_AS",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "ClearGlobalValue",
@@ -2568,17 +2614,17 @@
                 },
                 "Talent_ElementReactionUp_AttackLandedEvent_01": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Mona_StarChart_HurtUp_Duration",
                         0.05000000074505806,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
                             "target": "Team",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent_TeamHandle"
                         }
                     ]
@@ -2586,12 +2632,12 @@
                 "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent_TeamHandle": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Mona_StarChart_HurtUp_Duration",
                         0.05000000074505806,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CurLocalAvatarMixin",
@@ -2602,12 +2648,12 @@
                 "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Mona_StarChart_HurtUp_Duration",
                         0.05000000074505806,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -2616,7 +2662,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "Is_Mona_StarChart_HurtUp",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "successActions": [
@@ -2632,8 +2678,8 @@
                 "UNIQUE_Avatar_Mona_StarChart_Talent_ElementReactionUp_TeamHandle": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "AS_Mona_Talent_ElementReactionUp_Time",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_Talent_ElementReactionUp_Time",
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CurLocalAvatarMixin",
@@ -2656,14 +2702,14 @@
                 "UNIQUE_Talent_ElementAddHurt": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Mona_Talent_ElementReactionUp_Time",
                         "AS_Mona_StarChart_HurtUp_Duration",
-                        "Add",
+                        "ADD",
                         "AS_Mona_StarChart_Bubble_Duration",
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_ElemReactElectricDelta": "AS_Mona_Talent_ElementReactionUp_Electric",
                         "Actor_ElemReactSteamDelta": "AS_Mona_Talent_ElementReactionUp_Steam",
@@ -2673,13 +2719,15 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp_AS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp_AS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2687,9 +2735,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10415,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10415,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "RemoveModifier",
@@ -2739,7 +2787,7 @@
             "modifiers": {
                 "MoveLoop_Talent_Phantom": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Timer",
                     "onThinkInterval": [
                         {
@@ -2772,7 +2820,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2789,17 +2837,17 @@
                 "LiquidPhantom": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "CreateGadget",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "onGround": true,
                                 "direction": {
@@ -2828,8 +2876,8 @@
             "modifiers": {
                 "Phantom": {
                     "modifierName": "",
-                    "duration": "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_MaxHPDelta": 999999.0,
                         "Actor_DefenceDelta": 999999.0
@@ -2837,42 +2885,45 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Phantom"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Phantom",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 5.0
+                                    "PHALDBNIMGI": 5.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art_Extra",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": [
+                                        "MDJIHDGGPHA": [
                                             "AS_Mona_Phantom_LastDamageRate",
                                             "AS_Mona_Talent_LiquidStrike_LiquidPhantom_DamageRate",
-                                            "Mul"
+                                            "MUL"
                                         ],
-                                        "damagePercentageRatio": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 150.0
                                     },
@@ -2893,21 +2944,22 @@
                     "onBeingHit": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.399999976158142,
-                                    "z": 0.44999998807907104
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.399999976158142,
+                                    "OGKDKNLKIDE": 0.44999998807907104
                                 }
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Taunting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.5,
                     "onThinkInterval": [
                         {
@@ -2958,12 +3010,13 @@
                 },
                 "Taunted_FX": {
                     "modifierName": "",
-                    "duration": 8.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 8.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Taunted"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Taunted",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onKill": [
@@ -2977,7 +3030,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_MONA_PHANTOM",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -3004,13 +3057,13 @@
             "modifiers": {
                 "ChargeEfficiencyToWaterAddHurt": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
                             "target": "Caster",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByNot",
@@ -3018,7 +3071,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
-                                            "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                            "ratio": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
                                         }
                                     ]
                                 }
@@ -3026,8 +3079,8 @@
                             "successActions": [
                                 {
                                     "$type": "AddGlobalValue",
-                                    "doOffStage": true,
-                                    "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "RotationDampTime": true,
+                                    "ratio": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
                                     "key": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
                                     "useLimitRange": true,
                                     "maxValue": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
@@ -3035,12 +3088,12 @@
                                 },
                                 {
                                     "$type": "RemoveUniqueModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
                                 },
                                 {
                                     "$type": "AttachModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
                                 }
                             ]
@@ -3050,7 +3103,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Caster",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByNot",
@@ -3058,7 +3111,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
-                                            "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                            "ratio": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
                                         }
                                     ]
                                 }
@@ -3066,8 +3119,8 @@
                             "successActions": [
                                 {
                                     "$type": "AddGlobalValue",
-                                    "doOffStage": true,
-                                    "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "RotationDampTime": true,
+                                    "ratio": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
                                     "key": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
                                     "useLimitRange": true,
                                     "maxValue": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
@@ -3075,12 +3128,12 @@
                                 },
                                 {
                                     "$type": "RemoveUniqueModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
                                 },
                                 {
                                     "$type": "AttachModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
                                 }
                             ]
@@ -3091,12 +3144,12 @@
                     "stacking": "Overlap",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_WaterAddHurtExtraDelta": [
                             "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
                             "AS_Mona_Talent_WaterHurtAddRate",
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "isLimitedProperties": true
@@ -3105,7 +3158,7 @@
             "onAdded": [
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "ChargeEfficiencyToWaterAddHurt"
                 }
             ],
@@ -3138,12 +3191,12 @@
             "modifiers": {
                 "MoveLoop_Talent_ExtraAttakDamageUp": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkTime",
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
                             "useLimitRange": true,
                             "maxValue": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_MaxValue",
@@ -3153,7 +3206,7 @@
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkValue",
+                            "ratio": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkValue",
                             "key": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
                             "useLimitRange": true,
                             "maxValue": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_MaxValue",
@@ -3168,12 +3221,13 @@
                 "UNIQUE_Talent_LiquidStrike_Move_ExtraAttackDamageUp_Duration": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_Time",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_Time",
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -3202,7 +3256,7 @@
             "modifiers": {
                 "NormalAttack_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -3228,7 +3282,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -3250,54 +3304,57 @@
                 "Talent_AutoExtraAttack_Handle": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": "AS_Mona_Talent_AutoExtraAttack_CD",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "AS_Mona_Talent_AutoExtraAttack_CD",
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
                             "target": "SelfAttackTarget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Talent_AutoExtraAttack_DoAttack"
                         },
                         {
                             "$type": "FireEffect",
                             "target": "SelfAttackTarget",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_Talent_AutoExtraAttack"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_Talent_AutoExtraAttack",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Talent_AutoExtraAttack_DoAttack": {
                     "modifierName": "",
-                    "duration": 0.699999988079071,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.699999988079071,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "onGround": true
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "onGround": true
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -3317,42 +3374,42 @@
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Talent_AutoExtraAttack_Damage"
                         }
                     ]
                 },
                 "Talent_AutoExtraAttack_Damage": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "target": "Caster",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "ExtraAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": [
+                                        "MDJIHDGGPHA": [
                                             "AS_Mona_ExtraAttack_Damge",
                                             "AS_Mona_Talent_AutoExtraAttack_DamageRate",
-                                            "Mul"
+                                            "MUL"
                                         ],
-                                        "damagePercentageRatio": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
+                                        "NEFPGMGNGAK": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 26.145000457763672
                                     },
@@ -3368,7 +3425,7 @@
                                         "shakeTime": 0.36000001430511475,
                                         "shakeDistance": 30.0,
                                         "shakeDir": {
-                                            "_y": -1.0
+                                            "y": -1.0
                                         },
                                         "extension": {
                                             "baseCycle": 0.7200000286102295,
@@ -3387,7 +3444,7 @@
             "onAdded": [
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "NormalAttack_Handler"
                 }
             ],
@@ -3526,7 +3583,7 @@
             "modifiers": {
                 "HideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -3551,28 +3608,29 @@
                 },
                 "FallingAnthem_SetVisible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         }
                     ]
                 },
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Catalyst_FallAnthem_BS_Water"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Catalyst_FallAnthem_BS_Water",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "ApplyModifier",
@@ -3582,7 +3640,7 @@
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -3597,7 +3655,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -3605,26 +3663,26 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.5
+                                    "PHALDBNIMGI": 1.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "strikeType": "Default",
                                         "enBreak": 5.0
                                     },
@@ -3641,7 +3699,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -3653,10 +3711,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -3668,14 +3726,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -3687,14 +3745,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -3706,14 +3764,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -3724,10 +3782,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -3741,7 +3799,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -3756,14 +3814,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -3774,7 +3832,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -3782,10 +3840,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -3796,10 +3854,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -3811,33 +3869,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -3847,7 +3905,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -3855,7 +3913,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -3869,17 +3927,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -3887,7 +3945,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -3901,7 +3959,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -3914,18 +3972,19 @@
                 },
                 "FallingAnthem_Attach_SelfEffect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Catalyst_FallAnthem_Self_Water"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Catalyst_FallAnthem_Self_Water",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_Remove_SelfEffect": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "RemoveModifier",
@@ -3935,8 +3994,8 @@
                 },
                 "FallingAnthem_BSCameraRadialBlur": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CameraBlurMixin",
@@ -3955,7 +4014,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -3963,27 +4022,27 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Default",
                                 "enBreak": 50.0
                             },
@@ -3999,7 +4058,7 @@
                                 "shakeTime": 0.11999999731779099,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.23999999463558197,
@@ -4017,34 +4076,34 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.5
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Default",
                                 "enBreak": 100.0
                             },
@@ -4060,8 +4119,8 @@
                                 "shakeTime": 0.20000000298023224,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0,
-                                    "_z": 1.0
+                                    "y": 1.0,
+                                    "z": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.4000000059604645,
@@ -4079,12 +4138,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Catalyst_FallAnthem_Strike_01_Water"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Catalyst_FallAnthem_Strike_01_Water",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -4092,11 +4152,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Catalyst_FallAnthem_Strike_02_Water"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Catalyst_FallAnthem_Strike_02_Water",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }

@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10321,
+                    "skillID": 10321,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -17,7 +17,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -28,14 +28,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -46,7 +46,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -59,7 +59,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -74,12 +74,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -109,13 +109,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -129,7 +129,7 @@
             "onAbilityStart": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_ABILITY_Bennett_ElementalArt_Level",
                     "useLimitRange": true,
                     "maxValue": 2.0,
@@ -181,7 +181,7 @@
                 },
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10322,
+                    "skillID": 10322,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -205,15 +205,16 @@
             "modifiers": {
                 "ElementalArt_CD_Protect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalArt_ChargeLoop"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Boy_Sword_Bennett_ElementalArt_ChargeLoop",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Bennett_ElementalArt_Level",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -224,7 +225,7 @@
                 "GenerateElemBall_ElementalArt": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -245,7 +246,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -256,7 +257,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Bennett_ElementalArt_Level",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         }
                                     ],
@@ -268,7 +269,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Bennett_ElementalArt_Level",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "MoreThan"
                                         }
                                     ],
@@ -281,8 +282,8 @@
                 "Ball1": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Randomed",
@@ -294,12 +295,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": "GetElementRatio",
+                                    "GADHOGJLEIJ": "GetElementRatio",
                                     "baseEnergy": 6.0
                                 }
                             ]
@@ -314,12 +315,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": "GetElementRatio",
+                                    "GADHOGJLEIJ": "GetElementRatio",
                                     "baseEnergy": 3.0
                                 }
                             ]
@@ -329,8 +330,8 @@
                 "Ball2": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Randomed",
@@ -342,12 +343,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": "GetElementRatio",
+                                    "GADHOGJLEIJ": "GetElementRatio",
                                     "baseEnergy": 9.0
                                 }
                             ]
@@ -356,12 +357,12 @@
                 },
                 "Bennett_Talent_Globalvalue_Control": {
                     "modifierName": "",
-                    "duration": 2.0999999046325684,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0999999046325684,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -371,8 +372,8 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -388,7 +389,7 @@
                 },
                 {
                     "$type": "SetGlobalValue",
-                    "value": 0.0,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Talent_Bennett_DonotBlow",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -416,7 +417,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "successActions": [
@@ -425,12 +426,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 0.5,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 0.5,
+                            "costStaminaDelta": 1.0
                         }
                     ],
                     "failActions": [
@@ -439,12 +440,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         }
                     ]
                 },
@@ -453,19 +454,19 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "massiveAttackRatio": 0.4000000059604645,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.699999988079071,
-                                    "z": 0.800000011920929
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.699999988079071,
+                                    "OGKDKNLKIDE": 0.800000011920929
                                 }
                             },
-                            "secondHeight": 2.5,
+                            "height": 2.5,
                             "fanAngle": 270.0,
-                            "radius": 2.5,
+                            "PHALDBNIMGI": 2.5,
                             "detectDirection": "Counterclockwise"
                         },
                         "attackInfo": {
@@ -473,10 +474,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_01",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_01",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -494,8 +495,8 @@
                                 "shakeTime": 0.09000000357627869,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": 0.30000001192092896
+                                    "x": 1.0,
+                                    "y": 0.30000001192092896
                                 }
                             }
                         }
@@ -519,7 +520,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "successActions": [
@@ -528,12 +529,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 0.75,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 0.75,
+                            "costStaminaDelta": 1.0
                         }
                     ],
                     "failActions": [
@@ -542,12 +543,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 1.5,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 1.5,
+                            "costStaminaDelta": 1.0
                         }
                     ]
                 },
@@ -556,18 +557,18 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "massiveAttackRatio": 0.800000011920929,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.699999988079071,
-                                    "z": 0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.699999988079071,
+                                    "OGKDKNLKIDE": 0.5
                                 }
                             },
-                            "secondHeight": 2.5,
-                            "radius": 2.5,
+                            "height": 2.5,
+                            "PHALDBNIMGI": 2.5,
                             "detectDirection": "Counterclockwise"
                         },
                         "attackInfo": {
@@ -575,10 +576,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_02_01",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_02_01",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -596,8 +597,8 @@
                                 "shakeTime": 0.09000000357627869,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": -0.20000000298023224
+                                    "x": 1.0,
+                                    "y": -0.20000000298023224
                                 }
                             }
                         }
@@ -620,19 +621,19 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.2000000476837158,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.2000000476837158,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 3.0,
-                                "y": 3.0,
-                                "z": 3.0
+                                "NMLENGBJMAA": 3.0,
+                                "OKBPMDLDKLI": 3.0,
+                                "OGKDKNLKIDE": 3.0
                             }
                         },
                         "attackInfo": {
@@ -640,10 +641,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_02_02",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_02_02",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -653,7 +654,7 @@
                                 "hitImpulseType": "LV7",
                                 "overrideHitImpulse": {
                                     "hitLevel": "Air",
-                                    "hitImpulseX": 300.0,
+                                    "DBIGJBIFCPK": 300.0,
                                     "hitImpulseY": 900.0
                                 },
                                 "retreatType": "ByHitDirection",
@@ -667,7 +668,7 @@
                                 "shakeTime": 0.09000000357627869,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": -1.0
+                                    "y": -1.0
                                 }
                             }
                         }
@@ -691,19 +692,19 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": -1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": -1.0
                                 }
                             },
                             "size": {
-                                "x": 3.0,
-                                "y": 2.5,
-                                "z": 4.0
+                                "NMLENGBJMAA": 3.0,
+                                "OKBPMDLDKLI": 2.5,
+                                "OGKDKNLKIDE": 4.0
                             }
                         },
                         "attackInfo": {
@@ -711,14 +712,14 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": [
+                                "MDJIHDGGPHA": [
                                     "Strike_02_02",
                                     "Ratio_Of_Strike02_02",
-                                    "Mul"
+                                    "MUL"
                                 ],
-                                "damagePercentageRatio": 0.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -737,8 +738,8 @@
                                 "shakeTime": 0.23999999463558197,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0,
-                                    "_z": -1.0
+                                    "y": 1.0,
+                                    "z": -1.0
                                 }
                             }
                         }
@@ -762,7 +763,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "successActions": [
@@ -771,12 +772,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         }
                     ],
                     "failActions": [
@@ -785,12 +786,12 @@
                             "predicates": [
                                 {
                                     "$type": "BySkillReady",
-                                    "overtime": 10322
+                                    "skillID": 10322
                                 }
                             ],
-                            "overtime": 10322,
-                            "cdRatio": 2.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10322,
+                            "cdDelta": 2.0,
+                            "costStaminaDelta": 1.0
                         }
                     ]
                 },
@@ -799,18 +800,18 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "massiveAttackRatio": 0.6000000238418579,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.699999988079071,
-                                    "z": 0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.699999988079071,
+                                    "OGKDKNLKIDE": 0.5
                                 }
                             },
-                            "secondHeight": 2.5,
-                            "radius": 2.5,
+                            "height": 2.5,
+                            "PHALDBNIMGI": 2.5,
                             "detectDirection": "Counterclockwise"
                         },
                         "attackInfo": {
@@ -818,10 +819,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_03_01",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_03_01",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -839,8 +840,8 @@
                                 "shakeTime": 0.09000000357627869,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": -0.20000000298023224
+                                    "x": 1.0,
+                                    "y": -0.20000000298023224
                                 }
                             }
                         }
@@ -863,19 +864,19 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 3.0,
-                                "y": 4.0,
-                                "z": 3.0
+                                "NMLENGBJMAA": 3.0,
+                                "OKBPMDLDKLI": 4.0,
+                                "OGKDKNLKIDE": 3.0
                             }
                         },
                         "attackInfo": {
@@ -883,10 +884,10 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_03_02",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_03_02",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Slash",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -896,7 +897,7 @@
                                 "hitImpulseType": "LV6",
                                 "overrideHitImpulse": {
                                     "hitLevel": "Air",
-                                    "hitImpulseX": 300.0,
+                                    "DBIGJBIFCPK": 300.0,
                                     "hitImpulseY": 900.0
                                 },
                                 "retreatType": "ByHitDirection",
@@ -910,7 +911,7 @@
                                 "shakeTime": 0.09000000357627869,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": -1.0
+                                    "y": -1.0
                                 }
                             }
                         }
@@ -933,28 +934,28 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "massiveAttackRatio": 0.5,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.699999988079071,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.699999988079071,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.5,
-                            "radius": 3.5
+                            "height": 2.5,
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Strike_03_03",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Strike_03_03",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "enBreak": 250.0,
                                 "attackType": "Melee"
                             },
@@ -971,7 +972,7 @@
                                 "shakeTime": 0.30000001192092896,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 }
                             }
                         }
@@ -985,33 +986,33 @@
                             "$type": "ByTargetGlobalValue",
                             "target": "Self",
                             "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "compareType": "NoneOrEqual"
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.699999988079071,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.699999988079071,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.5,
-                            "radius": 3.5
+                            "height": 2.5,
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 0.0,
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": 0.0,
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "enBreak": 250.0,
                                 "attackType": "Melee"
                             },
@@ -1020,7 +1021,7 @@
                                 "hitImpulseType": "LV8",
                                 "overrideHitImpulse": {
                                     "hitLevel": "Air",
-                                    "hitImpulseX": 650.0,
+                                    "DBIGJBIFCPK": 650.0,
                                     "hitImpulseY": 950.0
                                 },
                                 "hitHaltTimeScale": 0.009999999776482582
@@ -1042,40 +1043,41 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10323,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10323,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "ignoreMassive": true,
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.5
                                 }
                             },
-                            "radius": 6.0
+                            "PHALDBNIMGI": 6.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Burst",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Burst_DMG",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Burst_DMG",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Default",
                                 "enBreak": 200.0
                             },
@@ -1092,7 +1094,7 @@
                                 "shakeTime": 0.23999999463558197,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 }
                             }
                         }
@@ -1132,7 +1134,7 @@
             "modifiers": {
                 "isGhost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachAbilityStateResistance",
@@ -1142,12 +1144,12 @@
                 },
                 "invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "WarmField_WeaponFade": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -1172,7 +1174,7 @@
             "onAbilityStart": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_ABILITY_Bennett_WarmField_BaseAttack",
                     "useLimitRange": true,
                     "maxValue": "FIGHT_PROP_BASE_ATTACK",
@@ -1183,9 +1185,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 1.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 1.5
                         }
                     },
                     "gadgetID": 41032002,
@@ -1211,8 +1213,8 @@
             "modifiers": {
                 "WarmField_Handler": {
                     "modifierName": "",
-                    "duration": 12.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 12.5,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onAdded": [
                         {
@@ -1292,15 +1294,15 @@
                                     "HPRatio": "HPTreshhold"
                                 }
                             ],
-                            "PDLLIFICICJ": "HealConst",
-                            "amountByCasterMaxHPRatio": "HealMaxHpRatio"
+                            "cdRatio": "HealConst",
+                            "LJBKFPPNELO": "HealMaxHpRatio"
                         }
                     ]
                 },
                 "WarmField_Modifier": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -1378,13 +1380,13 @@
                 "UNIQUE_WarmField_AttackUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 2.0999999046325684,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0999999046325684,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AttackExtraDelta": [
                             "AttackUpRatio",
                             "Bennett_WarmField_BaseAttack",
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "state": "AttackUp",
@@ -1393,16 +1395,16 @@
                 "UNIQUE_WarmField_FireBuff": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 2.0999999046325684,
+                    "KPGONJCLMDC": 2.0999999046325684,
                     "elementType": "Fire",
-                    "elementDurability": 25.0,
+                    "bonusCriticalHurt": 25.0,
                     "state": "ElementFire"
                 },
                 "UNIQUE_Talent_Avatar_FireUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 2.0999999046325684,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0999999046325684,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FireAddHurtDelta": "FireUp"
                     }
@@ -1410,9 +1412,9 @@
                 "UNIQUE_Talent_Weapon_FireEnhanced": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 2.0999999046325684,
+                    "KPGONJCLMDC": 2.0999999046325684,
                     "elementType": "Fire",
-                    "elementDurability": 25.0,
+                    "bonusCriticalHurt": 25.0,
                     "overrideWeaponElement": true
                 }
             },
@@ -1429,7 +1431,8 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst_Field"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst_Field",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1444,56 +1447,56 @@
                     "animEventNames": [
                         "ATK01"
                     ],
-                    "bonusCriticalHurt": "Attack01",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack01",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK02"
                     ],
-                    "bonusCriticalHurt": "Attack02",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack02",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK03"
                     ],
-                    "bonusCriticalHurt": "Attack03",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack03",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK04"
                     ],
-                    "bonusCriticalHurt": "Attack04",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack04",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK05"
                     ],
-                    "bonusCriticalHurt": "Attack05",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack05",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ExtraAttack_1"
                     ],
-                    "bonusCriticalHurt": "ExtraAttack1",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "ExtraAttack1",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ExtraAttack_2"
                     ],
-                    "bonusCriticalHurt": "ExtraAttack2",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "ExtraAttack2",
+                    "NEFPGMGNGAK": 0.0
                 }
             ],
             "abilitySpecials": {
@@ -1532,7 +1535,7 @@
             "modifiers": {
                 "Capacitor_EnergyGain_Up": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_ChargeEfficiencyDelta": "Rate"
                     },
@@ -1670,18 +1673,19 @@
             "modifiers": {
                 "FallingAnthem_AttachWeaponEffect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Self_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Self_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_CameraRadialBlur": {
                     "modifierName": "",
-                    "duration": 0.23000000417232513,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.23000000417232513,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CameraBlurMixin",
@@ -1694,17 +1698,18 @@
                 },
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -1719,7 +1724,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -1727,25 +1732,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Slash",
                                         "enBreak": 25.0,
@@ -1764,7 +1769,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -1776,10 +1781,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -1791,14 +1796,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -1810,14 +1815,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -1829,14 +1834,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -1847,10 +1852,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -1864,7 +1869,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -1879,14 +1884,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "FallingAnthem_Loop_Normal": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachModifierToSelfGlobalValueMixin",
@@ -1906,27 +1911,29 @@
                 },
                 "FallingAnthem_Loop_Normal_Rank_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Loop_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Loop_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_Loop_Normal_Rank_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Loop_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Loop_02",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -1937,7 +1944,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -1945,10 +1952,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -1959,10 +1966,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -1974,33 +1981,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2010,7 +2017,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -2018,7 +2025,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -2032,17 +2039,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -2050,7 +2057,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -2064,7 +2071,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -2077,7 +2084,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce_AS": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -2096,7 +2103,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -2104,26 +2111,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 100.0,
@@ -2141,7 +2148,7 @@
                                 "shakeTime": 0.11999999731779099,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.23999999463558197,
@@ -2159,33 +2166,33 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 5.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 5.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 150.0,
@@ -2203,8 +2210,8 @@
                                 "shakeTime": 0.20000000298023224,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0,
-                                    "_z": 1.0
+                                    "y": 1.0,
+                                    "z": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.4000000059604645,
@@ -2222,12 +2229,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Sword_FallAnthem_Strike_01"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Strike_01",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -2235,11 +2243,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Sword_FallAnthem_Strike_02"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Strike_02",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }

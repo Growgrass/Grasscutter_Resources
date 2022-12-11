@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10311,
+                    "skillID": 10311,
                     "chargeTime": 0.20000000298023224,
                     "secondChargeTime": 999999.0,
                     "OnBeginUncharged": [
@@ -17,7 +17,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 100.0
+                            "ratio": 100.0
                         }
                     ],
                     "OnReleaseUncharged": [
@@ -27,7 +27,7 @@
                         },
                         {
                             "$type": "EntityDoSkill",
-                            "overtime": 10315,
+                            "skillID": 10315,
                             "isHold": true
                         }
                     ],
@@ -39,25 +39,25 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 101.0
+                            "ratio": 101.0
                         }
                     ],
                     "OnReleaseCharged": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10311,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10311,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10314,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10314,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "EntityDoSkill",
-                            "overtime": 10315,
+                            "skillID": 10315,
                             "isHold": true
                         }
                     ],
@@ -96,24 +96,24 @@
             "modifiers": {
                 "KeepFastAiming": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "FastAiming",
-                            "value": true
+                            "ratio": true
                         },
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.7549999952316284,
-                                "_y": 0.17000000178813934,
-                                "_z": -1.899999976158142
+                                "x": 0.7549999952316284,
+                                "y": 0.17000000178813934,
+                                "z": -1.899999976158142
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.7549999952316284,
-                                "_y": 0.3700000047683716,
-                                "_z": -1.600000023841858
+                                "x": 0.7549999952316284,
+                                "y": 0.3700000047683716,
+                                "z": -1.600000023841858
                             },
                             "cameraFastFocusMode": true,
                             "faceToTarget": true,
@@ -147,12 +147,12 @@
                 },
                 "SetFastAimShooting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "FastAimShooting",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -165,7 +165,7 @@
                             "predicates": [
                                 {
                                     "$type": "ByAnimatorBool",
-                                    "value": true,
+                                    "ratio": true,
                                     "parameter": "FastAiming"
                                 }
                             ],
@@ -175,12 +175,12 @@
                 },
                 "SetNeedAimEndStates": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "InStatesNeedAimEnd",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -200,24 +200,24 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10314,
+                    "skillID": 10314,
                     "secondChargeTime": 999999.0,
                     "OnReleaseCharged": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10311,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10311,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10314,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10314,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "EntityDoSkill",
-                            "overtime": 10315,
+                            "skillID": 10315,
                             "isHold": true
                         }
                     ],
@@ -253,24 +253,24 @@
             "modifiers": {
                 "KeepAiming": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "Aiming",
-                            "value": true
+                            "ratio": true
                         },
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.7549999952316284,
-                                "_y": 0.17000000178813934,
-                                "_z": -1.899999976158142
+                                "x": 0.7549999952316284,
+                                "y": 0.17000000178813934,
+                                "z": -1.899999976158142
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.7549999952316284,
-                                "_y": 0.3700000047683716,
-                                "_z": -1.600000023841858
+                                "x": 0.7549999952316284,
+                                "y": 0.3700000047683716,
+                                "z": -1.600000023841858
                             },
                             "cameraFastFocusMode": true,
                             "faceToTarget": true,
@@ -304,12 +304,12 @@
                 },
                 "SetAimShooting": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "AimShooting",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -321,12 +321,12 @@
                 },
                 "SetNeedAimEndStates": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "InStatesNeedAimEnd",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
@@ -356,11 +356,12 @@
             "modifiers": {
                 "Fischl_Arrow_FX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Bow_Arrow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Bow_Arrow",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -414,7 +415,7 @@
             "modifiers": {
                 "ShowAimingEffect_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onRemoved": [
                         {
@@ -433,7 +434,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Enchanted_Time",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
@@ -445,7 +446,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Enchanted_Time",
-                                    "value": 4.0,
+                                    "ratio": 4.0,
                                     "forceByCaster": true,
                                     "compareType": "MoreThanAndEqual"
                                 }
@@ -454,14 +455,14 @@
                         },
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Ball_Show"
                         }
                     ]
                 },
                 "ShootAimingArrow_Charge_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -472,35 +473,35 @@
                 },
                 "Aim_ChangeAlpha": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "EffectChangeAlphaMixin",
                             "target": "Team",
-                            "HFFJNJPFMEE": 0.20000000298023224,
-                            "JMNILCJHBLL": 0.30000001192092896
+                            "HOMPPOOOCFI": 0.20000000298023224,
+                            "KKANJKOAEPD": 0.30000001192092896
                         }
                     ]
                 },
                 "FastAim_ChangeAlpha": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "EffectChangeAlphaMixin",
                             "target": "Team",
-                            "HFFJNJPFMEE": 0.20000000298023224,
-                            "JMNILCJHBLL": 0.30000001192092896
+                            "HOMPPOOOCFI": 0.20000000298023224,
+                            "KKANJKOAEPD": 0.30000001192092896
                         }
                     ]
                 },
                 "ShootAimingArrow_Charge_Remove": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -5.0,
+                            "ratio": -5.0,
                             "key": "_Enchanted_Time",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -521,11 +522,11 @@
                         "maxModifierNumForMultipleType": 5.0
                     },
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_Enchanted_Time",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -536,7 +537,7 @@
                 "Magic_Arrow_Glow_01": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -544,25 +545,27 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_Fischl_Crow_AimShoot",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Once_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Once_01",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Loop_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Loop_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Magic_Arrow_Glow_02": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
@@ -570,27 +573,31 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Fischl_Crow_AimShoot",
-                                    "value": 0.0
+                                    "ratio": 0.0
                                 }
                             ],
                             "successActions": [
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Once_02"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Once_02",
+                                    "COOMHFHLGFG": -1.0
                                 },
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Loop_02"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Loop_02",
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ],
                             "failActions": [
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Once_02"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Once_02",
+                                    "COOMHFHLGFG": -1.0
                                 },
                                 {
                                     "$type": "AttachEffect",
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_Glow_Loop_02"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Glow_Loop_02",
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ]
                         }
@@ -600,7 +607,7 @@
             "onAbilityStart": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": -5.0,
+                    "ratio": -5.0,
                     "key": "_Enchanted_Time",
                     "useLimitRange": true,
                     "maxValue": 5.0,
@@ -632,7 +639,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "forceByCaster": true,
                             "compareType": "LessAndEqual"
                         }
@@ -644,9 +651,9 @@
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByAttachPoint",
@@ -658,16 +665,17 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_ElectricMagic_ShootArrow",
+                            "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_ShootArrow",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.8999999761581421
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.8999999761581421
                                 },
                                 "attachPointName": "WeaponR"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "failActions": [
@@ -677,7 +685,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Fischl_Crow_AimShoot",
-                                    "value": 0.0
+                                    "ratio": 0.0
                                 }
                             ],
                             "successActions": [
@@ -687,7 +695,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_Enchanted_Time",
-                                            "value": 4.0,
+                                            "ratio": 4.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -696,9 +704,9 @@
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "direction": {
                                             "$type": "ConfigDirectionByAttachPoint",
@@ -714,21 +722,22 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_Enchanted_Time",
-                                            "value": 4.0,
+                                            "ratio": 4.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
                                     ],
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_OnShooting",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_OnShooting",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.8999999761581421
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.8999999761581421
                                         },
                                         "attachPointName": "WeaponR"
-                                    }
+                                    },
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ],
                             "failActions": [
@@ -738,7 +747,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_Enchanted_Time",
-                                            "value": 4.0,
+                                            "ratio": 4.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
@@ -747,16 +756,16 @@
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         },
                                         "direction": {
                                             "$type": "ConfigDirectionByDefault",
                                             "angleOffset": {
-                                                "x": 2.0,
-                                                "y": 0.0,
-                                                "z": 0.0
+                                                "NMLENGBJMAA": 2.0,
+                                                "OKBPMDLDKLI": 0.0,
+                                                "OGKDKNLKIDE": 0.0
                                             }
                                         },
                                         "attachPointName": "FocusAnchor"
@@ -768,21 +777,22 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_Enchanted_Time",
-                                            "value": 4.0,
+                                            "ratio": 4.0,
                                             "forceByCaster": true,
                                             "compareType": "MoreThanAndEqual"
                                         }
                                     ],
-                                    "effectPattern": "Eff_ElectricMagic_Arrow_OnShooting",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_OnShooting",
                                     "born": {
                                         "$type": "ConfigBornByAttachPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.8999999761581421
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.8999999761581421
                                         },
                                         "attachPointName": "WeaponR"
-                                    }
+                                    },
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ]
                         }
@@ -794,7 +804,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Enchanted_Time",
-                            "value": 4.0,
+                            "ratio": 4.0,
                             "forceByCaster": true,
                             "compareType": "MoreThanAndEqual"
                         }
@@ -821,8 +831,8 @@
             "modifiers": {
                 "DoAttack": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -835,20 +845,20 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackBox",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "checkHitLayerType": "Both",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": -0.5
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": -0.5
                                         }
                                     },
                                     "size": {
-                                        "x": 0.10000000149011612,
-                                        "y": 0.10000000149011612,
-                                        "z": 1.0
+                                        "NMLENGBJMAA": 0.10000000149011612,
+                                        "OKBPMDLDKLI": 0.10000000149011612,
+                                        "OGKDKNLKIDE": 1.0
                                     }
                                 },
                                 "attackInfo": {
@@ -856,10 +866,10 @@
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Fischl_ProudSkill_31_P7_ChargeElementDamage_Percentage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "Fischl_ProudSkill_31_P7_ChargeElementDamage_Percentage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 20.0,
                                         "enHeadBreak": 60.0
@@ -897,7 +907,7 @@
                 "ShootArrow_Enchanted_Electric": {
                     "modifierName": "",
                     "elementType": "Electric",
-                    "elementDurability": 20.0
+                    "bonusCriticalHurt": 20.0
                 }
             },
             "onAdded": [
@@ -907,7 +917,7 @@
                 },
                 {
                     "$type": "SetOverrideMapValue",
-                    "value": 0.0,
+                    "ratio": 0.0,
                     "overrideMapKey": "_IS_FISCHL_ARROW_FIND_CROW"
                 }
             ],
@@ -924,14 +934,14 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Fischl_SkillGadget_Crow",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "ByUnlockTalentParam",
                             "talentParam": "Avatar_Fischl_ProudSkill_21_ExteaAttackThunder"
                         }
                     ],
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "overrideMapKey": "_IS_FISCHL_ARROW_FIND_CROW"
                 },
                 {
@@ -972,15 +982,17 @@
             "modifiers": {
                 "ArrowEffectModifier": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_ElectricMagic_Arrow_Fly_Trail"
+                            "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Fly_Trail",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_ElectricMagic_Arrow_Fly_Particle"
+                            "healLimitedByCasterMaxHPRatio": "Eff_ElectricMagic_Arrow_Fly_Particle",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1045,20 +1057,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -0.5
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -1066,9 +1078,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Fischl_ProudSkill_31_P6_ExtraAttack_WithoutElement_Damage_Percentage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": "Fischl_ProudSkill_31_P6_ExtraAttack_WithoutElement_Damage_Percentage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 10.0,
                                 "enHeadBreak": 30.0
@@ -1111,7 +1123,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Venti_Arrow_Fly_Big"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Venti_Arrow_Fly_Big",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -1135,21 +1148,22 @@
             "modifiers": {
                 "ShootArrow_Fx": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_ShootArrow_Small",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Small",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "WeaponL"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1161,9 +1175,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1188,21 +1202,22 @@
             "modifiers": {
                 "ShootArrow_Fx": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_ShootArrow_Small",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Small",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "WeaponL"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1214,9 +1229,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1241,21 +1256,22 @@
             "modifiers": {
                 "ShootArrow_Fx": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_ShootArrow_Big",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Big",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "WeaponL"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1267,9 +1283,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1294,21 +1310,22 @@
             "modifiers": {
                 "ShootArrow_Fx": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_ShootArrow_Small",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Small",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "WeaponL"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1320,9 +1337,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1347,21 +1364,22 @@
             "modifiers": {
                 "ShootArrow_Fx": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_ShootArrow_Big_Attack05",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Big_Attack05",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "WeaponL"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1373,9 +1391,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1400,7 +1418,8 @@
             "onAbilityStart": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_ShootArrow_Smoke"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_ShootArrow_Smoke",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1417,31 +1436,31 @@
             "modifiers": {
                 "Fischl_ProudSkill_31": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
                             "attackTags": [
                                 "NormalAttack_01"
                             ],
-                            "bonusCriticalHurt": "Fischl_ProudSkill_31_P1_Damage_Percentage",
-                            "damagePercentageRatio": 0.0
+                            "MDJIHDGGPHA": "Fischl_ProudSkill_31_P1_Damage_Percentage",
+                            "NEFPGMGNGAK": 0.0
                         },
                         {
                             "$type": "ModifyDamageMixin",
                             "attackTags": [
                                 "NormalAttack_02"
                             ],
-                            "bonusCriticalHurt": "Fischl_ProudSkill_31_P2_Damage_Percentage",
-                            "damagePercentageRatio": 0.0
+                            "MDJIHDGGPHA": "Fischl_ProudSkill_31_P2_Damage_Percentage",
+                            "NEFPGMGNGAK": 0.0
                         },
                         {
                             "$type": "ModifyDamageMixin",
                             "attackTags": [
                                 "NormalAttack_04"
                             ],
-                            "bonusCriticalHurt": "Fischl_ProudSkill_31_P4_Damage_Percentage",
-                            "damagePercentageRatio": 0.0
+                            "MDJIHDGGPHA": "Fischl_ProudSkill_31_P4_Damage_Percentage",
+                            "NEFPGMGNGAK": 0.0
                         }
                     ]
                 }
@@ -1449,7 +1468,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Fischl_Attack_Small"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Attack_Small",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -1469,23 +1489,23 @@
             "modifiers": {
                 "Fischl_ProudSkill_31": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
                             "attackTags": [
                                 "NormalAttack_03"
                             ],
-                            "bonusCriticalHurt": "Fischl_ProudSkill_31_P3_Damage_Percentage",
-                            "damagePercentageRatio": 0.0
+                            "MDJIHDGGPHA": "Fischl_ProudSkill_31_P3_Damage_Percentage",
+                            "NEFPGMGNGAK": 0.0
                         },
                         {
                             "$type": "ModifyDamageMixin",
                             "attackTags": [
                                 "NormalAttack_05"
                             ],
-                            "bonusCriticalHurt": "Fischl_ProudSkill_31_P5_Damage_Percentage",
-                            "damagePercentageRatio": 0.0
+                            "MDJIHDGGPHA": "Fischl_ProudSkill_31_P5_Damage_Percentage",
+                            "NEFPGMGNGAK": 0.0
                         }
                     ]
                 }
@@ -1493,7 +1513,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Fischl_Attack_Big"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Attack_Big",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -1527,7 +1548,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10312,
+                    "skillID": 10312,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -1562,18 +1583,18 @@
             "modifiers": {
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.800000011920929,
-                                "_y": 0.20000000298023224,
-                                "_z": -2.5
+                                "x": 0.800000011920929,
+                                "y": 0.20000000298023224,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.5,
-                                "_y": -0.20000000298023224
+                                "x": 0.5,
+                                "y": -0.20000000298023224
                             },
                             "cameraFastFocusMode": true,
                             "dragButtonName": "Skill2",
@@ -1612,11 +1633,11 @@
                 },
                 "Charge": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 2.0,
+                            "ratio": 2.0,
                             "key": "_Fischl_Crow_ShowType",
                             "useLimitRange": true,
                             "maxValue": 2.0,
@@ -1624,15 +1645,18 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_S_Skill_Aim_TargetPoint_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Aim_TargetPoint_Line",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_E_Skill_Hand_Once"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Hand_Once",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_E_Skill_Hand_Loop"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Hand_Loop",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -1644,9 +1668,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.20000000298023224,
-                            "y": 1.0,
-                            "z": 0.6000000238418579
+                            "NMLENGBJMAA": 0.20000000298023224,
+                            "OKBPMDLDKLI": 1.0,
+                            "OGKDKNLKIDE": 0.6000000238418579
                         },
                         "direction": {
                             "$type": "ConfigDirectionByAttachPoint",
@@ -1674,9 +1698,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 1.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 1.5
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1685,7 +1709,7 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_Fischl_Crow_ShowType",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -1714,7 +1738,7 @@
                         {
                             "$type": "ByTargetAltitude",
                             "logic": "GreaterOrEqual",
-                            "value": 0.949999988079071
+                            "ratio": 0.949999988079071
                         }
                     ],
                     "key": "CrowPos",
@@ -1729,16 +1753,16 @@
                         {
                             "$type": "ByTargetAltitude",
                             "logic": "Lesser",
-                            "value": 0.699999988079071
+                            "ratio": 0.699999988079071
                         }
                     ],
                     "key": "CrowPos",
                     "born": {
                         "$type": "ConfigBornByCollisionPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     }
                 },
@@ -1762,9 +1786,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 10.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 10.0
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1810,8 +1834,8 @@
             "modifiers": {
                 "DoSkill": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "CreateGadget",
@@ -1827,17 +1851,18 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_E_Skill_Hand_OnSummon"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Hand_OnSummon",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "AttachModifier_Steps_0": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "AttachModifier_Steps_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
@@ -1845,25 +1870,26 @@
                                 "$type": "SelectTargetsByChildren",
                                 "configID": 41031008
                             },
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "doAfterDie": false,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Fischl_SkillGadget_Crow",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
-                            "effectPattern": "Eff_Fischl_S_Skill_Death",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Death",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "Spine"
                             },
-                            "ownedByLevel": true
+                            "ownedByLevel": true,
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "KillGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "gadgetInfo": {
                                 "configID": 41031008
                             }
@@ -1872,59 +1898,60 @@
                 },
                 "AttachModifier_Steps_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Ball_Show"
                         }
                     ]
                 },
                 "Talent_B_SummonAttack": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Talent_B",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_B",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "CrowPos",
                                 "directionKey": ""
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "ignoreMassive": true,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "CrowPos",
                                         "directionKey": ""
                                     },
-                                    "radius": 3.0
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "",
                                     "attenuationGroup": "Fischl",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": [
+                                        "MDJIHDGGPHA": [
                                             "AS_Fischl_ProudSkill_32_P2_SummonAttack",
                                             "AS_Fischl_Talent_332_Damage_AttackRatio",
-                                            "Add"
+                                            "ADD"
                                         ],
-                                        "damagePercentageRatio": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 80.0,
-                                        "bonusCritical": 0.0
+                                        "DDBBIKJKOPG": 0.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "Eff_Fischl_Talent_B_Hit",
@@ -1939,35 +1966,35 @@
                 },
                 "Normal_SummonAttack": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "ignoreMassive": true,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "CrowPos",
                                         "directionKey": ""
                                     },
-                                    "radius": 2.0
+                                    "PHALDBNIMGI": 2.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "",
                                     "attenuationGroup": "Fischl",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Fischl_ProudSkill_32_P2_SummonAttack",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Fischl_ProudSkill_32_P2_SummonAttack",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 80.0,
-                                        "bonusCritical": 0.0
+                                        "DDBBIKJKOPG": 0.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
@@ -1984,9 +2011,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10312,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10312,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "KillGadget",
@@ -2029,8 +2056,8 @@
             "modifiers": {
                 "CrowBlink_Hide&Show": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAbility",
@@ -2044,9 +2071,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 1.0,
-                                    "y": 0.0,
-                                    "z": 0.5
+                                    "NMLENGBJMAA": 1.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.5
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByEntity"
@@ -2067,14 +2094,15 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_E_Skill_Hand_OnControl"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Hand_OnControl",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "doOffStage": true,
-                    "overtime": 10316,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "RotationDampTime": true,
+                    "skillID": 10316,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 }
             ]
         }
@@ -2086,8 +2114,8 @@
             "modifiers": {
                 "CrowBlink_Hide": {
                     "modifierName": "",
-                    "duration": 0.25,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.25,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "KillGadget",
@@ -2097,18 +2125,19 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_S_Skill_Contnrol_Hide",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Contnrol_Hide",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "positionKey": "CrowPos",
                                 "directionKey": ""
                             },
-                            "ownedByLevel": true
+                            "ownedByLevel": true,
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2121,7 +2150,7 @@
                             "$type": "ByTargetGlobalValue",
                             "target": "Self",
                             "key": "_Fischl_Crow_Left_Time",
-                            "value": 2.0,
+                            "ratio": 2.0,
                             "compareType": "MoreThanAndEqual"
                         }
                     ],
@@ -2138,12 +2167,12 @@
                 "CrowBlink_Show": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_Fischl_Crow_ShowType",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -2151,7 +2180,7 @@
                         },
                         {
                             "$type": "CreateGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "lifeByOwnerIsAlive": true,
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
@@ -2164,14 +2193,15 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "doOffStage": true,
-                            "effectPattern": "Eff_Fischl_S_Skill_Contnrol_Show",
+                            "RotationDampTime": true,
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Contnrol_Show",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "CrowPos",
                                 "directionKey": ""
                             },
-                            "ownedByLevel": true
+                            "ownedByLevel": true,
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2179,12 +2209,12 @@
             "onAbilityStart": [
                 {
                     "$type": "ApplyModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Fischl_Crow_Left_Time",
-                            "value": 2.0,
+                            "ratio": 2.0,
                             "compareType": "MoreThanAndEqual"
                         }
                     ],
@@ -2205,25 +2235,25 @@
                 "UNIQUE_DoSkill_GlobalValueLogic_1": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "AS_Fischl_ProudSkill_32_P4_Time",
                         "AS_Fischl_Talent_Skill_S_TimeUp",
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "SwitchSkillIDMixin",
                             "priority": "AvatarSpecial",
                             "skillIndex": 1,
-                            "overtime": 10316
+                            "skillID": 10316
                         }
                     ],
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 2.0,
+                            "RotationDampTime": true,
+                            "ratio": 2.0,
                             "key": "_Fischl_Crow_Left_Time",
                             "useLimitRange": true,
                             "maxValue": 2.0,
@@ -2231,16 +2261,16 @@
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10316,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10316,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_Fischl_Crow_Left_Time",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2252,7 +2282,7 @@
             "onAbilityStart": [
                 {
                     "$type": "ApplyModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_DoSkill_GlobalValueLogic_1"
                 }
             ]
@@ -2265,21 +2295,22 @@
             "modifiers": {
                 "ShowEffect": {
                     "modifierName": "",
-                    "duration": 0.36000001430511475,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.36000001430511475,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_S_Skill_Summon",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Summon",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "RootNode"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2300,7 +2331,7 @@
                 "ElementElectric": {
                     "modifierName": "",
                     "elementType": "Electric",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 }
             },
             "onAdded": [
@@ -2310,7 +2341,7 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_Fischl_Crow_BeAttackedTrigger",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -2335,7 +2366,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_Fischl_Crow_Left_Time",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "compareType": "MoreThan"
                         }
                     ],
@@ -2383,21 +2414,22 @@
                 "Attack_01": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.009999999776482582,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.009999999776482582,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "Mouth"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -2414,21 +2446,22 @@
                 "Attack_02": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "Mouth"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -2457,7 +2490,7 @@
                             "target": "SelfAttackTarget",
                             "logic": "LesserOrEqual",
                             "compareType": "XYZ",
-                            "value": 15.0
+                            "ratio": 15.0
                         }
                     ],
                     "modifierName": "Attack_01"
@@ -2475,7 +2508,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Fischl_Crow_NormalAttackTrail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Crow_NormalAttackTrail",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -2484,20 +2518,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -1.0
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -2505,10 +2539,10 @@
                             "attenuationTag": "Elemental_Art",
                             "attenuationGroup": "Fischl",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Fischl_Talent_336_AttackRatio_AssistAttack",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "AS_Fischl_Talent_336_AttackRatio_AssistAttack",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Electric",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 10.0
                             },
@@ -2537,16 +2571,17 @@
                 "Attack": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Talent_A_NormalAttackOnShooting",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_NormalAttackOnShooting",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "PRIVATE_TalentA"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerBullet",
@@ -2565,8 +2600,8 @@
                 "UNIQUE_Ball_Show": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 3.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveModifier",
@@ -2578,7 +2613,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_Fischl_Talent_A_IsShow",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -2588,13 +2623,13 @@
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Ball_Hide"
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_Fischl_Talent_A_IsShow",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -2604,58 +2639,62 @@
                 },
                 "Ball_Show_AttachEffect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "doOffStage": true,
-                            "effectPattern": "Eff_Fischl_Talent_A_Loop"
+                            "RotationDampTime": true,
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_Loop",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Eff_Ani_Fischl_Talent_A_Show",
-                            "effectPattern": "Eff_Fischl_Talent_A_Loop"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_Loop"
                         },
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Eff_Ani_Fischl_Talent_A_NormalAttack",
-                            "effectPattern": "Eff_Fischl_Talent_A_Loop"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_Loop"
                         }
                     ]
                 },
                 "Ball_Hide": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SendEffectTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "parameter": "Eff_Ani_Fischl_Talent_A_Hide",
-                            "effectPattern": "Eff_Fischl_Talent_A_Loop"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_Loop"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Ball_Hide_RemovehEffect"
                         }
                     ]
                 },
                 "Ball_Hide_RemovehEffect": {
                     "modifierName": "",
-                    "duration": 0.009999999776482582,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.009999999776482582,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Fischl_Talent_A_IsShow",
-                                    "value": 0.0
+                                    "ratio": 0.0
                                 }
                             ],
                             "modifierName": "Ball_Show_AttachEffect"
@@ -2671,13 +2710,14 @@
                 {
                     "$type": "SendEffectTrigger",
                     "parameter": "Eff_Ani_Fischl_Talent_A_NormalAttack",
-                    "effectPattern": "Eff_Fischl_Talent_A_Loop"
+                    "attachPoint": "",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_Loop"
                 }
             ],
-            "onAvatarOut": [
+            "ELMEGFLPEKG": [
                 {
                     "$type": "RemoveUniqueModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Ball_Show"
                 }
             ],
@@ -2694,7 +2734,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Fischl_Talent_A_NormalAttackTrail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_A_NormalAttackTrail",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -2703,20 +2744,20 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": -0.5
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": -0.5
                                 }
                             },
                             "size": {
-                                "x": 0.10000000149011612,
-                                "y": 0.10000000149011612,
-                                "z": 1.0
+                                "NMLENGBJMAA": 0.10000000149011612,
+                                "OKBPMDLDKLI": 0.10000000149011612,
+                                "OGKDKNLKIDE": 1.0
                             }
                         },
                         "attackInfo": {
@@ -2724,9 +2765,9 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Fischl_Talent_331_Damage_AttackRatio",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 100.0,
+                                "MDJIHDGGPHA": "AS_Fischl_Talent_331_Damage_AttackRatio",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 100.0,
                                 "strikeType": "Pierce"
                             },
                             "hitPattern": {
@@ -2753,7 +2794,7 @@
             "modifiers": {
                 "FindCrowPos": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onThinkInterval": [
                         {
@@ -2768,12 +2809,12 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_Fischl_SkillGadget_Crow",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "Avatar_Fischl_UnlockTalent_ExtreaAttackThunder",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "modifierName": "TriggerExtreAttack"
@@ -2783,8 +2824,8 @@
                 "TriggerExtreAttack": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetSelfAttackTarget",
@@ -2845,7 +2886,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "Avatar_Fischl_UnlockTalent_ExtreaAttackThunder",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "modifierName": "TriggerExtreAttack"
@@ -2864,29 +2905,31 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_Talent_C_NormalAttackOnShooting",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_C_NormalAttackOnShooting",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "attachPointName": "Mouth"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_Talent_C_BeTrigger",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_C_BeTrigger",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "attachPointName": "Spine"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerBullet",
@@ -2911,30 +2954,31 @@
                 {
                     "$type": "FireEffect",
                     "target": "Target",
-                    "effectPattern": "Eff_Fischl_Talent_C_Hit",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_C_Hit",
                     "born": {
                         "$type": "ConfigBornByTarget"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackBox",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "checkHitLayerType": "Both",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "size": {
-                                "x": 2.5,
-                                "y": 2.5,
-                                "z": 2.5
+                                "NMLENGBJMAA": 2.5,
+                                "OKBPMDLDKLI": 2.5,
+                                "OGKDKNLKIDE": 2.5
                             }
                         },
                         "attackInfo": {
@@ -2942,14 +2986,14 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": [
+                                "MDJIHDGGPHA": [
                                     "AS_Fischl_ProudSkill_21_AttackRatio_ExteaAttackThunder",
                                     "Fischl_ProudSkill_31_P7_ChargeElementDamage_Percentage",
-                                    "Mul"
+                                    "MUL"
                                 ],
-                                "damagePercentageRatio": 0.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Electric",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 40.0
                             },
@@ -2983,12 +3027,12 @@
             "modifiers": {
                 "Corw_Invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "IsGhostToEnemy"
                 },
                 "CheckCreator": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onThinkInterval": [
                         {
@@ -2998,7 +3042,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Fischl_Crow_Left_Time",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ]
@@ -3007,38 +3051,40 @@
                 },
                 "ShowEffect_NoAim": {
                     "modifierName": "",
-                    "duration": 0.12999999523162842,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.12999999523162842,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_S_Skill_Summon",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Summon",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "Spine"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "ShowEffect_Aim": {
                     "modifierName": "",
-                    "duration": 0.12999999523162842,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.12999999523162842,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_S_Skill_Summon_Aim",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Summon_Aim",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "Spine"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "AutoAttack_Delay": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
@@ -3048,7 +3094,7 @@
                 },
                 "AutoAttack": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onAdded": [
                         {
@@ -3065,8 +3111,8 @@
                 },
                 "SetAttackTarget": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
@@ -3096,7 +3142,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ANIMAL_ENTITY_TYPE",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         }
                                     ],
@@ -3114,7 +3160,7 @@
                                             "target": "SelfAttackTarget",
                                             "logic": "LesserOrEqual",
                                             "compareType": "XYZ",
-                                            "value": 10.0
+                                            "ratio": 10.0
                                         },
                                         {
                                             "$type": "ByTargetHPValue",
@@ -3143,21 +3189,22 @@
                 "AutoAttack_01": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_S_Crow_NormalAttackOnShooting",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "AP1"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerBullet",
@@ -3167,9 +3214,9 @@
                                 "direction": {
                                     "$type": "ConfigDirectionByEntity",
                                     "angleOffset": {
-                                        "x": 1.0,
-                                        "y": 0.0,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 1.0,
+                                        "OKBPMDLDKLI": 0.0,
+                                        "OGKDKNLKIDE": 0.0
                                     },
                                     "randomAngleHor": 45.0
                                 },
@@ -3182,7 +3229,7 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CurLocalAvatarMixin",
@@ -3192,173 +3239,12 @@
                 },
                 "CrowAttackAttach": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack01"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack02"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack03"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack04"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack05"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Attack06"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack01"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack02"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack03"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack04"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack05"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Tartaglia_Attack06"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack01"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack02"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack03"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack04"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack05"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Gandalfr_Attack06"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack01"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack02"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack03"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack04"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack05"
-                            ],
-                            "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
-                        },
-                        {
-                            "$type": "AttachToAnimatorStateIDMixin",
-                            "stateIDs": [
-                                "Katana_Attack06"
+                            "$type": "AttachToStateGroupNormalizedTimeMixin",
+                            "AMCGFLOCGLH": [
+                                "State_Group_Avatar_Normal_Attack"
                             ],
                             "modifierName": "UNIQUE_Fischl_Skill_S_Crow_DoCrowAttack"
                         }
@@ -3368,8 +3254,8 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAbility",
@@ -3382,7 +3268,7 @@
                                     "$type": "ByTargetPositionToSelfPosition",
                                     "logic": "LesserOrEqual",
                                     "compareType": "XYZ",
-                                    "value": 15.0
+                                    "ratio": 15.0
                                 }
                             ],
                             "abilityName": "Avatar_Fischl_Talent_D_Crow_NormalAttack",
@@ -3394,7 +3280,7 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CurLocalAvatarMixin",
@@ -3404,7 +3290,7 @@
                 },
                 "ElementReaction_Attack": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "DoActionByElementReactionMixin",
@@ -3416,7 +3302,10 @@
                                 "SwirlElectric",
                                 "CrystallizeElectric",
                                 "Superconductor",
-                                "Explode"
+                                "Explode",
+                                "Overdose",
+                                "OverdoseElectric",
+                                "OvergrowMushroomElectric"
                             ],
                             "actions": [
                                 {
@@ -3430,8 +3319,8 @@
                 "TriggerElementReactionAttack": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
@@ -3452,9 +3341,9 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
                                     "setTarget": false
@@ -3469,7 +3358,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Caster",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "Fischl_Crow_NoHasAttackTarget",
                                     "useLimitRange": true,
                                     "maxValue": 1.0,
@@ -3494,7 +3383,7 @@
                             "$type": "ByTargetGlobalValue",
                             "target": "OriginOwner",
                             "key": "_Fischl_Crow_ShowType",
-                            "value": 3.0
+                            "ratio": 3.0
                         }
                     ],
                     "successActions": [
@@ -3513,7 +3402,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Fischl_Crow_ShowType",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "modifierName": "ShowEffect_NoAim"
@@ -3526,7 +3415,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Fischl_Crow_ShowType",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
                             "triggerID": "Crow_Summon_Show_NoAim"
@@ -3539,7 +3428,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Fischl_Crow_ShowType",
-                                    "value": 2.0
+                                    "ratio": 2.0
                                 }
                             ],
                             "modifierName": "ShowEffect_Aim"
@@ -3552,7 +3441,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Fischl_Crow_ShowType",
-                                    "value": 2.0
+                                    "ratio": 2.0
                                 }
                             ],
                             "triggerID": "Crow_Summon_Show_Aim"
@@ -3573,7 +3462,7 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_Fischl_SkillGadget_Crow",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -3581,11 +3470,12 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_S_Skill_Show_Trail",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_S_Skill_Show_Trail",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "attachPointName": "Spine"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -3594,7 +3484,7 @@
                 {
                     "$type": "AttachModifier",
                     "target": "Team",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -3610,7 +3500,7 @@
                 {
                     "$type": "AttachModifier",
                     "target": "Team",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -3627,7 +3517,7 @@
                             "talentParam": "Avatar_Fischl_ProudSkill_21_ExteaAttackThunder"
                         }
                     ],
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "Avatar_Fischl_UnlockTalent_ExtreaAttackThunder",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -3667,7 +3557,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "Fischl_Crow_NoHasAttackTarget",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
@@ -3675,21 +3565,22 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "setTarget": false
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Fischl_Talent_ElementReactionAttackThunder",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_ElementReactionAttackThunder",
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "positionKey": "ElementReactionAttackPos",
                         "directionKey": ""
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "Predicated",
@@ -3702,7 +3593,7 @@
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "LesserOrEqual",
                             "compareType": "XYZ",
-                            "value": 15.0
+                            "ratio": 15.0
                         }
                     ],
                     "successActions": [
@@ -3712,29 +3603,31 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Talent_C_NormalAttackOnShooting",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_C_NormalAttackOnShooting",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "Mouth"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Talent_C_BeTrigger",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_C_BeTrigger",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "attachPointName": "Spine"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
@@ -3749,17 +3642,17 @@
                                 "positionKey": "ElementReactionAttackPos",
                                 "directionKey": ""
                             },
-                            "radius": 0.5
+                            "PHALDBNIMGI": 0.5
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "",
                             "attenuationGroup": "Fischl",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Fischl_ProudSkill_22_ElementReactionAttack_AttackRatio",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "AS_Fischl_ProudSkill_22_ElementReactionAttack_AttackRatio",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Electric",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 40.0
                             },
@@ -3791,10 +3684,11 @@
                 {
                     "$type": "FireEffect",
                     "target": "SelfAttackTarget",
-                    "effectPattern": "Eff_Fischl_Talent_ElementReactionAttackThunder",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Talent_ElementReactionAttackThunder",
                     "born": {
                         "$type": "ConfigBornByTarget"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
@@ -3805,17 +3699,17 @@
                             "born": {
                                 "$type": "ConfigBornByTarget"
                             },
-                            "radius": 0.5
+                            "PHALDBNIMGI": 0.5
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "",
                             "attenuationGroup": "Fischl",
                             "attackProperty": {
-                                "bonusCriticalHurt": "AS_Fischl_ProudSkill_22_ElementReactionAttack_AttackRatio",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "AS_Fischl_ProudSkill_22_ElementReactionAttack_AttackRatio",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Electric",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 40.0
                             },
@@ -3846,7 +3740,7 @@
             "modifiers": {
                 "AttackElementBall": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -3867,14 +3761,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "CasterOriginOwner",
                                     "key": "_Ability_Fischl_ElementalArt_ElementBall_CD",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -3901,7 +3795,7 @@
                                                 "positionKey": "_Ability_Fischl_ElementalArt_ElementBall_Pos",
                                                 "directionKey": ""
                                             },
-                                            "ratio": 1.0,
+                                            "GADHOGJLEIJ": 1.0,
                                             "baseEnergy": 3.0
                                         },
                                         {
@@ -3919,12 +3813,13 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_Ability_Fischl_ElementalArt_ElementBall_CD",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -3933,35 +3828,36 @@
                     "onRemoved": [
                         {
                             "$type": "ClearGlobalValue",
+                            "RotationDampTime": true,
                             "key": "_Ability_Fischl_ElementalArt_ElementBall_CD"
                         }
                     ]
                 },
                 "FirstAttack": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackBox",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "checkHitLayerType": "Both",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": -0.5
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": -0.5
                                         }
                                     },
                                     "size": {
-                                        "x": 0.10000000149011612,
-                                        "y": 0.10000000149011612,
-                                        "z": 1.0
+                                        "NMLENGBJMAA": 0.10000000149011612,
+                                        "OKBPMDLDKLI": 0.10000000149011612,
+                                        "OGKDKNLKIDE": 1.0
                                     }
                                 },
                                 "attackInfo": {
@@ -3969,10 +3865,10 @@
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "Fischl",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Fischl_ProudSkill_32_Damage_AttackRatio",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Fischl_ProudSkill_32_Damage_AttackRatio",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 10.0
                                     },
@@ -3992,7 +3888,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Fischl_Skill_S_Crow_NormalAttackTrail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_S_Crow_NormalAttackTrail",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AttachModifier",
@@ -4020,7 +3917,7 @@
                         "CrowQueen_MoveStandby"
                     ],
                     "angularSpeed": 270.0,
-                    "JKHAODPLIHP": true
+                    "KFNJKFNNLOG": true
                 }
             ],
             "abilitySpecials": {
@@ -4037,23 +3934,23 @@
             "modifiers": {
                 "Delete_CrowQueen_DoSkill": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Fischl_CrowQueen_DoSkill"
                         }
                     ]
                 },
                 "DoSkill_Handle": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "CrowQueen_Time",
                         "CrowQueen_BS_DelayTime",
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -4073,34 +3970,34 @@
                         },
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Ball_Show"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Fischl_CrowQueen_DoSkill"
                         },
                         {
                             "$type": "SetAnimatorTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "triggerID": "Skill_E_SpecialToNormalSkin"
                         }
                     ],
                     "onKill": [
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "DoSkill_Handle"
                         }
                     ]
                 },
                 "DoSkill_Delay": {
                     "modifierName": "",
-                    "duration": "CrowQueen_BS_DelayTime",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "CrowQueen_BS_DelayTime",
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible",
                     "onRemoved": [
                         {
@@ -4113,12 +4010,12 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "CrowQueen_Time",
                         1.0,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_MoveSpeedRatio": "CrowQueen_MoveSpeedRatio",
                         "Actor_SubHurtDelta": "AS_Fischl_ProudSkill_33_SubHurt",
@@ -4127,7 +4024,7 @@
                     "onAdded": [
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": false,
+                            "RotationDampTime": false,
                             "predicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
@@ -4138,7 +4035,11 @@
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true
+                            "RotationDampTime": true
+                        },
+                        {
+                            "$type": "EnableHDMesh",
+                            "IBJNANMCAIC": "Default"
                         },
                         {
                             "$type": "ApplyModifier",
@@ -4173,22 +4074,28 @@
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "triggerID": "Hide_Avatar_OnRemoved"
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "CrowQueen_Talent_314_DoHeal"
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         },
                         {
+                            "$type": "EnableHDMesh",
+                            "canBeHandledOnRecover": true,
+                            "enable": true,
+                            "IBJNANMCAIC": "Default"
+                        },
+                        {
                             "$type": "EnablePushColliderName",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "pushColliderNames": [
                                 "PushCollider"
                             ],
@@ -4196,30 +4103,31 @@
                         },
                         {
                             "$type": "EnablePushColliderName",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "pushColliderNames": [
                                 "PushColliderExtra"
                             ]
                         },
                         {
                             "$type": "FireEffect",
-                            "doOffStage": true,
-                            "effectPattern": "Eff_Fischl_E_Skill_Appear",
+                            "RotationDampTime": true,
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Appear",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "RootNode"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "SetGlobalPos",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "key": "CrowPos",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 1.0,
-                                    "y": 0.0,
-                                    "z": 0.5
+                                    "NMLENGBJMAA": 1.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.5
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByEntity"
@@ -4228,28 +4136,28 @@
                         },
                         {
                             "$type": "TriggerAbility",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "abilityName": "Avatar_Fischl_CrowSummon_Init"
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Summon_Crow"
                         },
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Effect_Crow"
                         },
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ],
-                    "onAvatarOut": [
+                    "ELMEGFLPEKG": [
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "DoSkill_Handle"
                         }
                     ]
@@ -4257,39 +4165,40 @@
                 "Summon_Crow": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAbility",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "abilityName": "Ability_Fischl_Skill_S_ControlCrow_Show"
                         }
                     ]
                 },
                 "Hide_Avatar": {
                     "modifierName": "",
-                    "duration": 0.03999999910593033,
-                    "elementDurability": 100.0
+                    "KPGONJCLMDC": 0.03999999910593033,
+                    "bonusCriticalHurt": 100.0
                 },
                 "Effect_CrowHandler": {
                     "modifierName": "",
-                    "duration": 0.07999999821186066,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.07999999821186066,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_E_Skill_Disappear",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_Disappear",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "attachPointName": "RootNode"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Effect_Crow"
                         },
                         {
@@ -4304,8 +4213,8 @@
                 },
                 "Effect_Crow": {
                     "modifierName": "",
-                    "duration": "CrowQueen_Time",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "CrowQueen_Time",
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerPostProcessEffectMixin",
@@ -4316,18 +4225,20 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_E_Skill_CrowsArea_Loop"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_E_Skill_CrowsArea_Loop",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Fischl_Skill_E_Crow"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_E_Crow",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "CrowQueen_DoAttackEventThinkInterval_01": {
                     "modifierName": "",
-                    "duration": "CrowQueen_Time",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "CrowQueen_Time",
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.15000000596046448,
                     "onThinkInterval": [
                         {
@@ -4351,7 +4262,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "CrowQueen_BeAttacked",
-                                            "value": 1.0
+                                            "ratio": 1.0
                                         }
                                     ]
                                 },
@@ -4364,13 +4275,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "CrowQueen_AttackTargetCount",
-                                    "value": "AS_Fischl_ProudSkill_33_MaxCount",
+                                    "ratio": "AS_Fischl_ProudSkill_33_MaxCount",
                                     "forceByCaster": true,
                                     "compareType": "LessAndEqual"
                                 }
@@ -4381,15 +4292,16 @@
                 },
                 "CrowQueen_DoAttack_Normaol_01": {
                     "modifierName": "",
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_Skill_E_CrowQueen_Thunder",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_Skill_E_CrowQueen_Thunder",
                             "born": {
                                 "$type": "ConfigBornBySelf"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -4401,20 +4313,20 @@
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 0.5
+                                    "PHALDBNIMGI": 0.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "Fischl",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Fischl_ProudSkill_33_LoopDamage_AttackRatio",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Fischl_ProudSkill_33_LoopDamage_AttackRatio",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Blunt",
                                         "enBreak": 150.0,
-                                        "bonusCritical": 0.0
+                                        "DDBBIKJKOPG": 0.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
@@ -4433,7 +4345,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "CrowQueen_BeAttacked",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -4454,18 +4366,18 @@
                 },
                 "CrowQueen_AddGlobalValue": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "CrowQueen_AttackTargetCount",
                             "useLimitRange": true,
                             "maxValue": [
                                 "AS_Fischl_ProudSkill_33_MaxCount",
                                 1.0,
-                                "Add"
+                                "ADD"
                             ],
                             "minValue": 0.0
                         }
@@ -4474,35 +4386,35 @@
                 "CrowQueen_DoAttack_Once": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "ignoreMassive": true,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "ArrowRainPos",
                                         "directionKey": ""
                                     },
-                                    "radius": 5.0
+                                    "PHALDBNIMGI": 5.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "Fischl",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AS_Fischl_Talent_334_OnceDamage_AttackRatio",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AS_Fischl_Talent_334_OnceDamage_AttackRatio",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 500.0,
-                                        "bonusCritical": 0.0
+                                        "DDBBIKJKOPG": 0.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
@@ -4528,35 +4440,36 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Fischl_CrowQueen_LastAttack",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Fischl_CrowQueen_LastAttack",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.20000000298023224,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.20000000298023224,
+                                    "OGKDKNLKIDE": 0.0
                                 }
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "CrowQueen_Talent_314_DoHeal": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "HealHP",
                             "target": "Applier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
                                     "talentParam": "Avatar_Fischl_Talent_334_CrowHealHp"
                                 }
                             ],
-                            "amountByCasterMaxHPRatio": "AS_Fischl_Talent_334_HealHp_MaxHpRatio"
+                            "LJBKFPPNELO": "AS_Fischl_Talent_334_HealHp_MaxHpRatio"
                         }
                     ]
                 }
@@ -4564,7 +4477,7 @@
             "onAdded": [
                 {
                     "$type": "TriggerSetVisible",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "canBeHandledOnRecover": true,
                     "visible": true
                 }
@@ -4572,9 +4485,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10313,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10313,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "ClearGlobalValue",
@@ -4582,13 +4495,13 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": 0.0,
+                    "ratio": 0.0,
                     "key": "CrowQueen_AttackTargetCount",
                     "useLimitRange": true,
                     "maxValue": [
                         "AS_Fischl_ProudSkill_33_MaxCount",
                         1.0,
-                        "Add"
+                        "ADD"
                     ],
                     "minValue": 1.0
                 },
@@ -4716,21 +4629,23 @@
             "modifiers": {
                 "FallingAnthem_AttachEffect_BS_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_BS_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_BS_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -4746,7 +4661,7 @@
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -4761,7 +4676,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -4769,25 +4684,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 10.0,
                                         "attackType": "Melee"
@@ -4805,7 +4720,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -4817,10 +4732,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -4832,14 +4747,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -4851,14 +4766,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -4870,14 +4785,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -4888,10 +4803,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -4905,7 +4820,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -4920,14 +4835,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "FallingAnthem_Loop_Normal": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
@@ -4935,17 +4850,18 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_FallingAnthem_UseCamera",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Bow_FallAnthem_Loop_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Loop_02",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -4956,7 +4872,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -4964,10 +4880,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -4978,10 +4894,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -4993,33 +4909,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -5029,7 +4945,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -5037,7 +4953,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -5051,17 +4967,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -5069,7 +4985,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -5083,7 +4999,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -5102,7 +5018,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -5110,26 +5026,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 50.0,
                                 "attackType": "Melee"
@@ -5149,33 +5065,33 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.5
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Pierce",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -5195,12 +5111,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Bow_FallAnthem_Strike_01"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Strike_01",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -5208,11 +5125,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Bow_FallAnthem_Strike_02"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Bow_FallAnthem_Strike_02",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }

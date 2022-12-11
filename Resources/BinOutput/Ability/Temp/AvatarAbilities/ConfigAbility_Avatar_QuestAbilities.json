@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10035,
+                    "skillID": 10035,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -49,18 +49,18 @@
             "modifiers": {
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.800000011920929,
-                                "_y": 0.20000000298023224,
-                                "_z": -2.5
+                                "x": 0.800000011920929,
+                                "y": 0.20000000298023224,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.5,
-                                "_y": -0.20000000298023224
+                                "x": 0.5,
+                                "y": -0.20000000298023224
                             },
                             "dragButtonName": "Skill1",
                             "showCrosshair": false
@@ -74,7 +74,7 @@
                 },
                 "Charge": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -97,13 +97,13 @@
                 },
                 "Charge_Return": {
                     "modifierName": "",
-                    "duration": 3.9000000953674316,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.9000000953674316,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -111,13 +111,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.25,
+                            "ratio": 0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -132,7 +133,7 @@
                 },
                 "Charge2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -152,8 +153,8 @@
                 },
                 "Charge_Return2_Trigger": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 4.0,
                     "onThinkInterval": [
                         {
@@ -164,7 +165,7 @@
                 },
                 "Charge_Return2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -187,13 +188,13 @@
                 },
                 "Charge_Return2_Loop": {
                     "modifierName": "",
-                    "duration": 3.9000000953674316,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.9000000953674316,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 10.0,
+                            "ratio": 10.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -201,13 +202,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -0.25,
+                            "ratio": -0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -224,7 +226,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 4.0,
+                    "ratio": 4.0,
                     "key": "_DUMMY_THROW_RANGE",
                     "useLimitRange": true,
                     "maxValue": 10.0,
@@ -240,9 +242,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10384,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10384,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "TriggerBullet",
@@ -250,9 +252,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 1.7999999523162842,
-                            "z": 0.10000000149011612
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 1.7999999523162842,
+                            "OGKDKNLKIDE": 0.10000000149011612
                         }
                     }
                 }
@@ -269,7 +271,7 @@
             "modifiers": {
                 "SpeedUP": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_OverallSpeedRatio": "DummyThrowSpeedUp"
                     }
@@ -297,7 +299,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Ambor_Dummy_Throw"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Throw",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -307,7 +310,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Ambor_Dummy_ThrowGround"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_ThrowGround",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -319,7 +323,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10384,
+                    "skillID": 10384,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -362,18 +366,18 @@
             "modifiers": {
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.800000011920929,
-                                "_y": 0.20000000298023224,
-                                "_z": -2.5
+                                "x": 0.800000011920929,
+                                "y": 0.20000000298023224,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.5,
-                                "_y": -0.20000000298023224
+                                "x": 0.5,
+                                "y": -0.20000000298023224
                             },
                             "dragButtonName": "Skill1",
                             "showCrosshair": false
@@ -387,7 +391,7 @@
                 },
                 "Charge": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -410,13 +414,13 @@
                 },
                 "Charge_Return": {
                     "modifierName": "",
-                    "duration": 3.9000000953674316,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.9000000953674316,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -424,13 +428,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.25,
+                            "ratio": 0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -445,7 +450,7 @@
                 },
                 "Charge2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -465,8 +470,8 @@
                 },
                 "Charge_Return2_Trigger": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 4.0,
                     "onThinkInterval": [
                         {
@@ -477,7 +482,7 @@
                 },
                 "Charge_Return2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -500,13 +505,13 @@
                 },
                 "Charge_Return2_Loop": {
                     "modifierName": "",
-                    "duration": 3.9000000953674316,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.9000000953674316,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 10.0,
+                            "ratio": 10.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -514,13 +519,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -0.25,
+                            "ratio": -0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -537,7 +543,7 @@
             "onAdded": [
                 {
                     "$type": "AddGlobalValue",
-                    "value": 4.0,
+                    "ratio": 4.0,
                     "key": "_DUMMY_THROW_RANGE",
                     "useLimitRange": true,
                     "maxValue": 10.0,
@@ -563,9 +569,9 @@
                     "successActions": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10384,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10384,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "UseItem",
@@ -578,9 +584,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 2.0,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 2.0,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             }
                         }
@@ -599,7 +605,7 @@
             "modifiers": {
                 "SpeedUP": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_OverallSpeedRatio": "DummyThrowSpeedUp"
                     }
@@ -627,7 +633,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Ambor_Dummy_Throw"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Throw",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -636,9 +643,9 @@
                     "born": {
                         "$type": "ConfigBornByCollisionPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "onGround": true
                     },
@@ -646,7 +653,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Ambor_Dummy_ThrowGround"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_ThrowGround",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -659,7 +667,7 @@
                 "UNIQUE_Avatar_CameraCtrl": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachToStateIDMixin",
@@ -672,7 +680,7 @@
                 },
                 "Avatar_Flying_CameraCtrl": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterCameraShot",
@@ -680,13 +688,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_AmborBomb_Alert"
+                            "healLimitedByCasterMaxHPRatio": "Eff_AmborBomb_Alert",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 }
@@ -694,7 +703,7 @@
             "onAbilityStart": [
                 {
                     "$type": "ApplyModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Avatar_CameraCtrl"
                 }
             ]
@@ -707,8 +716,8 @@
             "modifiers": {
                 "AmborBulletChain": {
                     "modifierName": "",
-                    "duration": 0.4000000059604645,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.4000000059604645,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.15000000596046448,
                     "onAdded": [
                         {
@@ -717,9 +726,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.5,
-                                    "y": 0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.5,
+                                    "OKBPMDLDKLI": 0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByAttackTarget",
@@ -736,9 +745,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.5,
-                                    "z": 0.10000000149011612
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.5,
+                                    "OGKDKNLKIDE": 0.10000000149011612
                                 }
                             }
                         }
@@ -746,19 +755,19 @@
                 },
                 "MixinStart": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ButtonHoldChargeMixin",
-                            "overtime": 10037,
+                            "skillID": 10037,
                             "chargeTime": 0.10000000149011612,
                             "secondChargeTime": 999999.0,
                             "OnReleaseUncharged": [
                                 {
                                     "$type": "AvatarSkillStart",
-                                    "overtime": 10037,
-                                    "cdRatio": 1.0,
-                                    "costStaminaRatio": 1.0
+                                    "skillID": 10037,
+                                    "cdDelta": 1.0,
+                                    "costStaminaDelta": 1.0
                                 },
                                 {
                                     "$type": "ApplyModifier",
@@ -768,9 +777,9 @@
                             "OnReleaseCharged": [
                                 {
                                     "$type": "AvatarSkillStart",
-                                    "overtime": 10037,
-                                    "cdRatio": 1.0,
-                                    "costStaminaRatio": 1.0
+                                    "skillID": 10037,
+                                    "cdDelta": 1.0,
+                                    "costStaminaDelta": 1.0
                                 },
                                 {
                                     "$type": "ApplyModifier",
@@ -799,21 +808,21 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByCollisionPoint"
                             },
-                            "radius": 3.0
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": 8.0,
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": 8.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Fire",
-                                "elementDurability": 300.0,
+                                "bonusCriticalHurt": 300.0,
                                 "strikeType": "Blunt"
                             },
                             "hitPattern": {
@@ -827,8 +836,9 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Ambortask_Explode",
-                    "scale": 2.0
+                    "healLimitedByCasterMaxHPRatio": "Eff_Ambortask_Explode",
+                    "scale": 2.0,
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "SetSelfAttackTarget",
@@ -866,7 +876,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "AVATAR_GLIDING_ENERGY",
-                            "value": 50.0,
+                            "ratio": 50.0,
                             "compareType": "MoreThanAndEqual"
                         }
                     ],
@@ -874,7 +884,7 @@
                         {
                             "$type": "AddGlobalValue",
                             "target": "Team",
-                            "value": -50.0,
+                            "ratio": -50.0,
                             "key": "AVATAR_GLIDING_ENERGY",
                             "useLimitRange": true,
                             "maxValue": 100.0,
@@ -917,8 +927,8 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
@@ -942,7 +952,7 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "CreateGadget",
@@ -983,10 +993,10 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "doOffStage": true,
-                    "overtime": 20011,
-                    "cdRatio": 0.10000000149011612,
-                    "costStaminaRatio": 1.0
+                    "RotationDampTime": true,
+                    "skillID": 20011,
+                    "cdDelta": 0.10000000149011612,
+                    "costStaminaDelta": 1.0
                 }
             ],
             "isDynamicAbility": true
@@ -999,10 +1009,10 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "doOffStage": true,
-                    "overtime": 20012,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "RotationDampTime": true,
+                    "skillID": 20012,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 }
             ],
             "isDynamicAbility": true
@@ -1015,15 +1025,15 @@
             "modifiers": {
                 "GlidingChallenge_AirDash_AddSkill": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddAvatarSkillInfo",
-                            "overtime": 20011
+                            "skillID": 20011
                         },
                         {
                             "$type": "AddAvatarSkillInfo",
-                            "overtime": 20012
+                            "skillID": 20012
                         },
                         {
                             "$type": "AttachModifier",
@@ -1032,7 +1042,7 @@
                         {
                             "$type": "SetGlobalValue",
                             "target": "Team",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "AVATAR_GLIDING_ENERGY",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1049,17 +1059,17 @@
                         },
                         {
                             "$type": "RemoveAvatarSkillInfo",
-                            "overtime": 20011
+                            "skillID": 20011
                         },
                         {
                             "$type": "RemoveAvatarSkillInfo",
-                            "overtime": 20012
+                            "skillID": 20012
                         }
                     ]
                 },
                 "GlidingChallenge_AirDash_ChangeSkill": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AvatarChangeSkillMixin",
@@ -1080,7 +1090,7 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "modifierMixins": [
                         {
@@ -1103,9 +1113,9 @@
                                         "$type": "ServerLuaCall",
                                         "luaCallType": "CurChallengeGroup",
                                         "funcName": "ChallengeFail",
-                                        "param1": 0.0,
-                                        "param2": 0.0,
-                                        "param3": 0.0
+                                        "FMBBFLMNPOF": 0.0,
+                                        "GBPNAGAPMHB": 0.0,
+                                        "ALBFHLGOPBE": 0.0
                                     }
                                 ]
                             ]
@@ -1114,7 +1124,7 @@
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1123,7 +1133,7 @@
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1132,7 +1142,7 @@
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                             "useLimitRange": true,
                             "maxValue": 15.0,
@@ -1142,7 +1152,7 @@
                 },
                 "GlidingChallenge_FailOnLanded_AvatarHandler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachToStateIDMixin",
@@ -1156,13 +1166,13 @@
                 },
                 "GlidingChallenge_FailOnLanded": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
                             "target": "Team",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1172,7 +1182,7 @@
                         {
                             "$type": "SetGlobalValue",
                             "target": "Team",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1181,13 +1191,13 @@
                 },
                 "Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 }
             },
             "onAdded": [
                 {
                     "$type": "SetGlobalValue",
-                    "value": 0.0,
+                    "ratio": 0.0,
                     "key": "AVATAR_GLIDING_FAILONLANDED_COUNT",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -1217,7 +1227,7 @@
                 "UNIQUE_FlyBall_SetTeamGlobalValue": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ServerUpdateGlobalValueMixin",
@@ -1230,8 +1240,8 @@
                         {
                             "$type": "SetGlobalValue",
                             "target": "Team",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "has_end_game",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1240,7 +1250,7 @@
                 },
                 "FlyBall_FailOnLanded_AvatarHandler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachToStateIDMixin",
@@ -1259,7 +1269,7 @@
                     "onAdded": [
                         {
                             "$type": "ChangePlayMode",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "muteRemoteAction": true,
                             "toPlayMode": "FleurFairFall"
                         }
@@ -1267,21 +1277,21 @@
                     "onRemoved": [
                         {
                             "$type": "ChangePlayMode",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "muteRemoteAction": true
                         }
                     ]
                 },
                 "FlyBall_FailOnLanded": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
                             "target": "Team",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "Avatar_Activity_FlyBall_FlyTimer",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -1296,34 +1306,34 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "Avatar_Activity_FlyBall_FlyTimer",
-                                    "value": 4.5,
+                                    "ratio": 4.5,
                                     "compareType": "MoreThanAndEqual"
                                 }
                             ],
                             "successActions": [
                                 {
                                     "$type": "ServerLuaCall",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "predicates": [
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "has_end_game",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         }
                                     ],
                                     "luaCallType": "CurGalleryControlGroup",
                                     "isTarget": true,
                                     "funcName": "FlyBalloonLanding",
-                                    "param1": 0.0,
-                                    "param2": 0.0,
-                                    "param3": 0.0
+                                    "FMBBFLMNPOF": 0.0,
+                                    "GBPNAGAPMHB": 0.0,
+                                    "ALBFHLGOPBE": 0.0
                                 },
                                 {
                                     "$type": "SetGlobalValue",
                                     "target": "Team",
-                                    "doOffStage": true,
-                                    "value": 1.0,
+                                    "RotationDampTime": true,
+                                    "ratio": 1.0,
                                     "key": "has_end_game",
                                     "maxValue": 0.0,
                                     "minValue": 0.0
@@ -1335,8 +1345,8 @@
                         {
                             "$type": "AddGlobalValue",
                             "target": "Team",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "Avatar_Activity_FlyBall_FlyTimer",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -1349,22 +1359,22 @@
                 {
                     "$type": "SetGlobalValue",
                     "target": "Team",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "has_end_game",
                     "maxValue": 0.0,
                     "minValue": 0.0
                 },
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "FlyBall_FailOnLanded_AvatarHandler"
                 }
             ],
             "onKill": [
                 {
                     "$type": "RemoveModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "FlyBall_FailOnLanded"
                 }
             ],
@@ -1379,7 +1389,7 @@
                 "UNIQUE_QuestAbility_Player_SpecialBattle_200102": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_MaxHPDelta": 12000.0,
                         "Actor_AttackDelta": 5000.0,
@@ -1391,7 +1401,7 @@
             "onAdded": [
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_QuestAbility_Player_SpecialBattle_200102"
                 }
             ],
@@ -1406,21 +1416,21 @@
                 "UNIQUE_QuestAbility_Player_BanGuoba_4001506": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddAvatarSkillInfo",
-                            "doOffStage": true,
-                            "overtime": 20035
+                            "RotationDampTime": true,
+                            "skillID": 20035
                         },
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_QuestAbility_Player_SwitchSkill"
                         },
                         {
                             "$type": "KillGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "gadgetInfo": {
                                 "configID": 41023011
                             }
@@ -1429,26 +1439,26 @@
                     "onRemoved": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_QuestAbility_Player_SwitchSkill"
                         },
                         {
                             "$type": "RemoveAvatarSkillInfo",
-                            "doOffStage": true,
-                            "overtime": 20035
+                            "RotationDampTime": true,
+                            "skillID": 20035
                         }
                     ]
                 },
                 "UNIQUE_QuestAbility_Player_SwitchSkill": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "SwitchSkillIDMixin",
                             "priority": "Playmode",
                             "skillIndex": 1,
-                            "overtime": 20035
+                            "skillID": 20035
                         }
                     ]
                 }
@@ -1456,8 +1466,98 @@
             "onAdded": [
                 {
                     "$type": "AttachModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_QuestAbility_Player_BanGuoba_4001506"
+                }
+            ],
+            "isDynamicAbility": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "QuestAbility_Player_BanOzzy",
+            "modifiers": {
+                "UNIQUE_QuestAbility_Player_BanOzzy": {
+                    "modifierName": "",
+                    "isUnique": true,
+                    "bonusCriticalHurt": 100.0,
+                    "state": "IgnoreAddEnergy",
+                    "onAdded": [
+                        {
+                            "$type": "AddAvatarSkillInfo",
+                            "RotationDampTime": true,
+                            "skillID": 20036
+                        },
+                        {
+                            "$type": "AddAvatarSkillInfo",
+                            "RotationDampTime": true,
+                            "skillID": 20037
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "RotationDampTime": true,
+                            "modifierName": "UNIQUE_QuestAbility_Player_BanOzzy_SwitchSkill"
+                        },
+                        {
+                            "$type": "KillGadget",
+                            "RotationDampTime": true,
+                            "gadgetInfo": {
+                                "configID": 41031008
+                            }
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "RotationDampTime": true,
+                            "modifierName": "UNIQUE_QuestAbility_Player_BanOzzy_SwitchSkill"
+                        },
+                        {
+                            "$type": "RemoveAvatarSkillInfo",
+                            "RotationDampTime": true,
+                            "skillID": 20036
+                        },
+                        {
+                            "$type": "RemoveAvatarSkillInfo",
+                            "RotationDampTime": true,
+                            "skillID": 20037
+                        }
+                    ]
+                },
+                "UNIQUE_QuestAbility_Player_BanOzzy_SwitchSkill": {
+                    "modifierName": "",
+                    "isUnique": true,
+                    "bonusCriticalHurt": 100.0,
+                    "modifierMixins": [
+                        {
+                            "$type": "SwitchSkillIDMixin",
+                            "priority": "Playmode",
+                            "skillIndex": 1,
+                            "skillID": 20036
+                        },
+                        {
+                            "$type": "SwitchSkillIDMixin",
+                            "priority": "Playmode",
+                            "skillIndex": 4,
+                            "skillID": 20037
+                        }
+                    ]
+                }
+            },
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "RotationDampTime": true,
+                    "predicates": [
+                        {
+                            "$type": "ByHasFeatureTag",
+                            "featureTagIDs": [
+                                10031
+                            ]
+                        }
+                    ],
+                    "modifierName": "UNIQUE_QuestAbility_Player_BanOzzy"
                 }
             ],
             "isDynamicAbility": true
@@ -1497,7 +1597,7 @@
                 },
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10038,
+                    "skillID": 10038,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -1519,46 +1619,46 @@
             "modifiers": {
                 "Quest_AddSkillInfo": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddAvatarSkillInfo",
-                            "overtime": 10038
+                            "skillID": 10038
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "RemoveAvatarSkillInfo",
-                            "overtime": 10038
+                            "skillID": 10038
                         }
                     ]
                 },
                 "Quest_ChangePlayMode_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "SwitchSkillIDMixin",
                             "priority": "Quest",
                             "skillIndex": 1,
-                            "overtime": 10038
+                            "skillID": 10038
                         }
                     ]
                 },
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.800000011920929,
-                                "_y": 0.20000000298023224,
-                                "_z": -2.5
+                                "x": 0.800000011920929,
+                                "y": 0.20000000298023224,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.5,
-                                "_y": -0.20000000298023224
+                                "x": 0.5,
+                                "y": -0.20000000298023224
                             },
                             "dragButtonName": "Skill2",
                             "showCrosshair": false
@@ -1572,7 +1672,7 @@
                 },
                 "Charge": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -1595,13 +1695,13 @@
                 },
                 "Charge_Return": {
                     "modifierName": "",
-                    "duration": 3.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.5,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -1609,13 +1709,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.25,
+                            "ratio": 0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 8.0,
@@ -1630,7 +1731,7 @@
                 },
                 "Charge2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -1650,8 +1751,8 @@
                 },
                 "Charge_Return2_Trigger": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 4.0,
                     "onThinkInterval": [
                         {
@@ -1662,7 +1763,7 @@
                 },
                 "Charge_Return2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 8.0,
                     "onAdded": [
                         {
@@ -1685,13 +1786,13 @@
                 },
                 "Charge_Return2_Loop": {
                     "modifierName": "",
-                    "duration": 3.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.5,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.10000000149011612,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 8.0,
+                            "ratio": 8.0,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 8.0,
@@ -1699,13 +1800,14 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Ambor_Dummy_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Ambor_Dummy_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -0.25,
+                            "ratio": -0.25,
                             "key": "_DUMMY_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 8.0,
@@ -1720,13 +1822,13 @@
                 },
                 "ThrowBean_Trigger": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10038,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10038,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         },
                         {
                             "$type": "TriggerBullet",
@@ -1734,9 +1836,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.7999999523162842,
-                                    "z": 0.10000000149011612
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.7999999523162842,
+                                    "OGKDKNLKIDE": 0.10000000149011612
                                 }
                             }
                         }
@@ -1754,7 +1856,7 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": 4.0,
+                    "ratio": 4.0,
                     "key": "_DUMMY_THROW_RANGE",
                     "useLimitRange": true,
                     "maxValue": 8.0,
@@ -1773,46 +1875,46 @@
             "modifiers": {
                 "SpeedUP": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_OverallSpeedRatio": [
                             "DummyThrowSpeedUp",
                             0.07999999821186066,
-                            "Mul",
+                            "MUL",
                             0.23999999463558197,
-                            "Sub"
+                            "SUB"
                         ]
                     }
                 },
                 "Bean_Bloom_Strike": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.5
+                                    "PHALDBNIMGI": 1.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Quest_Bean_Hit",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
                                         "enBreak": 0.0
                                     }
                                 }
@@ -1824,25 +1926,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 4.5
+                                    "PHALDBNIMGI": 4.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Quest_Bean_Threat",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
                                         "enBreak": 0.0
                                     }
                                 }
@@ -1851,7 +1953,7 @@
                         },
                         {
                             "$type": "DebugLog",
-                            "content": "\u8c46\u5b50\u653b\u51fb\u76d2"
+                            "content": "豆子攻击盒"
                         }
                     ]
                 }
@@ -1875,7 +1977,8 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_SceneObj_Bean_Bullet"
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bean_Bullet",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onAbilityStart": [
@@ -1885,7 +1988,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_SceneObj_Bean_Bloom"
+                    "healLimitedByCasterMaxHPRatio": "Eff_SceneObj_Bean_Bloom",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -2009,120 +2113,131 @@
                 "Bartender_FX_Test1": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Test1"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Test1",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Test2": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Test2"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Test2",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Test3": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Test2"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Test2",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Origin_Cup": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Origin_Cup"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Origin_Cup",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Bar1": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Bar"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Bar",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Bar2": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Bar"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Bar",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Finish_Cup1": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Finish_Cup1"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Finish_Cup1",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Finish_Cup2": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Finish_Cup2"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Finish_Cup2",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Finish_Cup3": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Finish_Cup3"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Finish_Cup3",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Finish_Cup4": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Finish_Cup4"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Finish_Cup4",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Bartender_FX_Add_Cup": {
                     "stacking": "Multiple",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Bartender_FX_Add_Cup"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Bartender_FX_Add_Cup",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }

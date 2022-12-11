@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10011,
+                    "skillID": 10011,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -31,11 +31,12 @@
             "modifiers": {
                 "Charge1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -49,7 +50,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10012,
+                    "skillID": 10012,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -74,11 +75,12 @@
             "modifiers": {
                 "Charge1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -92,8 +94,8 @@
             "modifiers": {
                 "WindBlade": {
                     "modifierName": "",
-                    "duration": 20.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 20.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ReplaceEventPatternMixin",
@@ -128,11 +130,12 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_WindBlade_COUNT",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -142,7 +145,7 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -5.0,
+                            "ratio": -5.0,
                             "key": "_ABILITY_WindBlade_COUNT",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -152,8 +155,8 @@
                 },
                 "WindBlade_Remove": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveModifier",
@@ -177,12 +180,12 @@
             "modifiers": {
                 "WindBlade_CountDown": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -1.0,
+                            "ratio": -1.0,
                             "key": "_ABILITY_WindBlade_COUNT",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -206,8 +209,8 @@
             "modifiers": {
                 "Turbulence": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "DamageByAttackValue",
@@ -220,9 +223,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
                             "attackInfo": {
@@ -230,15 +233,15 @@
                                 "attenuationTag": "",
                                 "attenuationGroup": "default",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": 2.0,
-                                    "damagePercentageRatio": 0.0,
+                                    "MDJIHDGGPHA": 2.0,
+                                    "NEFPGMGNGAK": 0.0,
                                     "elementType": "Wind",
-                                    "elementDurability": 50.0
+                                    "bonusCriticalHurt": 50.0
                                 },
                                 "hitPattern": {
                                     "onHitEffectName": "default",
                                     "hitLevel": "Heavy",
-                                    "hitImpulseX": 700.0,
+                                    "DBIGJBIFCPK": 700.0,
                                     "hitImpulseY": 0.0,
                                     "hitImpulseType": "",
                                     "hitHaltTimeScale": 0.05000000074505806
@@ -249,12 +252,13 @@
                 },
                 "Turbulence_Effect": {
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -278,39 +282,39 @@
             "modifiers": {
                 "StormBlow": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.800000011920929,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.800000011920929,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 4.0,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 4.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Wind",
-                                        "elementDurability": 100.0
+                                        "bonusCriticalHurt": 100.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
                                         "hitLevel": "Air",
-                                        "hitImpulseX": 700.0,
+                                        "DBIGJBIFCPK": 700.0,
                                         "hitImpulseY": 700.0,
                                         "hitImpulseType": "",
                                         "hitHaltTimeScale": 0.05000000074505806
@@ -322,12 +326,13 @@
                 },
                 "StormBlow_Effect": {
                     "modifierName": "",
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -367,20 +372,21 @@
             "modifiers": {
                 "SupportInvincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "WindWalk": {
                     "modifierName": "",
-                    "duration": 8.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 8.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_MoveSpeedRatio": 0.20000000298023224
                     },
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -414,39 +420,39 @@
             "modifiers": {
                 "RockFall": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.800000011920929,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.800000011920929,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 4.0,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 4.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Rock",
-                                        "elementDurability": 100.0
+                                        "bonusCriticalHurt": 100.0
                                     },
                                     "hitPattern": {
                                         "onHitEffectName": "default",
                                         "hitLevel": "Heavy",
-                                        "hitImpulseX": 0.0,
+                                        "DBIGJBIFCPK": 0.0,
                                         "hitImpulseY": 0.0,
                                         "hitImpulseType": "",
                                         "hitHaltTimeScale": 0.05000000074505806
@@ -462,23 +468,25 @@
                 },
                 "RockFall_Effect": {
                     "modifierName": "",
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "RockFall_Stun": {
                     "modifierName": "",
-                    "duration": 4.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 4.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -508,19 +516,20 @@
             "modifiers": {
                 "Taunt": {
                     "modifierName": "",
-                    "duration": 4.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 4.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Taunt_Buff": {
                     "modifierName": "",
-                    "duration": 8.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 8.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_DefenceRatio": 1.0
                     }
@@ -555,9 +564,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.30000001192092896,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.30000001192092896,
+                            "OGKDKNLKIDE": 0.0
                         }
                     }
                 }
@@ -581,20 +590,21 @@
             "modifiers": {
                 "SupportInvincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 },
                 "RockShield": {
                     "modifierName": "",
-                    "duration": 8.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 8.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_DefenceRatio": 0.20000000298023224
                     },
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": ""
+                            "healLimitedByCasterMaxHPRatio": "",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }

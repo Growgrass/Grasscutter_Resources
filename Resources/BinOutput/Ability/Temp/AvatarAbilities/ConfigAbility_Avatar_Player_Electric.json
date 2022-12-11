@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 100546,
+                    "skillID": 100546,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -23,20 +23,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -47,14 +47,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -65,7 +65,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -78,7 +78,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -93,12 +93,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -128,13 +128,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -148,7 +148,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 100556,
+                    "skillID": 100556,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -165,20 +165,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -189,14 +189,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -207,7 +207,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -220,7 +220,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -235,12 +235,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -270,13 +270,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -298,7 +298,7 @@
             "modifiers": {
                 "Player_Electric_ElementalBurst_HideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -312,7 +312,7 @@
                     "onRemoved": [
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true,
                             "partNames": [
                                 "equip01",
@@ -340,7 +340,7 @@
             "modifiers": {
                 "Player_Electric_ElementalBurst_HideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
@@ -354,7 +354,7 @@
                     "onRemoved": [
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true,
                             "partNames": [
                                 "equip01",
@@ -398,7 +398,7 @@
             "modifiers": {
                 "Player_Electric_ElementalBurst_Invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible",
                     "onAdded": [
                         {
@@ -409,11 +409,12 @@
                 },
                 "Player_Electric_ElementalBurst_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Initiate"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Initiate",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "KillGadget",
@@ -425,7 +426,7 @@
                 },
                 "Player_Electric_ElementalBurst_Weather": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -443,19 +444,19 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
-                            "radius": 5.0
+                            "triggerType": "TriggerNoRepeat",
+                            "PHALDBNIMGI": 5.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Burst",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "ElementalBurst_InitiateDamage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "ElementalBurst_InitiateDamage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Electric",
                                 "elementRank": 3.0,
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Blunt",
                                 "enBreak": 150.0
                             },
@@ -489,13 +490,14 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10605,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10605,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalBurst_Burst"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Burst",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "CreateGadget",
@@ -503,9 +505,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "gadgetID": 41044001,
@@ -531,15 +533,15 @@
             "modifiers": {
                 "ExitCamera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "AvatarCameraParam",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "cameraParam": {
                                 "forceRadius": 6.0,
                                 "forceRadiusDuration": 0.0,
@@ -567,90 +569,93 @@
             "modifiers": {
                 "Player_Electric_ElementalBurst_Bullet_1_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_1",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_1",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByDefault",
                                     "angleOffset": {
-                                        "x": 0.0,
-                                        "y": 0.0,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 0.0,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
                                 "attachPointName": "Ponit1"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Player_Electric_ElementalBurst_Bullet_2_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_2",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_2",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByDefault",
                                     "angleOffset": {
-                                        "x": 0.0,
-                                        "y": 0.0,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 0.0,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
                                 "attachPointName": "Ponit2"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Player_Electric_ElementalBurst_Bullet_3_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_3",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_3",
                             "born": {
                                 "$type": "ConfigBornByAttachPoint",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "direction": {
                                     "$type": "ConfigDirectionByDefault",
                                     "angleOffset": {
-                                        "x": 0.0,
-                                        "y": 0.0,
-                                        "z": 0.0
+                                        "NMLENGBJMAA": 0.0,
+                                        "OKBPMDLDKLI": 0.0,
+                                        "OGKDKNLKIDE": 0.0
                                     }
                                 },
                                 "attachPointName": "Ponit3"
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "UNIQUE_Player_Electric_ElementalBurst_Handler": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "ElementalBurst_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "ElementalBurst_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CurLocalAvatarMixin",
@@ -681,7 +686,7 @@
                                 [
                                     {
                                         "$type": "Predicated",
-                                        "doOffStage": true,
+                                        "RotationDampTime": true,
                                         "targetPredicates": [
                                             {
                                                 "$type": "ByUnlockTalentParam",
@@ -691,8 +696,8 @@
                                         "failActions": [
                                             {
                                                 "$type": "SetGlobalValue",
-                                                "doOffStage": true,
-                                                "value": 0.0,
+                                                "RotationDampTime": true,
+                                                "ratio": 0.0,
                                                 "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
                                                 "maxValue": 0.0,
                                                 "minValue": 0.0
@@ -703,8 +708,8 @@
                                 [
                                     {
                                         "$type": "SetGlobalValue",
-                                        "doOffStage": true,
-                                        "value": 0.0,
+                                        "RotationDampTime": true,
+                                        "ratio": 0.0,
                                         "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
                                         "maxValue": 0.0,
                                         "minValue": 0.0
@@ -728,8 +733,8 @@
                         {
                             "$type": "SetGlobalValue",
                             "target": "Caster",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Player_Electric_ElementalBurst_CD",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -738,8 +743,8 @@
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -748,16 +753,16 @@
                 },
                 "Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Player_Electric_ElementalBurst_ElecResDown": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByEntityTypes",
@@ -768,7 +773,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -785,13 +790,13 @@
                                 {
                                     "$type": "RemoveUniqueModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Player_Electric_ElementalBurst_ElecResDown"
                                 },
                                 {
                                     "$type": "ApplyModifier",
                                     "target": "Target",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Player_Electric_ElementalBurst_ElecResDown"
                                 }
                             ]
@@ -802,8 +807,8 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "ElementalBurst_ElecResDown_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "ElementalBurst_ElecResDown_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_ElecSubHurtDelta": "ElementalBurst_ElecResDown_ElecSubHurtDelta"
                     },
@@ -813,7 +818,7 @@
                 "UNIQUE_Player_Electric_ElementalBurst_Detect": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -829,7 +834,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -848,13 +853,13 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Caster",
                                     "key": "_ABILITY_Player_Electric_ElementalBurst_CD",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "forceByCaster": true
                                 },
                                 {
                                     "$type": "ByTargetPositionToSelfPosition",
                                     "logic": "LesserOrEqual",
-                                    "value": 15.0
+                                    "ratio": 15.0
                                 }
                             ],
                             "successActions": [
@@ -865,9 +870,9 @@
                                     "born": {
                                         "$type": "ConfigBornBySelectedPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
                                     "setTarget": false
@@ -875,13 +880,13 @@
                                 {
                                     "$type": "ApplyModifier",
                                     "target": "Caster",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "predicates": [
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "target": "Caster",
                                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "compareType": "LessAndEqual"
                                         }
                                     ],
@@ -889,13 +894,13 @@
                                 },
                                 {
                                     "$type": "ApplyModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "predicates": [
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "target": "Caster",
                                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "compareType": "LessAndEqual"
                                         }
                                     ],
@@ -904,26 +909,26 @@
                                 {
                                     "$type": "ApplyModifier",
                                     "target": "Caster",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "predicates": [
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "target": "Caster",
                                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
-                                            "value": 2.0
+                                            "ratio": 2.0
                                         }
                                     ],
                                     "modifierName": "Player_Electric_ElementalBurst_ThunderAttack_Enhanced"
                                 },
                                 {
                                     "$type": "ApplyModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "predicates": [
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "target": "Caster",
                                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
-                                            "value": 2.0
+                                            "ratio": 2.0
                                         }
                                     ],
                                     "modifierName": "Player_Electric_ElementalBurst_Energy_Extra"
@@ -931,14 +936,14 @@
                                 {
                                     "$type": "ApplyModifier",
                                     "target": "Caster",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "Player_Electric_ElementalBurst_Count"
                                 },
                                 {
                                     "$type": "SetGlobalValue",
                                     "target": "Caster",
-                                    "doOffStage": true,
-                                    "value": 0.0,
+                                    "RotationDampTime": true,
+                                    "ratio": 0.0,
                                     "key": "_ABILITY_Player_Electric_ElementalBurst_CD",
                                     "maxValue": 0.0,
                                     "minValue": 0.0
@@ -950,14 +955,14 @@
                 "Player_Electric_ElementalBurst_Count": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
                             "target": "Caster",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Player_Electric_ElementalBurst_Counter",
                             "useLimitRange": true,
                             "maxValue": 3.0,
@@ -968,8 +973,8 @@
                         {
                             "$type": "SetGlobalValue",
                             "target": "Caster",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Player_Electric_ElementalBurst_CD",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -979,44 +984,45 @@
                 "Player_Electric_ElementalBurst_Energy_Default": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "value": "ElementalBurst_ReviveEnergy_Default"
+                            "ratio": "ElementalBurst_ReviveEnergy_Default"
                         }
                     ]
                 },
                 "Player_Electric_ElementalBurst_Energy_Extra": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "value": [
+                            "ratio": [
                                 "ElementalBurst_ReviveEnergy_Default",
                                 "ElementalBurst_ReviveEnergy_Enhanced",
-                                "Add"
+                                "ADD"
                             ]
                         }
                     ]
                 },
                 "Player_Electric_ElementalBurst_ThunderAttack_Default": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Thunder",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Thunder",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "_ABILITY_Player_Electric_ElementalBurst_Pos",
                                 "directionKey": ""
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -1024,25 +1030,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "ignoreMassive": true,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Player_Electric_ElementalBurst_Pos",
                                         "directionKey": ""
                                     },
-                                    "radius": 2.0
+                                    "PHALDBNIMGI": 2.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "ElementalBurst_ThunderAttack_Default_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "ElementalBurst_ThunderAttack_Default_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
                                         "elementRank": 1.5,
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 50.0
                                     },
@@ -1060,17 +1066,18 @@
                 },
                 "Player_Electric_ElementalBurst_ThunderAttack_Enhanced": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalBurst_Thunder_Enhanced",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Thunder_Enhanced",
                             "born": {
                                 "$type": "ConfigBornByGlobalValue",
                                 "positionKey": "_ABILITY_Player_Electric_ElementalBurst_Pos",
                                 "directionKey": ""
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerAttackEvent",
@@ -1078,29 +1085,29 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "ignoreMassive": true,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Player_Electric_ElementalBurst_Pos",
                                         "directionKey": ""
                                     },
-                                    "radius": 2.5
+                                    "PHALDBNIMGI": 2.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": [
+                                        "MDJIHDGGPHA": [
                                             "ElementalBurst_ThunderAttack_Enhanced_Damage_Percentage",
                                             "ElementalBurst_ThunderAttack_Default_Damage",
-                                            "Mul"
+                                            "MUL"
                                         ],
-                                        "damagePercentageRatio": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
                                         "elementRank": 1.5,
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 50.0
                                     },
@@ -1138,47 +1145,50 @@
             "onKill": [
                 {
                     "$type": "RemoveUniqueModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Player_Electric_ElementalBurst_Handler"
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "attachPointName": "Ponit1"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "attachPointName": "Ponit2"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalBurst_Magatama_Die",
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "attachPointName": "Ponit3"
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1190,14 +1200,14 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10602,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10602,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "doOffStage": true,
-                    "value": -1.0,
+                    "RotationDampTime": true,
+                    "ratio": -1.0,
                     "key": "_Ability_Player_Electric_ElementBall_Mark",
                     "useLimitRange": true,
                     "maxValue": 1.0,
@@ -1205,15 +1215,16 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Cast",
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Cast",
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
-                    }
+                    },
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "KillGadget",
@@ -1223,7 +1234,7 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": -4.0,
+                    "ratio": -4.0,
                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                     "useLimitRange": true,
                     "maxValue": 0.0,
@@ -1235,9 +1246,9 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.800000011920929,
-                            "z": 0.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.800000011920929,
+                            "OGKDKNLKIDE": 0.5
                         }
                     }
                 },
@@ -1247,16 +1258,16 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": 0.20000000298023224,
-                            "y": 0.800000011920929,
-                            "z": 0.20000000298023224
+                            "NMLENGBJMAA": 0.20000000298023224,
+                            "OKBPMDLDKLI": 0.800000011920929,
+                            "OGKDKNLKIDE": 0.20000000298023224
                         },
                         "direction": {
                             "$type": "ConfigDirectionByDefault",
                             "angleOffset": {
-                                "x": 0.0,
-                                "y": 20.0,
-                                "z": 0.0
+                                "NMLENGBJMAA": 0.0,
+                                "OKBPMDLDKLI": 20.0,
+                                "OGKDKNLKIDE": 0.0
                             }
                         }
                     }
@@ -1267,16 +1278,16 @@
                     "born": {
                         "$type": "ConfigBornBySelf",
                         "offset": {
-                            "x": -0.20000000298023224,
-                            "y": 0.800000011920929,
-                            "z": 0.20000000298023224
+                            "NMLENGBJMAA": -0.20000000298023224,
+                            "OKBPMDLDKLI": 0.800000011920929,
+                            "OGKDKNLKIDE": 0.20000000298023224
                         },
                         "direction": {
                             "$type": "ConfigDirectionByDefault",
                             "angleOffset": {
-                                "x": 0.0,
-                                "y": -20.0,
-                                "z": 0.0
+                                "NMLENGBJMAA": 0.0,
+                                "OKBPMDLDKLI": -20.0,
+                                "OGKDKNLKIDE": 0.0
                             }
                         }
                     }
@@ -1294,12 +1305,12 @@
             "modifiers": {
                 "Player_Electric_ElementalArt_ElementBall_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1316,14 +1327,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -1339,19 +1350,19 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 },
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "OriginOwner",
-                                    "doOffStage": true,
-                                    "value": 1.0,
+                                    "RotationDampTime": true,
+                                    "ratio": 1.0,
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
                                     "useLimitRange": true,
                                     "maxValue": 1.0,
@@ -1363,12 +1374,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1385,14 +1396,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1400,7 +1411,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 2.0,
@@ -1418,7 +1429,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1435,14 +1446,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1454,9 +1465,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -1467,9 +1478,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -1479,12 +1490,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Extra_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1501,14 +1512,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1516,7 +1527,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 3.0,
@@ -1534,7 +1545,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1551,14 +1562,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1570,9 +1581,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -1583,9 +1594,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -1601,15 +1612,17 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "Predicated",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "targetPredicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -1651,10 +1664,10 @@
                                 "attenuationTag": "Elemental_Art",
                                 "attenuationGroup": "default",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": "ElementalArt_Damage",
-                                    "damagePercentageRatio": 0.0,
+                                    "MDJIHDGGPHA": "ElementalArt_Damage",
+                                    "NEFPGMGNGAK": 0.0,
                                     "elementType": "Electric",
-                                    "elementDurability": 25.0,
+                                    "bonusCriticalHurt": 25.0,
                                     "strikeType": "Pierce",
                                     "enBreak": 100.0,
                                     "attackType": "Range"
@@ -1674,20 +1687,20 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackBox",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "checkHitLayerType": "Both",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
                                     "size": {
-                                        "x": 0.10000000149011612,
-                                        "y": 0.10000000149011612,
-                                        "z": 0.6000000238418579
+                                        "NMLENGBJMAA": 0.10000000149011612,
+                                        "OKBPMDLDKLI": 0.10000000149011612,
+                                        "OGKDKNLKIDE": 0.6000000238418579
                                     }
                                 },
                                 "attackInfo": {
@@ -1695,10 +1708,10 @@
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "ElementalArt_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "ElementalArt_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 100.0,
                                         "attackType": "Range"
@@ -1719,7 +1732,8 @@
             "onKill": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Bullet_Die"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Bullet_Die",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1734,12 +1748,12 @@
             "modifiers": {
                 "Player_Electric_ElementalArt_ElementBall_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1756,14 +1770,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -1779,19 +1793,19 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 },
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "OriginOwner",
-                                    "doOffStage": true,
-                                    "value": 1.0,
+                                    "RotationDampTime": true,
+                                    "ratio": 1.0,
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
                                     "useLimitRange": true,
                                     "maxValue": 1.0,
@@ -1803,12 +1817,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1825,14 +1839,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1840,7 +1854,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 2.0,
@@ -1858,7 +1872,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1875,14 +1889,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1894,9 +1908,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -1907,9 +1921,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -1919,12 +1933,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Extra_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1941,14 +1955,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -1956,7 +1970,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 3.0,
@@ -1974,7 +1988,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -1991,14 +2005,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -2010,9 +2024,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -2023,9 +2037,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -2041,15 +2055,17 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "Predicated",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "targetPredicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -2091,10 +2107,10 @@
                                 "attenuationTag": "Elemental_Art",
                                 "attenuationGroup": "default",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": "ElementalArt_Damage",
-                                    "damagePercentageRatio": 0.0,
+                                    "MDJIHDGGPHA": "ElementalArt_Damage",
+                                    "NEFPGMGNGAK": 0.0,
                                     "elementType": "Electric",
-                                    "elementDurability": 25.0,
+                                    "bonusCriticalHurt": 25.0,
                                     "strikeType": "Pierce",
                                     "enBreak": 100.0,
                                     "attackType": "Range"
@@ -2114,20 +2130,20 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackBox",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "checkHitLayerType": "Both",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
                                     "size": {
-                                        "x": 0.10000000149011612,
-                                        "y": 0.10000000149011612,
-                                        "z": 0.6000000238418579
+                                        "NMLENGBJMAA": 0.10000000149011612,
+                                        "OKBPMDLDKLI": 0.10000000149011612,
+                                        "OGKDKNLKIDE": 0.6000000238418579
                                     }
                                 },
                                 "attackInfo": {
@@ -2135,10 +2151,10 @@
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "ElementalArt_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "ElementalArt_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 100.0,
                                         "attackType": "Range"
@@ -2159,7 +2175,8 @@
             "onKill": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Bullet_Die"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Bullet_Die",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -2174,12 +2191,12 @@
             "modifiers": {
                 "Player_Electric_ElementalArt_ElementBall_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2196,14 +2213,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "OriginOwner",
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -2219,19 +2236,19 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 },
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "OriginOwner",
-                                    "doOffStage": true,
-                                    "value": 1.0,
+                                    "RotationDampTime": true,
+                                    "ratio": 1.0,
                                     "key": "_Ability_Player_Electric_ElementBall_Mark",
                                     "useLimitRange": true,
                                     "maxValue": 1.0,
@@ -2243,12 +2260,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2265,14 +2282,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -2280,7 +2297,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 2.0,
@@ -2298,7 +2315,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2315,14 +2332,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -2334,9 +2351,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -2347,9 +2364,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -2359,12 +2376,12 @@
                 },
                 "Player_Electric_ElementalArt_Bullet_Extra_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2381,14 +2398,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -2396,7 +2413,7 @@
                                 {
                                     "$type": "AddGlobalValue",
                                     "target": "Owner",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
                                     "useLimitRange": true,
                                     "maxValue": 3.0,
@@ -2414,7 +2431,7 @@
                         {
                             "$type": "Predicated",
                             "target": "Target",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByAttackTags",
@@ -2431,14 +2448,14 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Owner",
                                     "key": "_ABILITY_Player_Electric_ElementalArt_Counter",
-                                    "value": 2.0,
+                                    "ratio": 2.0,
                                     "compareType": "LessAndEqual"
                                 }
                             ],
@@ -2450,9 +2467,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 },
@@ -2463,9 +2480,9 @@
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     }
                                 }
@@ -2481,15 +2498,17 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Bullet_Trail",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "Predicated",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "targetPredicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -2531,10 +2550,10 @@
                                 "attenuationTag": "Elemental_Art",
                                 "attenuationGroup": "default",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": "ElementalArt_Damage",
-                                    "damagePercentageRatio": 0.0,
+                                    "MDJIHDGGPHA": "ElementalArt_Damage",
+                                    "NEFPGMGNGAK": 0.0,
                                     "elementType": "Electric",
-                                    "elementDurability": 25.0,
+                                    "bonusCriticalHurt": 25.0,
                                     "strikeType": "Pierce",
                                     "enBreak": 100.0,
                                     "attackType": "Range"
@@ -2554,20 +2573,20 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackBox",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "checkHitLayerType": "Both",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
                                     "size": {
-                                        "x": 0.10000000149011612,
-                                        "y": 0.10000000149011612,
-                                        "z": 0.6000000238418579
+                                        "NMLENGBJMAA": 0.10000000149011612,
+                                        "OKBPMDLDKLI": 0.10000000149011612,
+                                        "OGKDKNLKIDE": 0.6000000238418579
                                     }
                                 },
                                 "attackInfo": {
@@ -2575,10 +2594,10 @@
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "ElementalArt_Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "ElementalArt_Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Electric",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Pierce",
                                         "enBreak": 100.0,
                                         "attackType": "Range"
@@ -2599,7 +2618,8 @@
             "onKill": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Bullet_Die"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Bullet_Die",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -2615,14 +2635,14 @@
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": -0.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -0.5
                         },
                         "bornRandom": {
                             "$type": "BornRandomFromCenter",
-                            "minRandomRange": 0.20000000298023224,
-                            "maxRandomRange": 0.4000000059604645
+                            "maxRandomRange": 0.20000000298023224,
+                            "minRandomRange": 0.4000000059604645
                         },
                         "onGround": true,
                         "positionKey": "_ABILITY_Player_Electric_ElementalArt_BulletPos_1",
@@ -2644,14 +2664,14 @@
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": -0.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -0.5
                         },
                         "bornRandom": {
                             "$type": "BornRandomFromCenter",
-                            "minRandomRange": 0.20000000298023224,
-                            "maxRandomRange": 0.4000000059604645
+                            "maxRandomRange": 0.20000000298023224,
+                            "minRandomRange": 0.4000000059604645
                         },
                         "onGround": true,
                         "positionKey": "_ABILITY_Player_Electric_ElementalArt_BulletPos_2",
@@ -2673,14 +2693,14 @@
                     "born": {
                         "$type": "ConfigBornByGlobalValue",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": -0.5
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -0.5
                         },
                         "bornRandom": {
                             "$type": "BornRandomFromCenter",
-                            "minRandomRange": 0.20000000298023224,
-                            "maxRandomRange": 0.4000000059604645
+                            "maxRandomRange": 0.20000000298023224,
+                            "minRandomRange": 0.4000000059604645
                         },
                         "onGround": true,
                         "positionKey": "_ABILITY_Player_Electric_ElementalArt_BulletPos_3",
@@ -2698,7 +2718,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Element_Crystal_Elect_Trail"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Element_Crystal_Elect_Trail",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -2719,12 +2740,12 @@
             "modifiers": {
                 "Player_Electric_ElementalArt_Magatama_ModifySkillCD": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Predicated",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "targetPredicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
@@ -2734,11 +2755,11 @@
                             "successActions": [
                                 {
                                     "$type": "ModifyAvatarSkillCD",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "skillSlot": [
                                         2
                                     ],
-                                    "cdDelta": "ElementalArt_Magatama_ModifySkillCD"
+                                    "GEOJBKAOHKP": "ElementalArt_Magatama_ModifySkillCD"
                                 }
                             ]
                         }
@@ -2747,13 +2768,13 @@
                 "UNIQUE_Player_Electric_ElementalArt_Magatama_ExtraEfficiencyUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "ElementalArt_Magatama_EfficiencyUp_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "ElementalArt_Magatama_EfficiencyUp_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_ChargeEfficiencyExtraDelta": [
                             "ElementalArt_Magatama_ExtraEfficiencyUp_Percentage",
                             "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
-                            "Mul"
+                            "MUL"
                         ]
                     },
                     "isLimitedProperties": true
@@ -2761,55 +2782,57 @@
                 "UNIQUE_Player_Electric_ElementalArt_Magatama_EfficiencyUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "ElementalArt_Magatama_EfficiencyUp_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "ElementalArt_Magatama_EfficiencyUp_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_ChargeEfficiencyExtraDelta": "ElementalArt_Magatama_EfficiencyUp"
                     },
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Buff"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Buff",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "isLimitedProperties": true
                 },
                 "Player_Electric_ElementalArt_Magatama_ReviveExtraElemEnergy": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "value": "ElementalArt_Magatama_ReviveElemEnergy"
+                            "ratio": "ElementalArt_Magatama_ReviveElemEnergy"
                         }
                     ]
                 },
                 "Player_Electric_ElementalArt_Magatama_ReviveElemEnergy": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "value": "ElementalArt_Magatama_ReviveElemEnergy"
+                            "ratio": "ElementalArt_Magatama_ReviveElemEnergy"
                         }
                     ]
                 },
                 "Player_Electric_ElementalArt_Magatama_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Player_Electric_ElementalArt_Magatama_Life_Duration": {
                     "modifierName": "",
-                    "duration": "ElementalArt_Magatama_Life_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "ElementalArt_Magatama_Life_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "KillSelf"
@@ -2830,7 +2853,8 @@
             "onKill": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Player_Electric_ElementalArt_Magatama_Die"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Player_Electric_ElementalArt_Magatama_Die",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "onFieldEnter": [
@@ -2858,7 +2882,7 @@
                                 {
                                     "$type": "ByTargetPositionToSelfPosition",
                                     "logic": "LesserOrEqual",
-                                    "value": 40.0
+                                    "ratio": 40.0
                                 }
                             ],
                             "modifierName": "Player_Electric_ElementalArt_Magatama_ModifySkillCD"
@@ -2878,7 +2902,7 @@
                         {
                             "$type": "ByEnergyRatio",
                             "logic": "LesserOrEqual",
-                            "ratio": "ElementalArt_Magatama_ReviveExtraElemEnergy_Check_Percentage"
+                            "GADHOGJLEIJ": "ElementalArt_Magatama_ReviveExtraElemEnergy_Check_Percentage"
                         },
                         {
                             "$type": "ByUnlockTalentParam",

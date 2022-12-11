@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 100545,
+                    "skillID": 100545,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -23,20 +23,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -47,14 +47,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -65,7 +65,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -78,7 +78,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -93,12 +93,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -128,13 +128,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -149,7 +149,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 100555,
+                    "skillID": 100555,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -166,20 +166,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -190,14 +190,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -208,7 +208,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -221,7 +221,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -236,12 +236,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -271,13 +271,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -295,9 +295,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 2.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 2.0
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -309,9 +309,9 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10077,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10077,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 }
             ],
             "isDynamicAbility": true
@@ -324,7 +324,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10077,
+                    "skillID": 10077,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -356,18 +356,18 @@
             "modifiers": {
                 "Focus": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarEnterFocus",
                             "cameraFollowLower": {
-                                "_x": 0.800000011920929,
-                                "_y": 0.20000000298023224,
-                                "_z": -2.5
+                                "x": 0.800000011920929,
+                                "y": 0.20000000298023224,
+                                "z": -2.5
                             },
                             "cameraFollowUpper": {
-                                "_x": 0.5,
-                                "_y": -0.20000000298023224
+                                "x": 0.5,
+                                "y": -0.20000000298023224
                             },
                             "cameraFastFocusMode": true,
                             "dragButtonName": "Skill2",
@@ -392,11 +392,11 @@
                 },
                 "Charge": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 10.0,
+                            "ratio": 10.0,
                             "key": "_HOGYOKU_THROW_RANGE",
                             "useLimitRange": true,
                             "maxValue": 10.0,
@@ -404,7 +404,8 @@
                         },
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Hogyoku_Aim_Line"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Aim_Line",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -412,9 +413,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10077,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10077,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "TriggerBullet",
@@ -422,9 +423,9 @@
                     "born": {
                         "$type": "ConfigBornByAttachPoint",
                         "offset": {
-                            "x": 0.20000000298023224,
-                            "y": 0.0,
-                            "z": 0.6000000238418579
+                            "NMLENGBJMAA": 0.20000000298023224,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.6000000238418579
                         },
                         "attachPointName": "FocusAnchor"
                     }
@@ -443,9 +444,9 @@
                     "born": {
                         "$type": "ConfigBornByCollisionPoint",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -468,9 +469,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -490,22 +491,23 @@
             "modifiers": {
                 "Hogyoku_Base_Appear": {
                     "modifierName": "",
-                    "duration": 0.6000000238418579,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.6000000238418579,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Hogyoku_Bullet",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Bullet",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 1.0
                                 },
                                 "onGround": true,
                                 "alongGround": true
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -514,9 +516,9 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 1.0
                                 },
                                 "onGround": true,
                                 "onGroundIgnoreWater": true,
@@ -550,37 +552,37 @@
             "modifiers": {
                 "Hogyoku_AttackHandler": {
                     "modifierName": "",
-                    "duration": 5.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 5.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": -0.5,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": -0.5,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "useRotation": true
                                     },
-                                    "secondHeight": 2.0,
-                                    "radius": 3.0
+                                    "height": 2.0,
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Damage_Explode",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "Damage_Explode",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Rock",
                                         "elementRank": 1.5,
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Blunt",
                                         "enBreak": 133.1999969482422
                                     },
@@ -623,7 +625,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -635,13 +637,13 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Self",
                                     "key": "_ABILITY_Hogyoku_Barrier_Limitation",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Self",
                                     "key": "_ABILITY_Hogyoku_Barrier_ElemBallMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -652,12 +654,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "ratio": "GetElementRatio",
+                                    "GADHOGJLEIJ": "GetElementRatio",
                                     "baseEnergy": 9.0
                                 },
                                 {
@@ -670,19 +672,19 @@
                                             "born": {
                                                 "$type": "ConfigBornByTarget",
                                                 "offset": {
-                                                    "x": 0.0,
-                                                    "y": 0.0,
-                                                    "z": 0.0
+                                                    "NMLENGBJMAA": 0.0,
+                                                    "OKBPMDLDKLI": 0.0,
+                                                    "OGKDKNLKIDE": 0.0
                                                 }
                                             },
-                                            "ratio": "GetElementRatio",
+                                            "GADHOGJLEIJ": "GetElementRatio",
                                             "baseEnergy": 3.0
                                         }
                                     ]
                                 },
                                 {
                                     "$type": "AddGlobalValue",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "key": "_ABILITY_Hogyoku_Barrier_ElemBallMark",
                                     "useLimitRange": true,
                                     "maxValue": 1.0,
@@ -694,12 +696,12 @@
                 },
                 "Hogyoku_Barrier_HP": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "BarrierLifeTimeDelta",
                         30.0,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "KillSelf"
@@ -708,12 +710,12 @@
                 },
                 "Hogyoku_Barrier_Explode_Timer": {
                     "modifierName": "",
-                    "duration": 0.8999999761581421,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.8999999761581421,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Hogyoku_Barrier_Limitation",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -723,7 +725,7 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "value": -1.0,
+                            "ratio": -1.0,
                             "key": "_ABILITY_Hogyoku_Barrier_Limitation",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -743,36 +745,36 @@
                 },
                 "Hogyoku_Barrier_Explode": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onKill": [
                         {
                             "$type": "TriggerAttackEvent",
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "useRotation": true
                                     },
-                                    "secondHeight": 1.5,
-                                    "radius": 3.0
+                                    "height": 1.5,
+                                    "PHALDBNIMGI": 3.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Art",
                                     "attenuationTag": "Elemental_Art",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Damage_Explode",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "Damage_Explode",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Rock",
                                         "elementRank": 1.5,
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Blunt",
                                         "enBreak": 133.1999969482422
                                     },
@@ -796,7 +798,8 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Hogyoku_Crystal_Explode"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Crystal_Explode",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -827,8 +830,8 @@
             "modifiers": {
                 "Life_Timer": {
                     "modifierName": "",
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "KillSelf"
@@ -842,29 +845,29 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 },
                                 "useRotation": true
                             },
-                            "secondHeight": 1.5,
-                            "radius": 3.0
+                            "height": 1.5,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "Elemental_Art",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Damage_Explode",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Damage_Explode",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
                                 "elementRank": 1.5,
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Blunt",
                                 "enBreak": 133.1999969482422
                             },
@@ -888,7 +891,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Hogyoku_Crystal_Explode"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Crystal_Explode",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -904,8 +908,8 @@
             "modifiers": {
                 "Hogyoku_Barrier_Material_Timer": {
                     "modifierName": "",
-                    "duration": 0.05000000074505806,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.05000000074505806,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
@@ -919,17 +923,18 @@
                 },
                 "Hogyoku_Barrier_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Hogyoku_Crystal"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Crystal",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Hogyoku_Barrier_Disappear": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onKill": [
                         {
                             "$type": "FireEffect",
@@ -944,7 +949,8 @@
                                     ]
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Hogyoku_Crystal_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Crystal_Disappear",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "RemoveModifier",
@@ -956,7 +962,8 @@
             "onAdded": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Hogyoku_Crystal_Impact"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Hogyoku_Crystal_Impact",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -992,7 +999,7 @@
             "modifiers": {
                 "RockTide_Camera_Protection_Ghost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachAbilityStateResistance",
@@ -1002,7 +1009,7 @@
                 },
                 "RockTide_Camera_Protection_Invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible"
                 }
             },
@@ -1018,9 +1025,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 0.0,
-                            "y": 0.0,
-                            "z": 0.0
+                            "NMLENGBJMAA": 0.0,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 0.0
                         }
                     },
                     "gadgetID": 41005005,
@@ -1029,9 +1036,9 @@
                 },
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10078,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10078,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 }
             ],
             "isDynamicAbility": true
@@ -1051,8 +1058,8 @@
             "modifiers": {
                 "RockTide_Push": {
                     "modifierName": "",
-                    "duration": 1.2000000476837158,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.2000000476837158,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "WindZoneMixin",
@@ -1060,14 +1067,14 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "strength": -2.0,
-                            "attenuation": 4.0,
-                            "innerRadius": 0.0,
+                            "IKGEBLKGCPK": -2.0,
+                            "innerRadius": 4.0,
+                            "radius": 0.0,
                             "targetType": "All",
                             "predicates": [
                                 {
@@ -1089,8 +1096,8 @@
                 },
                 "RockTide_Attack_Start": {
                     "modifierName": "",
-                    "duration": 1.100000023841858,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.100000023841858,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.25,
                     "onRemoved": [
                         {
@@ -1104,28 +1111,28 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "secondHeight": 1.5,
-                                    "radius": 6.0
+                                    "height": 1.5,
+                                    "PHALDBNIMGI": 6.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Player_RockTide",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "AttackWaveDamage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "AttackWaveDamage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Rock",
                                         "elementRank": 3.0,
-                                        "elementDurability": 50.0,
+                                        "bonusCriticalHurt": 50.0,
                                         "strikeType": "Blunt",
                                         "enBreak": 100.0
                                     },
@@ -1149,16 +1156,17 @@
                 },
                 "RockTide_AttackWave_Material": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "GaeaAnthem_TimeDelta",
                         18.0,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_RockTide_Crest_Move"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_RockTide_Crest_Move",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -1169,7 +1177,7 @@
                 },
                 "RockTide_AttackWave_StarDustReturn": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -1207,8 +1215,8 @@
                 },
                 "StarDustReturn_Mark": {
                     "modifierName": "",
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -1224,25 +1232,25 @@
                         "maxModifierNumForMultipleType": 5.0
                     },
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "doOffStage": true,
-                            "value": "ReviveElemEnergyRatio"
+                            "RotationDampTime": true,
+                            "ratio": "ReviveElemEnergyRatio"
                         }
                     ]
                 },
                 "UNIQUE_RockTide_GaeaAnthem": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "GaeaAnthem_TimeDelta",
                         15.0,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 1.0,
                     "onThinkInterval": [
                         {
@@ -1268,8 +1276,8 @@
                 "UNIQUE_GaeaAnthem_PowerUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 2.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 2.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_EndureDelta": "GaeaAnthem_EndureDelta",
                         "Actor_CriticalDelta": "GaeaAnthem_CriticalDelta"
@@ -1353,9 +1361,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 2.75,
-                            "y": 0.0,
-                            "z": 6.670000076293945
+                            "NMLENGBJMAA": 2.75,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 6.670000076293945
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1373,9 +1381,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": -2.75,
-                            "y": 0.0,
-                            "z": -6.670000076293945
+                            "NMLENGBJMAA": -2.75,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -6.670000076293945
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1393,9 +1401,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": 6.670000076293945,
-                            "y": 0.0,
-                            "z": -2.75
+                            "NMLENGBJMAA": 6.670000076293945,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": -2.75
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1413,9 +1421,9 @@
                     "born": {
                         "$type": "ConfigBornByTarget",
                         "offset": {
-                            "x": -6.670000076293945,
-                            "y": 0.0,
-                            "z": 2.75
+                            "NMLENGBJMAA": -6.670000076293945,
+                            "OKBPMDLDKLI": 0.0,
+                            "OGKDKNLKIDE": 2.75
                         },
                         "onGround": true,
                         "onGroundIgnoreWater": true,
@@ -1442,12 +1450,12 @@
             "modifiers": {
                 "Barrier_Stat": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "BarrierLifeTimeDelta",
                         15.0,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_MaxHPRatio": "BarrierHP"
                     },
@@ -1459,8 +1467,8 @@
                 },
                 "Barrier_Material_Timer": {
                     "modifierName": "",
-                    "duration": 0.05000000074505806,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.05000000074505806,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
@@ -1474,28 +1482,30 @@
                 },
                 "Barrier_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_RockTide_RockWall"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_RockTide_RockWall",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onKill": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_RockTide_RockWall_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_RockTide_RockWall_Disappear",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Barrier_Damage": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Barrier_Damage_Modifier": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAttackEvent",
@@ -1503,22 +1513,22 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf"
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 0.10000000149011612,
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": 0.10000000149011612,
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Rock",
                                         "elementRank": 1.5,
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 10.59000015258789
                                     },
@@ -1541,7 +1551,8 @@
                 },
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_RockTide_RockWall_Impact"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_RockTide_RockWall_Impact",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -1569,26 +1580,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 1.0,
-                                    "z": 1.2000000476837158
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 1.0,
+                                    "OGKDKNLKIDE": 1.2000000476837158
                                 }
                             },
-                            "radius": 2.4000000953674316
+                            "PHALDBNIMGI": 2.4000000953674316
                         },
                         "attackInfo": {
                             "attackTag": "NormalAttack_05",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Avalanche_Damage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Avalanche_Damage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Blunt",
                                 "enBreak": 13.5,
                                 "attackType": "Melee"
@@ -1614,7 +1625,8 @@
                             "talentParam": "Player_Rock_Avalanche"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_RockBlade_Explode"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_RockBlade_Explode",
+                    "COOMHFHLGFG": -1.0
                 }
             ],
             "isDynamicAbility": true
@@ -1639,7 +1651,7 @@
             "modifiers": {
                 "Player_Rock_Climber": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_CostStaminaRatio": "Climber_CostStaminaRatio"
                     },

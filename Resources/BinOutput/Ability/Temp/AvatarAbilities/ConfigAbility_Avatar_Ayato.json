@@ -6,7 +6,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10661,
+                    "skillID": 10661,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -23,20 +23,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -47,14 +47,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -65,7 +65,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -78,7 +78,7 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -93,12 +93,12 @@
                                     "stamina": [
                                         "ExtraAttack_Sword_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -128,13 +128,13 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10001,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Sword_Stamina_Cost"
+                            "skillID": 10001,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Sword_Stamina_Cost"
                         }
                     ]
                 }
@@ -157,23 +157,23 @@
             "modifiers": {
                 "Ayato_ExtraAttack_CloseCollider": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "passThrough": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true
                         },
                         {
                             "$type": "KillGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "gadgetInfo": {
                                 "configID": 41066004
                             }
@@ -214,9 +214,9 @@
                                 "attenuationTag": "ExtraAttack",
                                 "attenuationGroup": "Avatar_Pole_ExtraAttack",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": 0.0,
-                                    "damagePercentageRatio": 0.0,
-                                    "elementDurability": 25.0,
+                                    "MDJIHDGGPHA": 0.0,
+                                    "NEFPGMGNGAK": 0.0,
+                                    "bonusCriticalHurt": 25.0,
                                     "overrideByWeapon": true,
                                     "strikeType": "Slash",
                                     "enBreak": 120.0,
@@ -233,7 +233,7 @@
                                     "shakeTime": 0.11999999731779099,
                                     "shakeDistance": 30.0,
                                     "shakeDir": {
-                                        "_x": -1.0
+                                        "x": -1.0
                                     }
                                 },
                                 "canBeModifiedBy": "OriginOwner"
@@ -246,26 +246,26 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "filterByFrame": true,
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 0.800000011920929
+                                    "PHALDBNIMGI": 0.800000011920929
                                 },
                                 "attackInfo": {
                                     "attackTag": "ExtraAttack",
                                     "attenuationTag": "ExtraAttack",
                                     "attenuationGroup": "Avatar_Pole_ExtraAttack",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": 0.0,
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 25.0,
+                                        "MDJIHDGGPHA": 0.0,
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Slash",
                                         "enBreak": 120.0,
@@ -282,7 +282,7 @@
                                         "shakeTime": 0.11999999731779099,
                                         "shakeDistance": 30.0,
                                         "shakeDir": {
-                                            "_x": -1.0
+                                            "x": -1.0
                                         }
                                     },
                                     "canBeModifiedBy": "OriginOwner"
@@ -344,7 +344,7 @@
             "modifiers": {
                 "Ayato_ElementalArt_SkinSet": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorTrigger",
@@ -354,11 +354,12 @@
                 },
                 "Ayato_ElementalArt_Hide": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_HideSpark"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_HideSpark",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "ActCameraRadialBlur",
@@ -370,37 +371,38 @@
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "passThrough": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_ShowSpark"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_ShowSpark",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         },
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ShowWeaponMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "MoreThan"
                                 }
                             ],
@@ -415,27 +417,27 @@
                 },
                 "Ayato_ElementalArt_AttackHide": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetVisible",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "visible": true
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ShowWeaponMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "MoreThan"
                                 }
                             ],
@@ -452,14 +454,14 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10662,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10662,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Avatar_Ayato_KendoPose_Buff_Level",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -626,12 +628,12 @@
                 "Ayato_ForceHideKatana_OnExit": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Ayato_ShowWeaponMark",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -641,8 +643,8 @@
                     "onRemoved": [
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -1.0,
+                            "RotationDampTime": true,
+                            "ratio": -1.0,
                             "key": "_ABILITY_Ayato_ShowWeaponMark",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -650,12 +652,12 @@
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ShowWeaponMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -672,18 +674,18 @@
                 "Ayato_Weapon_Eff_On": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Ayato_Katana_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Ayato_SheatheCircle_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -693,12 +695,12 @@
                 "Ayato_Weapon_Eff_CircleOff": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Ayato_SheatheCircle_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -708,12 +710,12 @@
                 "Ayato_Weapon_Eff_Off": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Ayato_Katana_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -723,20 +725,20 @@
                 "Ayato_Weapon_Eff_OnExit": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Ayato_Katana_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Ayato_SheatheCircle_FXMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -746,40 +748,43 @@
                 "Ayato_Katana_FXHandler": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Weapon"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Weapon",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Weapon_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Weapon_Disappear",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Ayato_Katana_FXSheathe": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_SpecialAttack_SheatheKeep"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_SpecialAttack_SheatheKeep",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "UNIQUE_Avatar_Ayato_KendoPose_State": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "Dura",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Dura",
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "SwitchSkillIDMixin",
-                            "overtime": 10663
+                            "skillID": 10663
                         }
                     ],
                     "properties": {
@@ -788,12 +793,12 @@
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "boolID": "Ayato_Hold_SpecialAttack"
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "partNames": [
                                 "equip01",
                                 "equip02",
@@ -802,8 +807,8 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Ayato_ShowWeaponMark",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -818,53 +823,53 @@
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Ayato_KendoPose",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SetAnimatorInt",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "intID": "SpecialAttack",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorBool",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "boolID": "Ayato_Hold_SpecialAttack"
                         },
                         {
                             "$type": "ResetAnimatorTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "triggerID": "DoSkill"
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Avatar_Ayato_KendoPose_Buff_Level_Remove"
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Avatar_Ayato_KendoPose",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SetAnimatorInt",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "intID": "SpecialAttack",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
-                            "value": -1.0,
+                            "RotationDampTime": true,
+                            "ratio": -1.0,
                             "key": "_ABILITY_Ayato_ShowWeaponMark",
                             "useLimitRange": true,
                             "maxValue": 5.0,
@@ -872,12 +877,12 @@
                         },
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ShowWeaponMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -904,7 +909,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
@@ -931,14 +936,14 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Avatar_Ayato_Talent6_IsCharged",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "compareType": "MoreThanAndEqual"
                                         }
                                     ],
                                     "successActions": [
                                         {
                                             "$type": "SetGlobalValue",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "key": "_ABILITY_Avatar_Ayato_Talent6_IsCharged",
                                             "maxValue": 0.0,
                                             "minValue": 0.0
@@ -968,34 +973,34 @@
                     "onReconnect": [
                         {
                             "$type": "SetAnimatorInt",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "intID": "SpecialAttack",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "SetAnimatorBool",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "boolID": "Ayato_Hold_SpecialAttack"
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff_Level_Remove": {
                     "modifierName": "",
-                    "duration": 0.20000000298023224,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.20000000298023224,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Avatar_Ayato_KendoPose",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Avatar_Ayato_KendoPose_Buff_Level",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1005,12 +1010,12 @@
                 "Avatar_Ayato_KendoPose_BuffAdd": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.05000000074505806,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.05000000074505806,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAbility",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "abilityName": "Avatar_Ayato_KendoPose_Buff",
                             "abilitySpecials": {
                                 "AddLevel": 1.0
@@ -1020,7 +1025,7 @@
                 },
                 "Ayato_ElementalArt_DropBall": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -1043,7 +1048,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -1059,8 +1064,8 @@
                 "Ball": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.899999976158142,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.899999976158142,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "GenerateElemBall",
@@ -1068,12 +1073,12 @@
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "ratio": 1.0,
+                            "GADHOGJLEIJ": 1.0,
                             "baseEnergy": 3.0
                         },
                         {
@@ -1086,12 +1091,12 @@
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 }
                             ]
@@ -1102,16 +1107,16 @@
             "onAdded": [
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Avatar_Ayato_KendoPose",
                     "maxValue": 0.0,
                     "minValue": 0.0
                 },
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Ayato_ShowWeaponMark",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -1134,7 +1139,7 @@
                             "talentParam": "TalentParam_Ayato_Talent6"
                         }
                     ],
-                    "value": 1.0,
+                    "ratio": 1.0,
                     "key": "_ABILITY_Avatar_Ayato_Talent6_IsCharged",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -1143,23 +1148,23 @@
             "onKill": [
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Avatar_Ayato_KendoPose",
                     "maxValue": 0.0,
                     "minValue": 0.0
                 },
                 {
                     "$type": "SetAnimatorInt",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "intID": "SpecialAttack",
-                    "value": 0.0
+                    "ratio": 0.0
                 }
             ],
-            "onAvatarOut": [
+            "ELMEGFLPEKG": [
                 {
                     "$type": "RemoveModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "UNIQUE_Avatar_Ayato_KendoPose_State"
                 }
             ]
@@ -1172,7 +1177,7 @@
             "abilityMixins": [
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10663,
+                    "skillID": 10663,
                     "chargeTime": 0.15000000596046448,
                     "secondChargeTime": 999999.0,
                     "OnBeginUncharged": [
@@ -1183,7 +1188,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 3.0
+                            "ratio": 3.0
                         }
                     ],
                     "OnBeginCharged": [
@@ -1195,7 +1200,7 @@
                     "OnReleaseCharged": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Avatar_Ayato_Hold_SpecialAttack"
                         }
                     ],
@@ -1208,7 +1213,7 @@
                     "OnReleaseSecondCharged": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Avatar_Ayato_Hold_SpecialAttack"
                         }
                     ]
@@ -1219,18 +1224,18 @@
                     "stacking": "Unique",
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "Ayato_Hold_SpecialAttack",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorBool",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "boolID": "Ayato_Hold_SpecialAttack"
                         }
                     ]
@@ -1268,7 +1273,7 @@
                         [
                             {
                                 "$type": "RemoveModifier",
-                                "doOffStage": true,
+                                "RotationDampTime": true,
                                 "modifierName": "Avatar_Ayato_KendoPose_BuffTimer"
                             }
                         ],
@@ -1276,35 +1281,40 @@
                             {
                                 "$type": "SendEffectTrigger",
                                 "parameter": "L1",
-                                "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                                "attachPoint": "",
+                                "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                             }
                         ],
                         [
                             {
                                 "$type": "SendEffectTrigger",
                                 "parameter": "L2",
-                                "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                                "attachPoint": "",
+                                "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                             }
                         ],
                         [
                             {
                                 "$type": "SendEffectTrigger",
                                 "parameter": "L3",
-                                "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                                "attachPoint": "",
+                                "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                             }
                         ],
                         [
                             {
                                 "$type": "SendEffectTrigger",
                                 "parameter": "L4",
-                                "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                                "attachPoint": "",
+                                "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                             }
                         ],
                         [
                             {
                                 "$type": "SendEffectTrigger",
                                 "parameter": "L5",
-                                "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                                "attachPoint": "",
+                                "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                             }
                         ]
                     ]
@@ -1332,64 +1342,66 @@
             "modifiers": {
                 "Avatar_Ayato_KendoPose_BuffEffect": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "Buff_Dura",
                         0.5,
-                        "Add"
+                        "ADD"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_BuffTimer": {
                     "modifierName": "",
-                    "duration": "Buff_Dura",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Buff_Dura",
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Avatar_Ayato_KendoPose_Buff_Level",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SendEffectTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "parameter": "Die",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_AttackBuff"
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Avatar_Ayato_KendoPose_BuffEffect_Delay"
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_BuffEffect_Delay": {
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Avatar_Ayato_KendoPose_BuffEffect"
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff0": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 },
                 "Avatar_Ayato_KendoPose_Buff1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -1398,18 +1410,18 @@
                                 "SP_ATK02",
                                 "SP_ATK03"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_MAX_HP",
                                 "PropToDamageExtraRatio",
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -1418,20 +1430,20 @@
                                 "SP_ATK02",
                                 "SP_ATK03"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_MAX_HP",
                                 "PropToDamageExtraRatio",
-                                "Mul",
+                                "MUL",
                                 2.0,
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff3": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -1440,20 +1452,20 @@
                                 "SP_ATK02",
                                 "SP_ATK03"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_MAX_HP",
                                 "PropToDamageExtraRatio",
-                                "Mul",
+                                "MUL",
                                 3.0,
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff4": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -1462,20 +1474,20 @@
                                 "SP_ATK02",
                                 "SP_ATK03"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_MAX_HP",
                                 "PropToDamageExtraRatio",
-                                "Mul",
+                                "MUL",
                                 4.0,
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_Buff5": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -1484,20 +1496,20 @@
                                 "SP_ATK02",
                                 "SP_ATK03"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_MAX_HP",
                                 "PropToDamageExtraRatio",
-                                "Mul",
+                                "MUL",
                                 5.0,
-                                "Mul"
+                                "MUL"
                             ]
                         }
                     ]
                 },
                 "Avatar_Ayato_KendoPose_HPBuff": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_MaxHPRatio": "Tlant2_MaxHPRatio"
                     }
@@ -1518,17 +1530,17 @@
                 },
                 {
                     "$type": "AddGlobalValue",
-                    "value": "AddLevel",
+                    "ratio": "AddLevel",
                     "key": "_ABILITY_Avatar_Ayato_KendoPose_Buff_Level",
                     "useLimitRange": true,
                     "maxValue": "MaxKendoBuffLevel",
                     "minValue": 0.0
                 }
             ],
-            "onAvatarOut": [
+            "ELMEGFLPEKG": [
                 {
                     "$type": "RemoveModifier",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "modifierName": "Avatar_Ayato_KendoPose_BuffTimer"
                 }
             ]
@@ -1547,7 +1559,8 @@
             "onAdded": [
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Gadget"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Gadget",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerAbility",
@@ -1567,7 +1580,8 @@
             "onAbilityStart": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Gadget_Break"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Gadget_Break",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
@@ -1575,18 +1589,18 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackSphere",
-                            "lifeTime": "TriggerNoRepeat",
-                            "radius": 3.5
+                            "triggerType": "TriggerNoRepeat",
+                            "PHALDBNIMGI": 3.5
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Art",
                             "attenuationTag": "Elemental_Art",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "ArtGadget_Damage",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "ArtGadget_Damage",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Water",
-                                "elementDurability": 25.0,
+                                "bonusCriticalHurt": 25.0,
                                 "strikeType": "Default",
                                 "enBreak": 100.0,
                                 "attackType": "Melee"
@@ -1613,7 +1627,7 @@
                             "$type": "ByTargetGlobalValue",
                             "target": "OriginOwner",
                             "key": "_ABILITY_Avatar_Ayato_KendoPose",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "successActions": [
@@ -1628,7 +1642,8 @@
                         {
                             "$type": "FireEffect",
                             "target": "OriginOwner",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Constellation1_Avatar"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalArt_Constellation1_Avatar",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
@@ -1696,17 +1711,18 @@
             "modifiers": {
                 "Ayato_ElementalBurst_Weapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_WeaponDither"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_WeaponDither",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Ayato_ElementalBurst_WeaponDisappear": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "RemoveModifier",
@@ -1714,14 +1730,15 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_WeaponDither_Disappear"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_WeaponDither_Disappear",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "ElementalBurst_Protection": {
                     "modifierName": "",
-                    "duration": 3.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 3.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "WindZoneMixin",
@@ -1729,14 +1746,14 @@
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "strength": -3.0,
-                            "attenuation": 2.0,
-                            "innerRadius": 0.0,
+                            "IKGEBLKGCPK": -3.0,
+                            "innerRadius": 2.0,
+                            "radius": 0.0,
                             "targetType": "Enemy",
                             "predicates": [
                                 {
@@ -1765,7 +1782,7 @@
                 },
                 "ElementalBurst_TriggerAction": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetAnimatorTrigger",
@@ -1778,17 +1795,17 @@
                                     "$type": "ByAttackNotHitScene",
                                     "attackPattern": {
                                         "$type": "ConfigAttackCircle",
-                                        "lifeTime": "TriggerNoRepeat",
+                                        "triggerType": "TriggerNoRepeat",
                                         "born": {
                                             "$type": "ConfigBornBySelf",
                                             "offset": {
-                                                "x": 0.0,
-                                                "y": 0.5,
-                                                "z": 0.0
+                                                "NMLENGBJMAA": 0.0,
+                                                "OKBPMDLDKLI": 0.5,
+                                                "OGKDKNLKIDE": 0.0
                                             }
                                         },
-                                        "secondHeight": 2.0,
-                                        "radius": 1.0
+                                        "height": 2.0,
+                                        "PHALDBNIMGI": 1.0
                                     },
                                     "checkWaterLayer": true
                                 },
@@ -1814,7 +1831,8 @@
                             "failActions": [
                                 {
                                     "$type": "FireEffect",
-                                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_NoCamera"
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_NoCamera",
+                                    "COOMHFHLGFG": -1.0
                                 }
                             ]
                         }
@@ -1822,7 +1840,7 @@
                     "onRemoved": [
                         {
                             "$type": "AvatarCameraParam",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "cameraParam": {
                                 "forceRadius": 6.0,
                                 "forceRadiusDuration": 0.6000000238418579,
@@ -1833,7 +1851,7 @@
                 },
                 "Camera_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -1858,32 +1876,32 @@
                     "onRemoved": [
                         {
                             "$type": "DungeonFogEffects",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "cameraFogEffectName": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_BeforeCamera",
                             "playerFogEffectName": ""
                         },
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "ControlEmotion",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "EnableHeadControl",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "enable": true
                         }
                     ]
                 },
                 "ElementalBurst_WeatherAndHideWeapon": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "partNames": [
                                 "equip01",
                                 "equip02",
@@ -1894,12 +1912,12 @@
                     "onRemoved": [
                         {
                             "$type": "TriggerHideWeapon",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ShowWeaponMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -1914,7 +1932,7 @@
                 },
                 "Ayato_ElementalBurst_Attack": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "KillGadget",
@@ -1926,14 +1944,14 @@
                     "onRemoved": [
                         {
                             "$type": "CreateGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "gadgetID": 41066002,
                             "campID": 1001,
                             "campTargetType": "Enemy"
                         },
                         {
                             "$type": "TriggerAbility",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
@@ -1948,9 +1966,9 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "overtime": 10665,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "skillID": 10665,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 }
             ]
         }
@@ -1969,12 +1987,12 @@
             "modifiers": {
                 "Avatar_Ayato_ElementalBurst_Gadget_Select": {
                     "modifierName": "",
-                    "duration": [
+                    "KPGONJCLMDC": [
                         "Field_Dura",
                         0.20000000298023224,
-                        "Sub"
+                        "SUB"
                     ],
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.5,
                     "onAdded": [
                         {
@@ -1984,8 +2002,8 @@
                                 "$type": "ConfigBornBySelf",
                                 "bornRandom": {
                                     "$type": "BornRandomFromCenter",
-                                    "minRandomRange": 1.5,
-                                    "maxRandomRange": 9.5
+                                    "maxRandomRange": 1.5,
+                                    "minRandomRange": 9.5
                                 },
                                 "onGround": true
                             }
@@ -2010,13 +2028,13 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Ayato_ElementalBurstMark",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 },
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -2060,10 +2078,10 @@
                     "onThinkInterval": [
                         {
                             "$type": "SetOverrideMapValue",
-                            "value": [
+                            "ratio": [
                                 "Tag",
                                 "Minus",
-                                "Mul"
+                                "MUL"
                             ],
                             "overrideMapKey": "Tag"
                         },
@@ -2085,8 +2103,8 @@
                                         "$type": "ConfigBornBySelf",
                                         "bornRandom": {
                                             "$type": "BornRandomFromCenter",
-                                            "minRandomRange": 1.5,
-                                            "maxRandomRange": 9.5
+                                            "maxRandomRange": 1.5,
+                                            "minRandomRange": 9.5
                                         },
                                         "onGround": true
                                     }
@@ -2111,13 +2129,13 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Ayato_ElementalBurstMark",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ANIMAL_ENTITY_TYPE",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         }
                                     ],
@@ -2148,8 +2166,8 @@
                                         "$type": "ConfigBornBySelf",
                                         "bornRandom": {
                                             "$type": "BornRandomFromCenter",
-                                            "minRandomRange": 1.5,
-                                            "maxRandomRange": 9.5
+                                            "maxRandomRange": 1.5,
+                                            "minRandomRange": 9.5
                                         },
                                         "onGround": true
                                     }
@@ -2174,13 +2192,13 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Ayato_ElementalBurstMark",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         },
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ANIMAL_ENTITY_TYPE",
-                                            "value": 0.0,
+                                            "ratio": 0.0,
                                             "compareType": "NoneOrEqual"
                                         }
                                     ],
@@ -2223,13 +2241,13 @@
                             "modifierName": "UNIQUE_Avatar_Ayato_ElementalBurst_NormalAttackUp"
                         }
                     ],
-                    "NHFJDDBKNCM": true
+                    "HCNIELFHOMO": true
                 },
                 "Ayato_ElementalBurst_Gadget_Timer1": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.75,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.75,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.6000000238418579,
                     "onAdded": [
                         {
@@ -2238,7 +2256,7 @@
                             "successActions": [
                                 {
                                     "$type": "FireSubEmitterEffect",
-                                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_02",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_02",
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos1",
@@ -2249,7 +2267,7 @@
                             "failActions": [
                                 {
                                     "$type": "FireSubEmitterEffect",
-                                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_03",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_03",
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos1",
@@ -2265,30 +2283,30 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "massiveAttackRatio": 0.6000000238418579,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": -1.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": -1.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos1",
                                         "directionKey": ""
                                     },
-                                    "secondHeight": 3.5,
-                                    "radius": 2.5
+                                    "height": 3.5,
+                                    "PHALDBNIMGI": 2.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 50.0,
                                         "attackType": "Range"
@@ -2308,13 +2326,13 @@
                             "modifierName": "Ayato_ElementalBurst_Gadget_Timer1"
                         }
                     ],
-                    "NHFJDDBKNCM": true
+                    "HCNIELFHOMO": true
                 },
                 "Ayato_ElementalBurst_Gadget_Timer2": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.75,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.75,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.6000000238418579,
                     "onAdded": [
                         {
@@ -2323,7 +2341,7 @@
                             "successActions": [
                                 {
                                     "$type": "FireSubEmitterEffect",
-                                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_02",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_02",
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos2",
@@ -2334,7 +2352,7 @@
                             "failActions": [
                                 {
                                     "$type": "FireSubEmitterEffect",
-                                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_03",
+                                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Image_03",
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos2",
@@ -2350,30 +2368,30 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackCircle",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "massiveAttackRatio": 0.6000000238418579,
                                     "born": {
                                         "$type": "ConfigBornByGlobalValue",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": -1.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": -1.0,
+                                            "OGKDKNLKIDE": 0.0
                                         },
                                         "positionKey": "_ABILITY_Ayato_ElementalBurst_TriggerPos2",
                                         "directionKey": ""
                                     },
-                                    "secondHeight": 3.5,
-                                    "radius": 2.5
+                                    "height": 3.5,
+                                    "PHALDBNIMGI": 2.5
                                 },
                                 "attackInfo": {
                                     "attackTag": "Elemental_Burst",
                                     "attenuationTag": "Elemental_Burst",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Damage",
-                                        "damagePercentageRatio": 0.0,
+                                        "MDJIHDGGPHA": "Damage",
+                                        "NEFPGMGNGAK": 0.0,
                                         "elementType": "Water",
-                                        "elementDurability": 25.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "strikeType": "Default",
                                         "enBreak": 50.0,
                                         "attackType": "Range"
@@ -2393,13 +2411,13 @@
                             "modifierName": "Ayato_ElementalBurst_Gadget_Timer2"
                         }
                     ],
-                    "NHFJDDBKNCM": true
+                    "HCNIELFHOMO": true
                 },
                 "UNIQUE_Avatar_Ayato_ElementalBurst_NormalAttackUp": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -2411,13 +2429,14 @@
                                 "NormalAttack_05",
                                 "NormalAttack_06"
                             ],
-                            "damagePercentageRatio": "NormalAttackUp"
+                            "NEFPGMGNGAK": "NormalAttackUp"
                         }
                     ],
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Buff"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Buff",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "isLimitedProperties": true
@@ -2425,12 +2444,12 @@
                 "Ayato_ElementalBurst_Mark": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 1.4500000476837158,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.4500000476837158,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Ayato_ElementalBurstMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2439,7 +2458,7 @@
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Ayato_ElementalBurstMark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2448,7 +2467,7 @@
                 },
                 "Ayato_ElementalBurst_Gadget_Weather": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -2467,7 +2486,8 @@
                 },
                 {
                     "$type": "AttachEffect",
-                    "effectPattern": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Circle"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_ElementalBurst_Circle",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "AttachModifier",
@@ -2502,7 +2522,7 @@
             "modifiers": {
                 "Avatar_Ayato_OffStage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachModifierToPredicateMixin",
@@ -2510,7 +2530,7 @@
                                 {
                                     "$type": "ByEnergyRatio",
                                     "logic": "Lesser",
-                                    "ratio": "TriggerRatio"
+                                    "GADHOGJLEIJ": "TriggerRatio"
                                 }
                             ],
                             "modifierName": "Avatar_Ayato_ReviveEnergy_OffStage"
@@ -2519,16 +2539,16 @@
                 },
                 "Avatar_Ayato_ReviveEnergy_OffStage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": "Interval",
                     "onThinkInterval": [
                         {
                             "$type": "ReviveElemEnergy",
-                            "doOffStage": true,
-                            "value": "Energy"
+                            "RotationDampTime": true,
+                            "ratio": "Energy"
                         }
                     ],
-                    "NHFJDDBKNCM": true
+                    "HCNIELFHOMO": true
                 }
             },
             "onAdded": [
@@ -2543,7 +2563,7 @@
                     "successActions": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Avatar_Ayato_IsOffStage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2552,7 +2572,7 @@
                     "failActions": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Avatar_Ayato_IsOffStage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2563,18 +2583,18 @@
             "onAvatarIn": [
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 0.0,
+                    "RotationDampTime": true,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Avatar_Ayato_IsOffStage",
                     "maxValue": 0.0,
                     "minValue": 0.0
                 }
             ],
-            "onAvatarOut": [
+            "ELMEGFLPEKG": [
                 {
                     "$type": "SetGlobalValue",
-                    "doOffStage": true,
-                    "value": 1.0,
+                    "RotationDampTime": true,
+                    "ratio": 1.0,
                     "key": "_ABILITY_Avatar_Ayato_IsOffStage",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -2597,7 +2617,7 @@
                         "SP_ATK04",
                         "SP_ATK05"
                     ],
-                    "damagePercentageRatio": "DamageUp",
+                    "NEFPGMGNGAK": "DamageUp",
                     "predicates": [
                         {
                             "$type": "ByTargetHPRatio",
@@ -2626,8 +2646,8 @@
                 "UNIQUE_Ayato_ElementalBurst_Talent4Buff": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "Talent4_Time",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Talent4_Time",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_AttackSpeedRatio": "AttackSpeed"
                     },
@@ -2642,7 +2662,7 @@
                         {
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "LesserOrEqual",
-                            "value": 40.0
+                            "ratio": 40.0
                         }
                     ],
                     "modifierName": "UNIQUE_Ayato_ElementalBurst_Talent4Buff"
@@ -2654,7 +2674,7 @@
                         {
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "LesserOrEqual",
-                            "value": 40.0
+                            "ratio": 40.0
                         }
                     ],
                     "modifierName": "UNIQUE_Ayato_ElementalBurst_Talent4Buff"
@@ -2684,7 +2704,7 @@
             "modifiers": {
                 "Avatar_Ayato_Talent6_Ready": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.800000011920929,
                     "onAdded": [
                         {
@@ -2693,13 +2713,14 @@
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_Constellation_6_Watch"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_Constellation_6_Watch",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onThinkInterval": [
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": false,
+                            "RotationDampTime": false,
                             "modifierName": "Ayato_Constellation_6_Fx"
                         }
                     ],
@@ -2709,22 +2730,23 @@
                             "modifierName": "Ayato_Constellation_6_Fx"
                         }
                     ],
-                    "onAvatarOut": [
+                    "ELMEGFLPEKG": [
                         {
                             "$type": "RemoveModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Ayato_Constellation_6_Fx"
                         }
                     ]
                 },
                 "Ayato_Constellation_6_Fx": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "doOffStage": true,
-                            "effectPattern": "Eff_Avatar_Male_Sword_Ayato_Constellation_6_WatchTrail"
+                            "RotationDampTime": true,
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Male_Sword_Ayato_Constellation_6_WatchTrail",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 }
@@ -2739,8 +2761,8 @@
             "modifiers": {
                 "Avatar_Ayato_Talent6_BeforeCamera": {
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerPostProcessEffectMixin",
@@ -2769,96 +2791,96 @@
                     "animEventNames": [
                         "ATK01"
                     ],
-                    "bonusCriticalHurt": "Attack01",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack01",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK02"
                     ],
-                    "bonusCriticalHurt": "Attack02",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack02",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK03"
                     ],
-                    "bonusCriticalHurt": "Attack03",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack03",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK04"
                     ],
-                    "bonusCriticalHurt": "Attack04",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack04",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK04_01"
                     ],
-                    "bonusCriticalHurt": "Attack04",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack04",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK05"
                     ],
-                    "bonusCriticalHurt": "Attack05",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Attack05",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "attackTags": [
                         "ExtraAttack"
                     ],
-                    "bonusCriticalHurt": "ExtraAttack",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "ExtraAttack",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "SP_ATK01"
                     ],
-                    "bonusCriticalHurt": "SPAttack01",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "SPAttack01",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "SP_ATK02"
                     ],
-                    "bonusCriticalHurt": "SPAttack02",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "SPAttack02",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "SP_ATK03"
                     ],
-                    "bonusCriticalHurt": "SPAttack03",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "SPAttack03",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "SP_ATK04"
                     ],
-                    "bonusCriticalHurt": "SPAttack04",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "SPAttack04",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "SP_ATK05"
                     ],
-                    "bonusCriticalHurt": "SPAttack05",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "SPAttack05",
+                    "NEFPGMGNGAK": 0.0
                 }
             ],
             "abilitySpecials": {
@@ -3004,18 +3026,19 @@
             "modifiers": {
                 "FallingAnthem_AttachWeaponEffect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Self_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Self_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_CameraRadialBlur": {
                     "modifierName": "",
-                    "duration": 0.23000000417232513,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.23000000417232513,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CameraBlurMixin",
@@ -3028,17 +3051,18 @@
                 },
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -3053,7 +3077,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onThinkInterval": [
                         {
@@ -3061,25 +3085,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Slash",
                                         "enBreak": 25.0,
@@ -3098,7 +3122,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -3110,10 +3134,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -3125,14 +3149,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -3144,14 +3168,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -3163,14 +3187,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -3181,10 +3205,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -3198,7 +3222,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -3213,14 +3237,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "FallingAnthem_Loop_Normal": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachModifierToSelfGlobalValueMixin",
@@ -3240,27 +3264,29 @@
                 },
                 "FallingAnthem_Loop_Normal_Rank_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Loop_01"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Loop_01",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_Loop_Normal_Rank_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Sword_FallAnthem_Loop_02"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Loop_02",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -3271,7 +3297,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -3279,10 +3305,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -3293,10 +3319,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -3308,33 +3334,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -3344,7 +3370,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -3352,7 +3378,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -3366,17 +3392,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -3384,7 +3410,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -3398,7 +3424,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -3411,7 +3437,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce_AS": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -3430,7 +3456,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -3438,26 +3464,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 100.0,
@@ -3475,7 +3501,7 @@
                                 "shakeTime": 0.11999999731779099,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.23999999463558197,
@@ -3493,33 +3519,33 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 5.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 5.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 150.0,
@@ -3537,8 +3563,8 @@
                                 "shakeTime": 0.20000000298023224,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0,
-                                    "_z": 1.0
+                                    "y": 1.0,
+                                    "z": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.4000000059604645,
@@ -3556,12 +3582,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Sword_FallAnthem_Strike_01"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Strike_01",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -3569,11 +3596,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Sword_FallAnthem_Strike_02"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sword_FallAnthem_Strike_02",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }

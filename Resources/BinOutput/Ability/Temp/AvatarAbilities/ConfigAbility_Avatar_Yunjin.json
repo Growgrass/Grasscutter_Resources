@@ -9,56 +9,56 @@
                     "animEventNames": [
                         "ATK01"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_01_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_01_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK02"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_02_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_02_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK03A"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_03A_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_03A_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK03B"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_03B_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_03B_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK04A"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_04A_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_04A_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK04B"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_04B_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_04B_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 },
                 {
                     "$type": "ModifyDamageMixin",
                     "animEventNames": [
                         "ATK05"
                     ],
-                    "bonusCriticalHurt": "Yunjin_NormalAttack_05_Damage_AtkRatio",
-                    "damagePercentageRatio": 0.0
+                    "MDJIHDGGPHA": "Yunjin_NormalAttack_05_Damage_AtkRatio",
+                    "NEFPGMGNGAK": 0.0
                 }
             ],
             "abilitySpecials": {
@@ -100,7 +100,7 @@
                 },
                 {
                     "$type": "ButtonHoldChargeMixin",
-                    "overtime": 10641,
+                    "skillID": 10641,
                     "chargeTime": 0.11999999731779099,
                     "secondChargeTime": 0.20000000298023224,
                     "OnBeginUncharged": [
@@ -117,20 +117,20 @@
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 0,
+                                            "ratio": 0,
                                             "parameter": "ComboCount"
                                         },
                                         {
                                             "$type": "ByAnimatorInt",
                                             "logic": "Equal",
-                                            "value": 5,
+                                            "ratio": 5,
                                             "parameter": "ComboCount"
                                         }
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 99.0
+                            "ratio": 99.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -141,14 +141,14 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginCharged": [
                         {
                             "$type": "SetAnimatorBool",
                             "boolID": "IsCharging",
-                            "value": true
+                            "ratio": true
                         }
                     ],
                     "OnReleaseCharged": [
@@ -159,7 +159,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "SkillID",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "OnBeginSecondCharged": [
@@ -172,7 +172,7 @@
                                     "stamina": [
                                         "ExtraAttack_Pole_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
@@ -187,12 +187,12 @@
                                     "stamina": [
                                         "ExtraAttack_Pole_Stamina_Cost",
                                         "Flexible_Stamina",
-                                        "Add"
+                                        "ADD"
                                     ]
                                 }
                             ],
                             "intID": "SkillID",
-                            "value": 6.0
+                            "ratio": 6.0
                         },
                         {
                             "$type": "SetAnimatorBool",
@@ -222,71 +222,83 @@
             "modifiers": {
                 "ExtraAttack_StaminaCost": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10002,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": "ExtraAttack_Pole_Stamina_Cost"
+                            "skillID": 10002,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": "ExtraAttack_Pole_Stamina_Cost"
                         }
                     ]
                 },
                 "ExtraAttack_FX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ExtraAttack_Sprint",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ExtraAttack_Sprint",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.30000001192092896,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.30000001192092896,
+                                    "OGKDKNLKIDE": 0.0
                                 }
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "ExtraAttack_BS_FX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ExtraAttack_BS",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ExtraAttack_BS",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.30000001192092896,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.30000001192092896,
+                                    "OGKDKNLKIDE": 0.0
                                 }
-                            }
+                            },
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "ExtraAttack_CloseCollider": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "passThrough": true
+                        },
+                        {
+                            "$type": "EnableHDMesh",
+                            "IBJNANMCAIC": "Default"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "TriggerSetPassThrough",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "canBeHandledOnRecover": true
                         },
                         {
+                            "$type": "EnableHDMesh",
+                            "canBeHandledOnRecover": true,
+                            "enable": true,
+                            "IBJNANMCAIC": "Default"
+                        },
+                        {
                             "$type": "KillGadget",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "gadgetInfo": {
                                 "configID": 41064011
                             }
@@ -336,9 +348,9 @@
                                 "attenuationTag": "ExtraAttack",
                                 "attenuationGroup": "Avatar_Pole_ExtraAttack",
                                 "attackProperty": {
-                                    "bonusCriticalHurt": "Yunjin_ExtraAttack_Damage_AtkRatio",
-                                    "damagePercentageRatio": 0.0,
-                                    "elementDurability": 25.0,
+                                    "MDJIHDGGPHA": "Yunjin_ExtraAttack_Damage_AtkRatio",
+                                    "NEFPGMGNGAK": 0.0,
+                                    "bonusCriticalHurt": 25.0,
                                     "overrideByWeapon": true,
                                     "strikeType": "Spear",
                                     "enBreak": 120.0,
@@ -356,7 +368,7 @@
                                     "shakeTime": 0.11999999731779099,
                                     "shakeDistance": 30.0,
                                     "shakeDir": {
-                                        "_y": -1.0
+                                        "y": -1.0
                                     }
                                 },
                                 "canBeModifiedBy": "OriginOwner"
@@ -369,25 +381,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornByCollisionPoint",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 0.0
                                         }
                                     },
-                                    "radius": 0.800000011920929
+                                    "PHALDBNIMGI": 0.800000011920929
                                 },
                                 "attackInfo": {
                                     "attackTag": "ExtraAttack",
                                     "attenuationTag": "ExtraAttack",
                                     "attenuationGroup": "Avatar_Pole_ExtraAttack",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "Yunjin_ExtraAttack_Damage_AtkRatio",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 25.0,
+                                        "MDJIHDGGPHA": "Yunjin_ExtraAttack_Damage_AtkRatio",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 25.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Spear",
                                         "enBreak": 120.0,
@@ -405,7 +417,7 @@
                                         "shakeTime": 0.11999999731779099,
                                         "shakeDistance": 30.0,
                                         "shakeDir": {
-                                            "_y": -1.0
+                                            "y": -1.0
                                         }
                                     },
                                     "canBeModifiedBy": "OriginOwner"
@@ -521,16 +533,18 @@
             "modifiers": {
                 "FallingAnthem_BS_Material": {
                     "modifierName": "",
-                    "duration": 0.5299999713897705,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5299999713897705,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Pole_FallingAnthem_BS_Normal"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Pole_FallingAnthem_BS_Normal",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Sprint_Boost"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Sprint_Boost",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onRemoved": [
@@ -546,7 +560,7 @@
                 },
                 "FallingAnthem_BS_VelocityForce_Initialize": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_AddGravityScale": -2.0
                     },
@@ -561,7 +575,7 @@
                 },
                 "FallingAnthem_LoopDamage": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.30000001192092896,
                     "onAdded": [
                         {
@@ -569,25 +583,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 0.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 0.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Slash",
                                         "enBreak": 25.0,
@@ -609,25 +623,25 @@
                             "attackEvent": {
                                 "attackPattern": {
                                     "$type": "ConfigAttackSphere",
-                                    "lifeTime": "TriggerNoRepeat",
+                                    "triggerType": "TriggerNoRepeat",
                                     "born": {
                                         "$type": "ConfigBornBySelf",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "radius": 1.0
+                                    "PHALDBNIMGI": 1.0
                                 },
                                 "attackInfo": {
                                     "attackTag": "FallingAttack",
                                     "attenuationTag": "",
                                     "attenuationGroup": "default",
                                     "attackProperty": {
-                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
-                                        "damagePercentageRatio": 0.0,
-                                        "elementDurability": 100.0,
+                                        "MDJIHDGGPHA": "FallingAnthem_Normal_Loop_Damage",
+                                        "NEFPGMGNGAK": 0.0,
+                                        "bonusCriticalHurt": 100.0,
                                         "overrideByWeapon": true,
                                         "strikeType": "Slash",
                                         "enBreak": 25.0,
@@ -646,7 +660,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_01": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearGlobalValue",
@@ -658,10 +672,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv0",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv0",
@@ -673,14 +687,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv0"
+                                    "ratio": "FallingAnthem_Altitude_Lv0"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv1",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv1",
@@ -692,14 +706,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv1"
+                                    "ratio": "FallingAnthem_Altitude_Lv1"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv2",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv2",
@@ -711,14 +725,14 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 },
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv2"
+                                    "ratio": "FallingAnthem_Altitude_Lv2"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv3",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv3",
@@ -729,10 +743,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": "FallingAnthem_Altitude_Lv3"
+                                    "ratio": "FallingAnthem_Altitude_Lv3"
                                 }
                             ],
-                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "ratio": "FallingAnthem_FallingDamageRatio_Lv4",
                             "key": "_ABILITY_FallingAttack_Altitude",
                             "useLimitRange": true,
                             "maxValue": "FallingAnthem_FallingDamageRatio_Lv4",
@@ -746,7 +760,7 @@
                 },
                 "FallingAnthem_FallingDamageImmune_02": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValueToOverrideMap",
@@ -761,14 +775,14 @@
                 },
                 "FallingAnthem_FallingDamageImmune_03": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
                     }
                 },
                 "FallingAnthem_Loop_Normal": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "AttachModifierToSelfGlobalValueMixin",
@@ -788,27 +802,29 @@
                 },
                 "FallingAnthem_Loop_Normal_Rank_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
-                            "effectPattern": "Eff_Avatar_Pole_FallingAnthem_Loop_01_Normal"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Pole_FallingAnthem_Loop_01_Normal",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "FallingAnthem_Loop_Normal_Rank_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Pole_FallingAnthem_Loop_02_Normal"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Pole_FallingAnthem_Loop_02_Normal",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Inertia": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ApplyInertiaVelocityMixin",
@@ -819,7 +835,7 @@
                 },
                 "FallingAnthem_Height_Detect": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AddGlobalValue",
@@ -827,10 +843,10 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -841,10 +857,10 @@
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
-                            "value": 5.0,
+                            "ratio": 5.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 1.0,
@@ -856,33 +872,33 @@
                                 {
                                     "$type": "ByTargetAltitude",
                                     "logic": "LesserOrEqual",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "SetAnimatorFloat",
                             "predicates": [
                                 {
                                     "$type": "ByTargetAltitude",
-                                    "value": 2.4000000953674316
+                                    "ratio": 2.4000000953674316
                                 }
                             ],
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "SetAnimatorFloat",
                             "floatID": "FallingAnthem_UseCamera",
-                            "value": 0.0
+                            "ratio": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "key": "_ABILITY_FallingAnthem_UseCamera",
                             "useLimitRange": true,
                             "maxValue": 0.0,
@@ -892,7 +908,7 @@
                 },
                 "FallingAnthem_OverHead_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -900,7 +916,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -914,17 +930,17 @@
                 },
                 "FallingAnthem_OverHead_Camera_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         }
                     ]
                 },
                 "FallingAnthem_Landed_Camera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AvatarCameraParam",
@@ -932,7 +948,7 @@
                                 {
                                     "$type": "ByAnimatorFloat",
                                     "logic": "Equal",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "parameter": "FallingAnthem_UseCamera"
                                 }
                             ],
@@ -946,7 +962,7 @@
                 },
                 "FallingAnthem_ClearVelocityForce": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveVelocityForce",
@@ -965,7 +981,7 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
@@ -973,26 +989,26 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 3.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 3.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_1_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 100.0,
@@ -1010,7 +1026,7 @@
                                 "shakeTime": 0.11999999731779099,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0
+                                    "y": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.23999999463558197,
@@ -1028,33 +1044,33 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornByTarget",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": -0.5,
-                                    "z": 1.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": -0.5,
+                                    "OGKDKNLKIDE": 1.0
                                 }
                             },
-                            "secondHeight": 2.0,
-                            "radius": 5.0
+                            "height": 2.0,
+                            "PHALDBNIMGI": 5.0
                         },
                         "attackInfo": {
                             "attackTag": "FallingAttack",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
-                                "damagePercentageRatio": 0.0,
-                                "elementDurability": 25.0,
+                                "MDJIHDGGPHA": "FallingAnthem_Normal_Rank_2_Damage",
+                                "NEFPGMGNGAK": 0.0,
+                                "bonusCriticalHurt": 25.0,
                                 "overrideByWeapon": true,
                                 "strikeType": "Blunt",
                                 "enBreak": 150.0,
@@ -1072,8 +1088,8 @@
                                 "shakeTime": 0.20000000298023224,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_y": 1.0,
-                                    "_z": 1.0
+                                    "y": 1.0,
+                                    "z": 1.0
                                 },
                                 "extension": {
                                     "baseCycle": 0.4000000059604645,
@@ -1091,12 +1107,13 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 0.0,
+                            "ratio": 0.0,
                             "forceByCaster": true,
                             "compareType": "NoneOrEqual"
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Pole_FallingAnthem_Strike_01_Normal"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Pole_FallingAnthem_Strike_01_Normal",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "FireEffect",
@@ -1104,11 +1121,12 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_FallingAnthem_UseCamera",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "forceByCaster": true
                         }
                     ],
-                    "effectPattern": "Eff_Avatar_Pole_FallingAnthem_Strike_02_Normal"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Pole_FallingAnthem_Strike_02_Normal",
+                    "COOMHFHLGFG": -1.0
                 }
             ]
         }
@@ -1120,7 +1138,7 @@
             "abilityMixins": [
                 {
                     "$type": "SkillButtonHoldChargeMixin",
-                    "overtime": 10642,
+                    "skillID": 10642,
                     "nextLoopTriggerID": "NextLoopTrigger",
                     "endHoldTrigger": "EndHoldTrigger",
                     "beforeStateIDs": [
@@ -1221,11 +1239,11 @@
             "modifiers": {
                 "Yunjin_ElementalArt_Loop_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1233,7 +1251,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "CounterStage",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "AttachModifier",
@@ -1243,11 +1261,11 @@
                 },
                 "Yunjin_ElementalArt_Loop_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 2.0,
+                            "ratio": 2.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1255,7 +1273,8 @@
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Stage_2",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
                         },
                         {
                             "$type": "AttachModifier",
@@ -1277,11 +1296,11 @@
                 },
                 "Yunjin_ElementalArt_Loop_3": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1289,12 +1308,13 @@
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Stage_3",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
                         },
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "CounterStage",
-                            "value": 3.0
+                            "ratio": 3.0
                         },
                         {
                             "$type": "AttachModifier",
@@ -1324,12 +1344,12 @@
                 },
                 "Yunjin_ElementalArt_Weapon_VFX_1": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": 3.0,
+                            "value": 3.0,
                             "duration": 0.10000000149011612
                         }
                     ],
@@ -1337,19 +1357,19 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.10000000149011612
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Weapon_VFX_2": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": 6.0,
+                            "value": 6.0,
                             "duration": 0.10000000149011612
                         }
                     ],
@@ -1357,19 +1377,19 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.10000000149011612
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Weapon_VFX_3": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": 8.0,
+                            "value": 8.0,
                             "duration": 0.10000000149011612
                         }
                     ],
@@ -1377,14 +1397,14 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.10000000149011612
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Weapon_Cast_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachModifier",
@@ -1394,12 +1414,12 @@
                 },
                 "Yunjin_ElementalArt_Weapon_Cast_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": 8.0,
+                            "value": 8.0,
                             "duration": 0.10000000149011612
                         }
                     ],
@@ -1407,21 +1427,21 @@
                         {
                             "$type": "SetEmissionScaler",
                             "materialType": "Weapon",
-                            "weight": -1.0,
+                            "value": -1.0,
                             "duration": 0.10000000149011612
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Shield": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "EliteShieldMixin",
                             "shieldType": "Avatar_Rock",
-                            "shieldAngle": 360.0,
-                            "shieldHPRatio": "Yunjin_ElementalArt_Shield_HPRatio",
-                            "shieldHP": "Yunjin_ElementalArt_Shield_Base",
+                            "HBAIHBHCIDH": 360.0,
+                            "shieldHP": "Yunjin_ElementalArt_Shield_HPRatio",
+                            "effectPattern": "Yunjin_ElementalArt_Shield_Base",
                             "costShieldRatioName": "",
                             "showDamageText": "INFO_ELITE_DEFENCE",
                             "onShieldBroken": [
@@ -1435,7 +1455,8 @@
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Shield"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Shield",
+                            "COOMHFHLGFG": -1.0
                         }
                     ],
                     "onBeingHit": [
@@ -1460,43 +1481,45 @@
                 "Yunjin_ElementalArt_Shield_Hit_Handler": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.5,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Hit",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Shield"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Shield"
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Charge_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Charge"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Charge",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Endura": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_EndureDelta": 0.0
                     }
                 },
                 "Yunjin_ElementalArt_Hit_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ClearEndura"
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1504,7 +1527,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "CounterStage",
-                            "value": 1.0
+                            "ratio": 1.0
                         },
                         {
                             "$type": "ApplyModifier",
@@ -1525,7 +1548,7 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Self",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 3.0,
+                                    "ratio": 3.0,
                                     "compareType": "MoreThanAndEqual"
                                 },
                                 {
@@ -1548,12 +1571,12 @@
                 "UNIQUE_Yunjin_ElementalArt_JustGuard_Timer": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_JustGuard_Flag",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1562,8 +1585,8 @@
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_JustGuard_Flag",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1584,7 +1607,7 @@
                 },
                 "Avatar_Yunjin_ElementalArt_Remover": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveUniqueModifier",
@@ -1600,8 +1623,8 @@
                 },
                 "Yunjin_ElementalArt_JustGuard_Handler": {
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ActCameraShake",
@@ -1617,7 +1640,7 @@
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "value": 3.0,
+                            "ratio": 3.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1630,7 +1653,7 @@
                         {
                             "$type": "SetAnimatorInt",
                             "intID": "CounterStage",
-                            "value": "CounterStage"
+                            "ratio": "CounterStage"
                         },
                         {
                             "$type": "SendEffectTrigger",
@@ -1641,7 +1664,8 @@
                                 }
                             ],
                             "parameter": "Stage_3",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
                         },
                         {
                             "$type": "FireEffect",
@@ -1654,16 +1678,17 @@
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Self",
                                     "key": "_ABILITY_Yunjin_JustGuard_Flag",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_JustGuard"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_JustGuard",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_ElementalBall_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAttackLanded": [
                         {
                             "$type": "Predicated",
@@ -1684,7 +1709,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
@@ -1700,8 +1725,8 @@
                 "Yunjin_ElementalArt_ElementalBall": {
                     "stacking": "Unique",
                     "modifierName": "",
-                    "duration": 0.30000001192092896,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.30000001192092896,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "Randomed",
@@ -1713,12 +1738,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 6.0
                                 }
                             ]
@@ -1729,7 +1754,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 2.0
+                                    "ratio": 2.0
                                 }
                             ],
                             "chance": 0.5,
@@ -1740,12 +1765,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 }
                             ]
@@ -1756,7 +1781,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 3.0,
+                                    "ratio": 3.0,
                                     "compareType": "MoreThanAndEqual"
                                 }
                             ],
@@ -1768,12 +1793,12 @@
                                     "born": {
                                         "$type": "ConfigBornByTarget",
                                         "offset": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
+                                            "NMLENGBJMAA": 0.0,
+                                            "OKBPMDLDKLI": 0.0,
+                                            "OGKDKNLKIDE": 1.0
                                         }
                                     },
-                                    "ratio": 1.0,
+                                    "GADHOGJLEIJ": 1.0,
                                     "baseEnergy": 3.0
                                 }
                             ]
@@ -1782,7 +1807,7 @@
                 },
                 "Yunjin_ElementalArt_Kaoqi_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "TriggerAbility",
@@ -1794,7 +1819,7 @@
             "onAdded": [
                 {
                     "$type": "SetGlobalValue",
-                    "value": 0.0,
+                    "ratio": 0.0,
                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
                     "maxValue": 0.0,
                     "minValue": 0.0
@@ -1849,7 +1874,7 @@
             "modifiers": {
                 "Avatar_Yunjin_Kaoqi_Reset": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveUniqueModifier",
@@ -1859,11 +1884,11 @@
                 },
                 "Yunjin_ElementalArt_Kaoqi_Flag": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Flag",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1872,8 +1897,8 @@
                     "onRemoved": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_ElementalArt_Flag",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -1883,51 +1908,54 @@
                 "UNIQUE_Avatar_Yunjin_Kaoqi": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Kaoqi_Cast": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Cast",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
                         }
                     ]
                 },
                 "Yunjin_ElementalArt_Kaoqi_Dissolve": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Avatar_Yunjin_Kaoqi_Remover"
                         }
                     ]
                 },
                 "Avatar_Yunjin_Kaoqi_Remover": {
                     "modifierName": "",
-                    "duration": 0.6000000238418579,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.6000000238418579,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SendEffectTrigger",
                             "parameter": "Dissolve",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_Kaoqi"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByNot",
@@ -1935,7 +1963,7 @@
                                         {
                                             "$type": "ByTargetGlobalValue",
                                             "key": "_ABILITY_Yunjin_ElementalArt_Flag",
-                                            "value": 1.0,
+                                            "ratio": 1.0,
                                             "forceByCaster": true
                                         }
                                     ]
@@ -1974,7 +2002,7 @@
             "modifiers": {
                 "Avatar_Yunjin_ElementalArt_Strike_VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "FireEffect",
@@ -1982,11 +2010,12 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 1.0,
+                                    "ratio": 1.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_1"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_1",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -1994,10 +2023,11 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 2.0
+                                    "ratio": 2.0
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_2"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_2",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "FireEffect",
@@ -2005,10 +2035,11 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 3.0
+                                    "ratio": 3.0
                                 }
                             ],
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_3"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalArt_Cast_3",
+                            "COOMHFHLGFG": -1.0
                         },
                         {
                             "$type": "ApplyModifier",
@@ -2016,7 +2047,7 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                                    "value": 3.0
+                                    "ratio": 3.0
                                 }
                             ],
                             "modifierName": "Avatar_Yunjin_ElementalArt_Strike_Weather"
@@ -2025,8 +2056,8 @@
                 },
                 "Avatar_Yunjin_ElementalArt_Strike_Weather": {
                     "modifierName": "",
-                    "duration": 1.0,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -2041,10 +2072,10 @@
             "onAbilityStart": [
                 {
                     "$type": "AvatarSkillStart",
-                    "doOffStage": true,
-                    "overtime": 10642,
-                    "cdRatio": 1.0,
-                    "costStaminaRatio": 1.0
+                    "RotationDampTime": true,
+                    "skillID": 10642,
+                    "cdDelta": 1.0,
+                    "costStaminaDelta": 1.0
                 },
                 {
                     "$type": "TriggerAttackEvent",
@@ -2052,23 +2083,23 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                            "value": 1.0
+                            "ratio": 1.0
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 1.5,
-                            "radius": 4.0,
+                            "height": 1.5,
+                            "PHALDBNIMGI": 4.0,
                             "detectDirection": "Clockwise"
                         },
                         "attackInfo": {
@@ -2076,16 +2107,16 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "damagePercentageRatio": 0.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Spear",
                                 "enBreak": 100.0,
                                 "attackType": "Melee",
                                 "damageExtra": [
                                     "Yunjin_ElementalArt_LV1_Damage_DefRatio",
                                     "FIGHT_PROP_CUR_DEFENSE",
-                                    "Mul"
+                                    "MUL"
                                 ]
                             },
                             "hitPattern": {
@@ -2101,8 +2132,8 @@
                                 "shakeTime": 0.20999999344348907,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": -0.20000000298023224
+                                    "x": 1.0,
+                                    "y": -0.20000000298023224
                                 }
                             }
                         }
@@ -2115,23 +2146,23 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                            "value": 2.0
+                            "ratio": 2.0
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 1.5,
-                            "radius": 6.0,
+                            "height": 1.5,
+                            "PHALDBNIMGI": 6.0,
                             "detectDirection": "Clockwise"
                         },
                         "attackInfo": {
@@ -2139,16 +2170,16 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "damagePercentageRatio": 0.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Spear",
                                 "enBreak": 200.0,
                                 "attackType": "Melee",
                                 "damageExtra": [
                                     "Yunjin_ElementalArt_LV2_Damage_DefRatio",
                                     "FIGHT_PROP_CUR_DEFENSE",
-                                    "Mul"
+                                    "MUL"
                                 ]
                             },
                             "hitPattern": {
@@ -2164,8 +2195,8 @@
                                 "shakeTime": 0.20999999344348907,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": -0.20000000298023224
+                                    "x": 1.0,
+                                    "y": -0.20000000298023224
                                 }
                             }
                         }
@@ -2178,23 +2209,23 @@
                         {
                             "$type": "ByTargetGlobalValue",
                             "key": "_ABILITY_Yunjin_ElementalArt_Stage",
-                            "value": 3.0
+                            "ratio": 3.0
                         }
                     ],
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 1.5,
-                            "radius": 8.0,
+                            "height": 1.5,
+                            "PHALDBNIMGI": 8.0,
                             "detectDirection": "Clockwise"
                         },
                         "attackInfo": {
@@ -2202,16 +2233,16 @@
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "damagePercentageRatio": 0.0,
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
-                                "elementDurability": 100.0,
+                                "bonusCriticalHurt": 100.0,
                                 "strikeType": "Spear",
                                 "enBreak": 300.0,
                                 "attackType": "Melee",
                                 "damageExtra": [
                                     "Yunjin_ElementalArt_LV3_Damage_DefRatio",
                                     "FIGHT_PROP_CUR_DEFENSE",
-                                    "Mul"
+                                    "MUL"
                                 ]
                             },
                             "hitPattern": {
@@ -2227,8 +2258,8 @@
                                 "shakeTime": 0.30000001192092896,
                                 "shakeDistance": 30.0,
                                 "shakeDir": {
-                                    "_x": 1.0,
-                                    "_y": -0.20000000298023224
+                                    "x": 1.0,
+                                    "y": -0.20000000298023224
                                 }
                             }
                         }
@@ -2285,7 +2316,7 @@
             "modifiers": {
                 "Invincible": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "state": "Invincible",
                     "onAdded": [
                         {
@@ -2296,7 +2327,7 @@
                 },
                 "SkillStart": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveUniqueModifier",
@@ -2304,15 +2335,15 @@
                         },
                         {
                             "$type": "AvatarSkillStart",
-                            "overtime": 10643,
-                            "cdRatio": 1.0,
-                            "costStaminaRatio": 1.0
+                            "skillID": 10643,
+                            "cdDelta": 1.0,
+                            "costStaminaDelta": 1.0
                         }
                     ]
                 },
                 "Weather_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "ApplyModifier",
@@ -2322,8 +2353,8 @@
                 },
                 "Weather": {
                     "modifierName": "",
-                    "duration": 1.5,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 1.5,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "TriggerWeatherMixin",
@@ -2336,18 +2367,19 @@
                 },
                 "VFX": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_BS"
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_BS",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "RadialBlur": {
                     "modifierName": "",
-                    "duration": 0.10000000149011612,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.10000000149011612,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "CameraBlurMixin",
@@ -2360,15 +2392,15 @@
                 },
                 "ExitCamera": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onRemoved": [
                         {
                             "$type": "AvatarExitCameraShot",
-                            "doOffStage": true
+                            "RotationDampTime": true
                         },
                         {
                             "$type": "AvatarCameraParam",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "cameraParam": {
                                 "forceRadius": 6.0,
                                 "forceRadiusDuration": 0.0,
@@ -2381,7 +2413,8 @@
             "onAbilityStart": [
                 {
                     "$type": "FireEffect",
-                    "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Cast"
+                    "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Cast",
+                    "COOMHFHLGFG": -1.0
                 },
                 {
                     "$type": "ApplyModifier",
@@ -2392,28 +2425,28 @@
                     "attackEvent": {
                         "attackPattern": {
                             "$type": "ConfigAttackCircle",
-                            "lifeTime": "TriggerNoRepeat",
+                            "triggerType": "TriggerNoRepeat",
                             "born": {
                                 "$type": "ConfigBornBySelf",
                                 "offset": {
-                                    "x": 0.0,
-                                    "y": 0.0,
-                                    "z": 0.0
+                                    "NMLENGBJMAA": 0.0,
+                                    "OKBPMDLDKLI": 0.0,
+                                    "OGKDKNLKIDE": 0.0
                                 }
                             },
-                            "secondHeight": 4.0,
-                            "radius": 6.0
+                            "height": 4.0,
+                            "PHALDBNIMGI": 6.0
                         },
                         "attackInfo": {
                             "attackTag": "Elemental_Burst",
                             "attenuationTag": "",
                             "attenuationGroup": "default",
                             "attackProperty": {
-                                "bonusCriticalHurt": "Yunjin_ElementalBurst_Damage_AtkRatio",
-                                "damagePercentageRatio": 0.0,
+                                "MDJIHDGGPHA": "Yunjin_ElementalBurst_Damage_AtkRatio",
+                                "NEFPGMGNGAK": 0.0,
                                 "elementType": "Rock",
                                 "elementRank": 1.5,
-                                "elementDurability": 50.0,
+                                "bonusCriticalHurt": 50.0,
                                 "strikeType": "Blunt",
                                 "enBreak": 200.0,
                                 "attackType": "Melee"
@@ -2473,33 +2506,33 @@
                 "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_Handler": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "Yunjin_ElementalBurst_Buff_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Yunjin_ElementalBurst_Buff_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_ElementalBurst_Buff_Mark",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 1.0,
+                            "RotationDampTime": true,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_ElementalBurst_Buff_Mark",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff"
                         },
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_VFX"
                         },
                         {
@@ -2515,7 +2548,7 @@
                         },
                         {
                             "$type": "AttachModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
@@ -2528,13 +2561,13 @@
                     "onRemoved": [
                         {
                             "$type": "ApplyModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "modifierName": "Avatar_Yunjin_Buff_VFX_Remover"
                         },
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_ElementalBurst_Buff_Mark",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2544,7 +2577,7 @@
                 "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageCountMixin",
@@ -2556,15 +2589,15 @@
                                 "NormalAttack_05",
                                 "NormalAttack_06"
                             ],
-                            "damagePercentageRatio": 0.0,
+                            "NEFPGMGNGAK": 0.0,
                             "damageExtra": [
                                 "FIGHT_PROP_CUR_DEFENSE",
                                 "Yunjin_ElementalBurst_Buff_ExtraDamage_DefRatio",
-                                "Mul",
+                                "MUL",
                                 "FIGHT_PROP_CUR_DEFENSE",
                                 "Yunjin_ElementalBurst_Buff_ExtraDamage_ElementNum",
-                                "Mul",
-                                "Add"
+                                "MUL",
+                                "ADD"
                             ],
                             "predicates": [
                                 {
@@ -2576,25 +2609,25 @@
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ANIMAL_ENTITY_TYPE",
-                                    "value": 0.0,
+                                    "ratio": 0.0,
                                     "compareType": "NoneOrEqual"
                                 }
                             ],
-                            "MBAPLKMEFEN": 30.0,
-                            "KIEGNFBHHEC": [
+                            "CJHJKELGKHN": 30.0,
+                            "MKAKNLHEINA": [
                                 {
                                     "$type": "RemoveUniqueModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Yunjin_ElementalBurst_PermanentSkill_2_ElementNum"
                                 },
                                 {
                                     "$type": "RemoveUniqueModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Yunjin_Constellation_6"
                                 },
                                 {
                                     "$type": "ApplyModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "Avatar_Yunjin_Buff_VFX_Remover"
                                 }
                             ]
@@ -2604,25 +2637,26 @@
                 "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_VFX": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "AttachEffect",
-                            "doOffStage": true,
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Buff"
+                            "RotationDampTime": true,
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Buff",
+                            "COOMHFHLGFG": -1.0
                         }
                     ]
                 },
                 "UNIQUE_Yunjin_ElementalBurst_PermanentSkill_2_ElementNum": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "thinkInterval": 0.5,
                     "onAdded": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "maxValue": 0.0,
                             "minValue": 0.0
@@ -2631,15 +2665,15 @@
                     "onThinkInterval": [
                         {
                             "$type": "SetGlobalValue",
-                            "doOffStage": true,
-                            "value": 0.0,
+                            "RotationDampTime": true,
+                            "ratio": 0.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "maxValue": 0.0,
                             "minValue": 0.0
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2648,7 +2682,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2656,7 +2690,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2665,7 +2699,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2673,7 +2707,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2682,7 +2716,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2690,7 +2724,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2699,7 +2733,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2707,7 +2741,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2716,7 +2750,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2724,7 +2758,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2733,7 +2767,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2741,7 +2775,7 @@
                         },
                         {
                             "$type": "AddGlobalValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByBigTeamHasElementType",
@@ -2750,7 +2784,7 @@
                                     "logic": "GreaterOrEqual"
                                 }
                             ],
-                            "value": 1.0,
+                            "ratio": 1.0,
                             "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
                             "useLimitRange": true,
                             "maxValue": 4.0,
@@ -2758,54 +2792,54 @@
                         },
                         {
                             "$type": "SetOverrideMapValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
-                                    "value": 1.0
+                                    "ratio": 1.0
                                 }
                             ],
-                            "value": "Yunjin_PermanentSkill_2_ElementNum_Elem_1",
+                            "ratio": "Yunjin_PermanentSkill_2_ElementNum_Elem_1",
                             "overrideMapKey": "Yunjin_ElementalBurst_Buff_ExtraDamage_ElementNum"
                         },
                         {
                             "$type": "SetOverrideMapValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
-                                    "value": 2.0
+                                    "ratio": 2.0
                                 }
                             ],
-                            "value": "Yunjin_PermanentSkill_2_ElementNum_Elem_2",
+                            "ratio": "Yunjin_PermanentSkill_2_ElementNum_Elem_2",
                             "overrideMapKey": "Yunjin_ElementalBurst_Buff_ExtraDamage_ElementNum"
                         },
                         {
                             "$type": "SetOverrideMapValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
-                                    "value": 3.0
+                                    "ratio": 3.0
                                 }
                             ],
-                            "value": "Yunjin_PermanentSkill_2_ElementNum_Elem_3",
+                            "ratio": "Yunjin_PermanentSkill_2_ElementNum_Elem_3",
                             "overrideMapKey": "Yunjin_ElementalBurst_Buff_ExtraDamage_ElementNum"
                         },
                         {
                             "$type": "SetOverrideMapValue",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "key": "_ABILITY_Yunjin_PermanentSkill_2_ElementNum",
-                                    "value": 4.0
+                                    "ratio": 4.0
                                 }
                             ],
-                            "value": "Yunjin_PermanentSkill_2_ElementNum_Elem_4",
+                            "ratio": "Yunjin_PermanentSkill_2_ElementNum_Elem_4",
                             "overrideMapKey": "Yunjin_ElementalBurst_Buff_ExtraDamage_ElementNum"
                         }
                     ]
@@ -2813,7 +2847,7 @@
                 "UNIQUE_Yunjin_Constellation_6": {
                     "modifierName": "",
                     "isUnique": true,
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Animator_AttackSpeedRatio": "Yunjin_ElementalBurst_Buff_AttackSpeedRatio"
                     },
@@ -2822,8 +2856,8 @@
                 "UNIQUE_Avatar_Yunjin_Constellation_2_Buff": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "Yunjin_Constellation_2_Buff_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Yunjin_Constellation_2_Buff_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "ModifyDamageMixin",
@@ -2835,7 +2869,7 @@
                                 "NormalAttack_05",
                                 "NormalAttack_06"
                             ],
-                            "damagePercentageRatio": "Yunjin_Constellation_2_Buff_DamagePercentageRatio"
+                            "NEFPGMGNGAK": "Yunjin_Constellation_2_Buff_DamagePercentageRatio"
                         }
                     ],
                     "state": "AttackUp",
@@ -2843,26 +2877,27 @@
                 },
                 "Avatar_Yunjin_Buff_VFX_Remover": {
                     "modifierName": "",
-                    "duration": 0.4000000059604645,
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": 0.4000000059604645,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "SendEffectTrigger",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "parameter": "Die",
-                            "effectPattern": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Buff"
+                            "attachPoint": "",
+                            "healLimitedByCasterMaxHPRatio": "Eff_Avatar_Girl_Pole_Yunjin_ElementalBurst_Buff"
                         }
                     ],
                     "onRemoved": [
                         {
                             "$type": "RemoveUniqueModifier",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetGlobalValue",
                                     "target": "Self",
                                     "key": "_ABILITY_Yunjin_ElementalBurst_Buff_Mark",
-                                    "value": 0.0
+                                    "ratio": 0.0
                                 }
                             ],
                             "modifierName": "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_VFX"
@@ -2871,18 +2906,18 @@
                 },
                 "Avatar_Yunjin_ElementalBurst_Reset": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "onAdded": [
                         {
                             "$type": "RemoveUniqueModifier",
                             "target": "AllPlayerAvatars",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByTargetPositionToSelfPosition",
                                     "logic": "LesserOrEqual",
                                     "compareType": "XYZ",
-                                    "value": 40.0
+                                    "ratio": 40.0
                                 }
                             ],
                             "modifierName": "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_Handler"
@@ -2890,7 +2925,7 @@
                         {
                             "$type": "RemoveUniqueModifier",
                             "target": "AllPlayerAvatars",
-                            "doOffStage": true,
+                            "RotationDampTime": true,
                             "predicates": [
                                 {
                                     "$type": "ByUnlockTalentParam",
@@ -2900,7 +2935,7 @@
                                     "$type": "ByTargetPositionToSelfPosition",
                                     "logic": "LesserOrEqual",
                                     "compareType": "XYZ",
-                                    "value": 40.0
+                                    "ratio": 40.0
                                 }
                             ],
                             "modifierName": "UNIQUE_Avatar_Yunjin_Constellation_2_Buff"
@@ -2909,20 +2944,20 @@
                 },
                 "Blank": {
                     "modifierName": "",
-                    "elementDurability": 100.0
+                    "bonusCriticalHurt": 100.0
                 }
             },
             "onAbilityStart": [
                 {
                     "$type": "AttachModifier",
                     "target": "AllPlayerAvatars",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "LesserOrEqual",
                             "compareType": "XYZ",
-                            "value": 40.0
+                            "ratio": 40.0
                         }
                     ],
                     "modifierName": "UNIQUE_Avatar_Yunjin_ElementalBurst_Buff_Handler"
@@ -2930,7 +2965,7 @@
                 {
                     "$type": "AttachModifier",
                     "target": "AllPlayerAvatars",
-                    "doOffStage": true,
+                    "RotationDampTime": true,
                     "predicates": [
                         {
                             "$type": "ByUnlockTalentParam",
@@ -2940,7 +2975,7 @@
                             "$type": "ByTargetPositionToSelfPosition",
                             "logic": "LesserOrEqual",
                             "compareType": "XYZ",
-                            "value": 40.0
+                            "ratio": 40.0
                         }
                     ],
                     "modifierName": "UNIQUE_Avatar_Yunjin_Constellation_2_Buff"
@@ -2959,7 +2994,7 @@
             "modifiers": {
                 "Yunjin_CrystallizeAddDef_Handler": {
                     "modifierName": "",
-                    "elementDurability": 100.0,
+                    "bonusCriticalHurt": 100.0,
                     "modifierMixins": [
                         {
                             "$type": "DoActionByElementReactionMixin",
@@ -2975,7 +3010,7 @@
                             "actions": [
                                 {
                                     "$type": "AttachModifier",
-                                    "doOffStage": true,
+                                    "RotationDampTime": true,
                                     "modifierName": "UNIQUE_Yunjin_CrystallizeAddDef"
                                 }
                             ]
@@ -2985,8 +3020,8 @@
                 "UNIQUE_Yunjin_CrystallizeAddDef": {
                     "modifierName": "",
                     "isUnique": true,
-                    "duration": "Yunjin_CrystallizeAddDef_Duration",
-                    "elementDurability": 100.0,
+                    "KPGONJCLMDC": "Yunjin_CrystallizeAddDef_Duration",
+                    "bonusCriticalHurt": 100.0,
                     "properties": {
                         "Actor_DefenceRatio": "Yunjin_CrystallizeAddDef_DefRatio"
                     },
