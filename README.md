@@ -1,4 +1,8 @@
-# Grasscutter_Resources
+## Note
+This is an experimental branch for WeedWacker for fixing `Abilities`. I do not recommend using these resources with Grasscutter
+
+
+# Weedwacker_Resources
 > <em>Resource Version - Certain Anime Game V3.3.0</em><br/>
 > BinOuput is not "Fully" Updated to V3.3.0, Only Embryos & Scene Points
 
